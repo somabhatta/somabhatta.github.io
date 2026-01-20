@@ -4,381 +4,481 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Somadutta Bhatta - Nuclear Physicist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        :root {
+            --primary: #1e3a8a;       /* Deep Navy */
+            --accent: #3b82f6;        /* Bright Blue */
+            --bg-sidebar: #0f172a;    /* Darker Navy for sidebar */
+            --bg-content: #f8fafc;    /* Very light grey for content */
+            --text-main: #334155;
+            --text-light: #94a3b8;
+            --white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background: var(--bg-content);
+            height: 100vh;
+            overflow: hidden; 
+            display: flex;
         }
-        
-        header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+
+        /* --- LEFT SIDEBAR (Fixed) --- */
+        .sidebar {
+            width: 320px;
+            background: var(--bg-sidebar);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem;
+            flex-shrink: 0;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .profile-header {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        /* Photo Placeholder */
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
             color: white;
-            padding: 3rem 2rem;
-            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
         }
-        
-        header h1 {
-            font-size: 2.5rem;
+
+        .profile-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
             margin-bottom: 0.5rem;
         }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+
+        .profile-header p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
         }
-        
-        nav {
-            background: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav ul {
-            list-style: none;
+
+        /* Navigation Buttons */
+        .nav-menu {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-grow: 1;
         }
-        
-        nav a {
-            color: #1e3a8a;
-            text-decoration: none;
-            font-weight: 500;
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            text-align: left;
+            padding: 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.05);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .nav-btn.active {
+            background: var(--accent);
+            color: var(--white);
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.2rem;
             transition: color 0.3s;
         }
-        
-        nav a:hover {
-            color: #3b82f6;
+
+        .social-links a:hover {
+            color: var(--accent);
         }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
+
+        /* --- RIGHT CONTENT AREA --- */
+        .main-content {
+            flex-grow: 1;
+            padding: 3rem 4rem;
+            overflow-y: auto;
         }
-        
-        section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+        .content-section {
+            display: none; 
+            animation: fadeIn 0.4s ease-in-out;
+            max-width: 950px;
         }
-        
+
+        .content-section.active {
+            display: block; 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         h2 {
-            color: #1e3a8a;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #3b82f6;
-        }
-        
-        h3 {
-            color: #1e3a8a;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .position {
+            font-size: 2rem;
+            color: var(--primary);
             margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1rem;
         }
-        
-        .position-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
+
+        h3 {
+            color: var(--primary);
+            margin: 1.5rem 0 1rem 0;
         }
-        
-        .position-title {
-            font-weight: 600;
-            color: #1e3a8a;
-        }
-        
-        .position-date {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .position-location {
-            color: #666;
-            font-style: italic;
-        }
-        
-        .publication {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #f9fafb;
-            border-radius: 4px;
-            border-left: 4px solid #3b82f6;
-        }
-        
-        .publication-title {
-            font-weight: 600;
-            color: #1e3a8a;
-            margin-bottom: 0.3rem;
-        }
-        
-        .publication-meta {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        
-        .citation-count {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        
-        .impact {
-            margin-top: 0.5rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        .award {
-            padding: 1rem;
+
+        p {
+            line-height: 1.7;
             margin-bottom: 1rem;
-            background: #fef3c7;
-            border-radius: 4px;
-            border-left: 4px solid #f59e0b;
+            color: #475569;
         }
-        
-        .talk {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-        }
-        
-        .skills {
+
+        /* --- NEW PUBLICATION CARD DESIGN --- */
+        .pub-card {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            border: 1px solid #f1f5f9;
+            transition: transform 0.2s;
+        }
+
+        .pub-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image styling */
+        .pub-image-container {
+            width: 200px;
+            flex-shrink: 0;
+            background: #f1f5f9;
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .pub-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the box neatly */
+            transition: transform 0.3s;
         }
         
-        .skill-tag {
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .pub-card:hover .pub-image-container img {
+            transform: scale(1.05);
         }
-        
-        .contact-info {
-            text-align: center;
+
+        .pub-content {
             padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .publication-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            line-height: 1.3;
+        }
+
+        .meta-tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Standard Cards (for non-image items) */
+        .card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            border: 1px solid #f1f5f9;
+        }
+
+        .skill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-pill {
+            background: white;
+            border: 1px solid #cbd5e1;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
         
-        .contact-info a {
-            color: #3b82f6;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            background: #1e3a8a;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 900px) {
+            body { flex-direction: column; height: auto; overflow: auto; }
+            .sidebar { width: 100%; padding: 1.5rem; height: auto; }
+            .nav-menu { flex-direction: row; overflow-x: auto; padding-bottom: 10px; }
+            .nav-btn { white-space: nowrap; padding: 0.8rem 1.2rem; background: rgba(255,255,255,0.1); }
+            .main-content { padding: 2rem; overflow: visible; }
             
-            nav ul {
-                gap: 1rem;
-            }
-            
-            .position-header {
-                flex-direction: column;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
+            /* Stack publication cards on mobile */
+            .pub-card { flex-direction: column; }
+            .pub-image-container { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid #e2e8f0; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Dr. Somadutta Bhatta</h1>
-        <p>Postdoctoral Researcher in Nuclear Physics</p>
-        <p>Institute for Gravitational and Subatomic Physics (GRASP), Utrecht University</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#talks">Talks</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a Postdoctoral Researcher at the Institute for Gravitational and Subatomic Physics (GRASP) at Utrecht University, working with Prof. dr. R.J.M. Snellings. I recently completed my Ph.D. at Stony Brook University under the supervision of Prof. Jiangyong Jia.</p>
-            
-            <p style="margin-top: 1rem;">My research focuses on probing the Quark-Gluon Plasma (QGP), a primordial state of matter that existed microseconds after the Big Bang. Understanding the properties of this QCD matter is essential for constraining its critical point and explaining its phase transition into hadronic matter in the universe. This involves studying key characteristics of QGP such as its viscosities, the speed of sound in the medium, and the origin of collectivity in heavy-ion collisions.</p>
-            
-            <p style="margin-top: 1rem;">In recent years, my research has made substantial contributions toward addressing long-standing issues using heavy-ion collision data collected with the ATLAS detector at the LHC and the STAR detector at RHIC.</p>
-        </section>
+
+    <aside class="sidebar">
+        <div class="profile-header">
+            <div class="profile-photo">SB</div>
+            <h1>Dr. Somadutta Bhatta</h1>
+            <p>Postdoctoral Researcher</p>
+            <p style="opacity: 0.7; font-size: 0.85rem; margin-top:5px;">Utrecht University (GRASP)</p>
+        </div>
+
+        <nav class="nav-menu">
+            <button class="nav-btn active" onclick="showSection('about')">
+                <i class="fas fa-user"></i> About
+            </button>
+            <button class="nav-btn" onclick="showSection('research')">
+                <i class="fas fa-flask"></i> Research
+            </button>
+            <button class="nav-btn" onclick="showSection('publications')">
+                <i class="fas fa-book-open"></i> Publications
+            </button>
+            <button class="nav-btn" onclick="showSection('talks')">
+                <i class="fas fa-microphone"></i> Talks & Awards
+            </button>
+            <button class="nav-btn" onclick="showSection('skills')">
+                <i class="fas fa-code"></i> Skills
+            </button>
+            <button class="nav-btn" onclick="showSection('contact')">
+                <i class="fas fa-envelope"></i> Contact
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://scholar.google.com" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="mailto:s.bhatta@uu.nl" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://arxiv.org" target="_blank" title="ArXiv"><i class="fas fa-file-alt"></i></a>
+            </div>
+            <p style="font-size: 0.75rem; color: #64748b; margin-top: 1rem;">&copy; 2025 S. Bhatta</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
         
-        <section id="research">
+        <div id="about" class="content-section active">
+            <h2>About Me</h2>
+            <div class="card" style="border-left: 5px solid var(--accent);">
+                <p><strong>Postdoctoral Researcher</strong> at the Institute for Gravitational and Subatomic Physics (GRASP), Utrecht University.</p>
+                <p>Working with Prof. dr. R.J.M. Snellings.</p>
+            </div>
+            <p>I recently completed my Ph.D. at Stony Brook University under the supervision of Prof. Jiangyong Jia. My research focuses on probing the <strong>Quark-Gluon Plasma (QGP)</strong>, a primordial state of matter that existed microseconds after the Big Bang.</p>
+        </div>
+
+        <div id="research" class="content-section">
             <h2>Research Highlights</h2>
             
-            <div class="publication">
-                <div class="publication-title">Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions</div>
-                <div class="publication-meta">STAR Collaboration, Nature 635, 67–72 (2024) <span class="citation-count">94 citations</span></div>
-                <div class="impact"><strong>Impact:</strong> This landmark study pioneered a novel paradigm for nuclear structure physics, demonstrating for the first time that relativistic heavy-ion collisions can precisely image the three-dimensional shape of atomic nuclei. This work bridged the gap between high-energy and low-energy nuclear physics and resolved a major uncertainty that had long constrained the precision of Quark-Gluon Plasma studies.</div>
+            <div class="pub-card">
+                <div class="pub-image-container">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/6990342393665992474_0" alt="STAR Nature Paper Figure">
+                </div>
+                <div class="pub-content">
+                    <div class="publication-title">Imaging Shapes of Atomic Nuclei</div>
+                    <p style="font-size: 0.9rem; color: #64748b;">STAR Collaboration, Nature 635, 67–72 (2024)</p>
+                    <span class="meta-tag">94 citations</span>
+                    <p><strong>Impact:</strong> Pioneered a novel paradigm for nuclear structure physics, demonstrating that relativistic heavy-ion collisions can precisely image the three-dimensional shape of atomic nuclei.</p>
+                </div>
             </div>
-            
-            <div class="publication">
-                <div class="publication-title">Evidence for the collective nature of radial flow in Pb+Pb collisions</div>
-                <div class="publication-meta">ATLAS Collaboration, Accepted in PRL (Editor's suggestion), arXiv:2503.24125 <span class="citation-count">15 citations</span></div>
-                <div class="impact"><strong>Impact:</strong> This analysis established an entirely new observational window into QGP dynamics. By performing the first measurement of the transverse momentum dependence of radial flow fluctuations, I demonstrated that radial flow is a collective phenomenon. This work establishes v₀(pT) as a powerful new tool with high sensitivity to the QGP's bulk viscosity.</div>
+
+            <div class="pub-card">
+                <div class="pub-image-container">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/14230010339233715460_0" alt="ATLAS Radial Flow Figure">
+                </div>
+                <div class="pub-content">
+                    <div class="publication-title">Collective nature of radial flow in Pb+Pb</div>
+                    <p style="font-size: 0.9rem; color: #64748b;">ATLAS Collaboration, Accepted in PRL</p>
+                    <span class="meta-tag">15 citations</span>
+                    <p><strong>Impact:</strong> Established an entirely new observational window into QGP dynamics. Demonstrated radial flow is a collective phenomenon and established v₀(pT) as a tool for bulk viscosity.</p>
+                </div>
             </div>
-            
-            <div class="publication">
-                <div class="publication-title">Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions</div>
-                <div class="publication-meta">ATLAS Collaboration, PRL 133, 252301 (2024) <span class="citation-count">29 citations</span></div>
-                <div class="impact"><strong>Impact:</strong> This work achieved a critical breakthrough by experimentally isolating distinct sources of initial-state fluctuations for the first time. By disentangling geometric effects from intrinsic quantum fluctuations, my analysis solved a long-standing modeling challenge and enabled a cleaner extraction of QGP properties.</div>
+
+            <div class="pub-card">
+                <div class="pub-image-container">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13841272772603311684_0" alt="ATLAS Fluctuations Figure">
+                </div>
+                <div class="pub-content">
+                    <div class="publication-title">Disentangling sources of momentum fluctuations</div>
+                    <p style="font-size: 0.9rem; color: #64748b;">ATLAS Collaboration, PRL 133, 252301 (2024)</p>
+                    <span class="meta-tag">29 citations</span>
+                    <p><strong>Impact:</strong> Achieved a critical breakthrough by experimentally isolating distinct sources of initial-state fluctuations for the first time.</p>
+                </div>
             </div>
-        </section>
-        
-        <section id="publications">
+        </div>
+
+        <div id="publications" class="content-section">
             <h2>Selected Publications</h2>
-            <p>Full list available at: <a href="https://scholar.google.com" target="_blank">Google Scholar</a> | <a href="https://inspirehep.net" target="_blank">Inspire-HEP</a> | <a href="https://arxiv.org" target="_blank">ArXiv</a></p>
+            <p style="margin-bottom: 2rem;">Full lists: <a href="https://scholar.google.com" target="_blank">Google Scholar</a> | <a href="https://inspirehep.net" target="_blank">Inspire-HEP</a></p>
             
-            <h3>First/Primary Author Papers</h3>
-            <ul style="margin-top: 1rem; line-height: 2;">
-                <li>Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions. STAR, Nature 635, 67–72 (2024)</li>
-                <li>Evidence for the collective nature of radial flow in Pb+Pb collisions. ATLAS, Accepted in PRL (2025)</li>
-                <li>Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions. ATLAS, PRL 133, 252301 (2024)</li>
-                <li>Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions at the LHC. ATLAS, PRC 105, 054910 (2023)</li>
-                <li>Higher-order transverse momentum fluctuations in heavy-ion collisions. PRC 105, 024904 (2022)</li>
-            </ul>
-        </section>
-        
-        <section id="talks">
-            <h2>Invited Talks & Presentations</h2>
-            
-            <h3>Recent Invited Seminars</h3>
-            <div class="talk">
-                <strong>CERN-TH Seminar 2025</strong> - Insights into Nuclear Geometry and Initial Conditions of Heavy-Ion Collisions from ATLAS
-            </div>
-            <div class="talk">
-                <strong>LHCP 2024</strong> - Probing medium properties in ultra-central collisions (Plenary talk on behalf of ATLAS+ALICE+CMS)
-            </div>
-            <div class="talk">
-                <strong>Nuclear Physics Seminars at BNL 2024</strong> - Disentangling sources of momentum fluctuations in heavy-ion collisions
+            <div class="pub-card" style="min-height: auto;">
+                <div class="pub-content">
+                    <strong>Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions.</strong><br>
+                    <span style="color:#666">STAR, Nature 635, 67–72 (2024)</span>
+                </div>
             </div>
             
-            <h3>Conference Talks</h3>
-            <div class="talk">
-                <strong>Quark Matter 2025</strong> - Evidence for the collective nature of radial flow in Pb+Pb collisions
+            <div class="pub-card" style="min-height: auto;">
+                <div class="pub-content">
+                    <strong>Evidence for the collective nature of radial flow in Pb+Pb collisions.</strong><br>
+                    <span style="color:#666">ATLAS, Accepted in PRL (2025)</span>
+                </div>
             </div>
-            <div class="talk">
-                <strong>Initial Stages 2025</strong> - Recent flow and correlation measurements with ATLAS
+
+            <div class="pub-card" style="min-height: auto;">
+                <div class="pub-content">
+                    <strong>Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions.</strong><br>
+                    <span style="color:#666">ATLAS, PRL 133, 252301 (2024)</span>
+                </div>
             </div>
-            <div class="talk">
-                <strong>ATHIC 2025</strong> - Unveiling initial state fluctuations using [pT] cumulants
+
+            <div class="pub-card" style="min-height: auto;">
+                <div class="pub-content">
+                    <strong>Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions.</strong><br>
+                    <span style="color:#666">ATLAS, PRC 105, 054910 (2023)</span>
+                </div>
             </div>
-        </section>
-        
-        <section id="awards">
-            <h2>Awards & Recognition</h2>
-            
-            <div class="award">
-                <strong>Distinguished Travel Award</strong> - Stony Brook University (2025)
+        </div>
+
+        <div id="talks" class="content-section">
+            <h2>Talks & Awards</h2>
+            <h3>Awards</h3>
+            <div class="skill-container">
+                <div class="card" style="flex: 1 1 300px;">
+                    <strong>Distinguished Travel Award</strong>
+                    <div style="font-size: 0.9rem; color: #666;">Stony Brook University (2025)</div>
+                </div>
+                <div class="card" style="flex: 1 1 300px;">
+                    <strong>Young Scientist Award</strong>
+                    <div style="font-size: 0.9rem; color: #666;">Initial Stages Conference (2023)</div>
+                </div>
             </div>
-            
-            <div class="award">
-                <strong>Young Scientist Award</strong> - Initial Stages Conference (2023)
+            <h3 style="margin-top:2rem;">Recent Invited Seminars</h3>
+            <div class="card" style="border-left: 3px solid var(--accent);">
+                <strong>CERN-TH Seminar 2025</strong><br>Insights into Nuclear Geometry
             </div>
-            
-            <div class="award">
-                <strong>CSIR-NET Fellowship</strong> - All India Rank 39 (2018)<br>
-                <small>Top 0.5% from 200,000 participants nationwide</small>
-            </div>
-            
-            <div class="award">
-                <strong>INSPIRE Fellowship</strong> - Department of Science & Technology, Govt. of India (2013-2018)
-            </div>
-            
-            <div class="award">
-                <strong>NTSE Fellowship Scholar</strong> - NCERT, Govt. of India (2009-2013)<br>
-                <small>Selected from approximately 1 million applicants nationwide</small>
-            </div>
-        </section>
-        
-        <section id="skills">
+        </div>
+
+        <div id="skills" class="content-section">
             <h2>Technical Skills</h2>
-            <div class="skills">
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">ROOT</span>
-                <span class="skill-tag">Mathematica</span>
-                <span class="skill-tag">Glauber Models</span>
-                <span class="skill-tag">HIJING</span>
-                <span class="skill-tag">AMPT</span>
-                <span class="skill-tag">TRAJECTUM</span>
-                <span class="skill-tag">ATLAS Detector</span>
-                <span class="skill-tag">STAR Detector</span>
+            <div class="card">
+                <h3>Computation & Analysis</h3>
+                <div class="skill-container">
+                    <span class="skill-pill">C++</span>
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">ROOT</span>
+                    <span class="skill-pill">Mathematica</span>
+                </div>
             </div>
+        </div>
+
+        <div id="contact" class="content-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="card" style="text-align: center;">
+                    <i class="fas fa-envelope" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
             
-            <h3 style="margin-top: 2rem;">Collaborations</h3>
-            <p>Member of ATLAS Experiment at LHC and STAR Experiment at RHIC. Also affiliated with ALICE Experiment at LHC.</p>
-        </section>
-        
-        <section id="contact" class="contact-info">
-            <h2>Contact</h2>
-            <p style="margin-top: 1rem;">
-                <strong>Email:</strong> <a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
-            </p>
-            <p style="margin-top: 0.5rem;">
-                <strong>Institution:</strong> Institute for Gravitational and Subatomic Physics (GRASP)<br>
-                Utrecht University, Netherlands
-            </p>
-            <p style="margin-top: 1rem;">
-                <a href="https://scholar.google.com" target="_blank">Google Scholar</a> |
-                <a href="https://inspirehep.net" target="_blank">Inspire-HEP</a> |
-                <a href="https://arxiv.org" target="_blank">ArXiv</a>
-            </p>
-        </section>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 Dr. Somadutta Bhatta. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Postdoctoral Researcher in Nuclear Physics | Utrecht University</p>
-    </footer>
+            const buttons = document.querySelectorAll('.nav-btn');
+            for (let btn of buttons) {
+                if(btn.getAttribute('onclick').includes(sectionId)) {
+                    btn.classList.add('active');
+                    break;
+                }
+            }
+        }
+    </script>
 </body>
 </html>
