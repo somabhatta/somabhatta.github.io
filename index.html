@@ -45,7 +45,6 @@
         .top-nav-wrapper {
             max-width: var(--page-max-width);
             margin: 0 auto 20px auto;
-            /* "margin on both ends" handled by max-width centering + body padding */
         }
 
         .top-nav-grid {
@@ -70,7 +69,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 75px; /* Compact height */
+            min-height: 75px;
         }
 
         .top-nav-card:hover, .top-nav-card.active-tab {
@@ -116,7 +115,6 @@
         .sidebar {
             width: var(--sidebar-width);
             background-color: var(--light-bg);
-            /* Increased top padding to bring photo lower */
             padding: 60px 20px 40px 20px; 
             border-right: 1px solid var(--border-color);
             flex-shrink: 0;
@@ -131,9 +129,8 @@
             width: 160px;
             height: 160px;
             object-fit: cover;
-            
-            object-position: center 20px; /* This shifts the photo down by 20px */
-            
+            /* Adjust this value to move photo up/down inside circle */
+            object-position: center 20px; 
             border-radius: 50%;
             border: 4px solid var(--white);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -178,9 +175,9 @@
         }
 
         .contact-item {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
-            flex-direction: column; /* Better for long emails */
+            flex-direction: column;
             align-items: flex-start;
             word-break: break-all;
         }
@@ -221,11 +218,7 @@
 
         /* Sidebar Navigation Menu (Backup/Mobile) */
         .sidebar-nav {
-            margin-top: 30px;
-            text-align: left;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-            display: none; /* Hidden on desktop since we have top nav */
+            display: none; 
         }
 
         /* Main Content Styling */
@@ -478,6 +471,7 @@
                 <a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
                 <a href="mailto:somadutta.bhatta4@gmail.com">somadutta.bhatta4@gmail.com</a>
             </div>
+            <div class="contact-item">
                 <span class="contact-label">Location:</span>
                 Utrecht, Netherlands
             </div>
