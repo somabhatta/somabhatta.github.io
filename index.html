@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Somadutta Bhatta | Nuclear Physicist</title>
+    <title> Somadutta Bhatta </title>
     <style>
         :root {
             --primary-color: #003366; /* Academic Blue */
@@ -147,18 +147,66 @@
             transform: translateY(-2px);
         }
 
+        /* Sidebar Navigation Menu */
+        .sidebar-nav {
+            margin-top: 30px;
+            text-align: left;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        
+        .sidebar-nav button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 10px 5px;
+            font-size: 0.95rem;
+            color: #555;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .sidebar-nav button:hover, .sidebar-nav button.active {
+            color: var(--primary-color);
+            font-weight: 600;
+            border-left-color: var(--primary-color);
+            background-color: rgba(0, 51, 102, 0.05);
+        }
+
         /* Main Content Styling */
         .main-content {
             flex-grow: 1;
             padding: 50px 60px;
+            position: relative;
+        }
+
+        /* Section Visibility Logic */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         header {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
             margin-bottom: 10px;
             border-bottom: 3px solid var(--accent-color);
@@ -166,26 +214,56 @@
             padding-bottom: 5px;
         }
 
+        /* Navigation Grid on Biography Page */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .nav-card {
+            background: #fff;
+            border: 1px solid #e1e4e8;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+        }
+
+        .nav-card h3 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            background: none;
+            padding: 0;
+            border: none;
+        }
+
+        .nav-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
         h2 {
             font-size: 1.5rem;
             color: var(--primary-color);
             border-bottom: 2px solid #eee;
             padding-bottom: 10px;
-            margin-top: 50px;
+            margin-top: 40px;
             margin-bottom: 25px;
-            position: relative;
         }
         
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background-color: var(--accent-color);
-        }
-
         h3 {
             font-size: 1.15rem;
             color: #444;
@@ -287,7 +365,6 @@
             border: 1px solid #dbeafe;
         }
 
-        /* Section Specifics */
         .scientific-impact {
             background-color: #fcfcfc;
             border-top: 1px solid #eee;
@@ -320,7 +397,6 @@
             .main-content {
                 padding: 30px 20px;
             }
-            h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -356,32 +432,57 @@
             <a href="https://inspirehep.net" target="_blank" class="btn-social">Inspire-HEP</a>
             <a href="https://arxiv.org" target="_blank" class="btn-social">ArXiv</a>
         </div>
+
+        <div class="sidebar-nav">
+            <button onclick="showSection('biography')" class="active" id="btn-biography">Biography</button>
+            <button onclick="showSection('publications')" id="btn-publications">Publications</button>
+            <button onclick="showSection('talks')" id="btn-talks">Talks & Presentations</button>
+            <button onclick="showSection('awards')" id="btn-awards">Awards & Honors</button>
+            <button onclick="showSection('news')" id="btn-news">In the News</button>
+            <button onclick="showSection('service')" id="btn-service">Professional Service</button>
+            <button onclick="showSection('skills')" id="btn-skills">Technical Skills</button>
+            <button onclick="showSection('hobbies')" id="btn-hobbies">Hobbies</button>
+        </div>
     </aside>
 
     <main class="main-content">
-        <header>
-            <h1>Biography</h1>
-        </header>
+        
+        <section id="biography" class="content-section active">
+            <header>
+                <h1>Biography</h1>
+            </header>
+            <div class="content-body">
+                <p>I am a Postdoctoral Researcher at the <strong>Institute for Gravitational and Subatomic Physics (GRASP)</strong> at Utrecht University, working with Prof. dr. R.J.M. Snellings. I am also affiliated with <strong>NIKHEF</strong> and actively work within the <strong>ALICE Collaboration</strong> at CERN and the <strong>STAR Collaboration</strong> at RHIC.</p>
+                
+                <p>I recently completed my Ph.D. at Stony Brook University under the supervision of Prof. Jiangyong Jia. My research focuses on probing the <strong>Quark-Gluon Plasma (QGP)</strong>, a primordial state of matter that existed microseconds after the Big Bang. I study its key characteristics, such as viscosity, speed of sound, and the origin of collectivity in heavy-ion collisions.</p>
 
-        <section id="about">
-            <p>I am a Postdoctoral Researcher at the <strong>Institute for Gravitational and Subatomic Physics (GRASP)</strong> at Utrecht University, working with Prof. dr. R.J.M. Snellings. I am also affiliated with <strong>NIKHEF</strong> and actively work within the <strong>ALICE Collaboration</strong> at CERN and the <strong>STAR Collaboration</strong> at RHIC.</p>
+                <h2>Quick Links</h2>
+                <div class="nav-grid">
+                    <div class="nav-card" onclick="showSection('publications')">
+                        <h3>Publications</h3>
+                        <p>Full list of papers & impact</p>
+                    </div>
+                    <div class="nav-card" onclick="showSection('talks')">
+                        <h3>Talks</h3>
+                        <p>Conferences & Seminars</p>
+                    </div>
+                    <div class="nav-card" onclick="showSection('news')">
+                        <h3>In the News</h3>
+                        <p>Media coverage</p>
+                    </div>
+                    <div class="nav-card" onclick="showSection('awards')">
+                        <h3>Awards</h3>
+                        <p>Honors & Grants</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="content-section">
+            <header>
+                <h1>Full Publication List</h1>
+            </header>
             
-            <p>I recently completed my Ph.D. at Stony Brook University under the supervision of Prof. Jiangyong Jia. My research focuses on probing the <strong>Quark-Gluon Plasma (QGP)</strong>, a primordial state of matter that existed microseconds after the Big Bang. I study its key characteristics, such as viscosity, speed of sound, and the origin of collectivity in heavy-ion collisions.</p>
-        </section>
-
-        <section id="research">
-            <h2>Research Interests</h2>
-            <ul class="clean-list">
-                <li>Experimental High Energy Nuclear Physics</li>
-                <li>Heavy-Ion Collisions & Quark-Gluon Plasma (QGP)</li>
-                <li>Flow Fluctuations & Collectivity</li>
-                <li>Nuclear Imaging using High-Energy Collisions</li>
-            </ul>
-        </section>
-
-        <section id="publications">
-            <h2>Full Publication List</h2>
-
             <h3>A.i) Selected First/Primary Author Experimental Papers</h3>
 
             <div class="pub-item">
@@ -570,11 +671,12 @@
                     <a href="https://cds.cern.ch/record/2747068" target="_blank" class="link-btn">Link</a>
                 </div>
             </div>
-
         </section>
 
-        <section id="talks">
-            <h2>Talks and Presentations</h2>
+        <section id="talks" class="content-section">
+            <header>
+                <h1>Talks and Presentations</h1>
+            </header>
             
             <h3>A.) Invited Talks</h3>
             <ul class="clean-list">
@@ -685,8 +787,10 @@
             </ul>
         </section>
 
-        <section id="awards">
-            <h2>Awards & Honors</h2>
+        <section id="awards" class="content-section">
+            <header>
+                <h1>Awards & Honors</h1>
+            </header>
             <ul class="clean-list">
                 <li><strong>Distinguished Travel Award (2025)</strong> - Stony Brook University</li>
                 <li><strong>Young Scientist Award (2023)</strong> - Initial Stages Conference</li>
@@ -696,16 +800,32 @@
             </ul>
         </section>
 
-        <section id="news">
-            <h2>In the News</h2>
-            <ul class="clean-list">
-                <li><a href="#">CERN Courier:</a> Coverage of recent nature publication results.</li>
-                <li><a href="#">The Statesman:</a> Feature on Young Scientist Award 2023.</li>
-            </ul>
+        <section id="news" class="content-section">
+            <header>
+                <h1>In the News</h1>
+            </header>
+            
+            <div class="pub-item">
+                <div class="pub-title">A new probe of Radial Flow</div>
+                <div class="pub-meta">CERN Courier, July 8 2025</div>
+                <div class="pub-links">
+                    <a href="https://cerncourier.com/a/a-new-probe-of-radial-flow/" target="_blank" class="link-btn">Read Article</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Stony Brook Physicists unveil groundbreaking method for nuclear imaging</div>
+                <div class="pub-meta">The Statesman, November 22 2024</div>
+                <div class="pub-links">
+                    <a href="https://sbstatesman.com/130994/news/stony-brook-physicists-unveil-groundbreaking-method-for-nuclear-imaging/" target="_blank" class="link-btn">Read Article</a>
+                </div>
+            </div>
         </section>
-        
-        <section id="service">
-            <h2>Professional Service & Activities</h2>
+
+        <section id="service" class="content-section">
+            <header>
+                <h1>Professional Service & Activities</h1>
+            </header>
 
             <h3>Conference Organization</h3>
             <ul class="clean-list">
@@ -744,8 +864,10 @@
             </ul>
         </section>
 
-        <section id="skills">
-            <h2>Technical Skills</h2>
+        <section id="skills" class="content-section">
+            <header>
+                <h1>Technical Skills</h1>
+            </header>
             <ul class="clean-list">
                 <li><strong>Data Analysis:</strong> ROOT, Mathematica</li>
                 <li><strong>Programming Languages:</strong> C++, Python</li>
@@ -753,8 +875,10 @@
             </ul>
         </section>
 
-        <section id="hobbies">
-            <h2>Hobbies</h2>
+        <section id="hobbies" class="content-section">
+            <header>
+                <h1>Hobbies & Interests</h1>
+            </header>
             <ul class="clean-list">
                 <li>Reading books (Sci-Fi, Philosophy)</li>
                 <li>Listening to music</li>
@@ -764,6 +888,33 @@
 
     </main>
 </div>
+
+<script>
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Show the selected section
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.classList.add('active');
+        }
+
+        // Update Sidebar active state
+        const buttons = document.querySelectorAll('.sidebar-nav button');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        const activeBtn = document.getElementById('btn-' + sectionId);
+        if(activeBtn) activeBtn.classList.add('active');
+
+        // Scroll back to top of main content
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
 
 </body>
 </html>
