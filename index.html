@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Somadutta Bhatta - Nuclear Physicist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3b82f6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3b82f6;
+        }
+        
+        h3 {
+            color: #1e3a8a;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .position {
+            margin-bottom: 2rem;
+        }
+        
+        .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .position-title {
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        
+        .position-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .position-location {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .publication {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 4px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .publication-title {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 0.3rem;
+        }
+        
+        .publication-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .citation-count {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .impact {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .award {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #fef3c7;
+            border-radius: 4px;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .talk {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .contact-info a {
+            color: #3b82f6;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .position-header {
+                flex-direction: column;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dr. Somadutta Bhatta</h1>
+        <p>Postdoctoral Researcher in Nuclear Physics</p>
+        <p>Institute for Gravitational and Subatomic Physics (GRASP), Utrecht University</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#talks">Talks</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a Postdoctoral Researcher at the Institute for Gravitational and Subatomic Physics (GRASP) at Utrecht University, working with Prof. dr. R.J.M. Snellings. I recently completed my Ph.D. at Stony Brook University under the supervision of Prof. Jiangyong Jia.</p>
+            
+            <p style="margin-top: 1rem;">My research focuses on probing the Quark-Gluon Plasma (QGP), a primordial state of matter that existed microseconds after the Big Bang. Understanding the properties of this QCD matter is essential for constraining its critical point and explaining its phase transition into hadronic matter in the universe. This involves studying key characteristics of QGP such as its viscosities, the speed of sound in the medium, and the origin of collectivity in heavy-ion collisions.</p>
+            
+            <p style="margin-top: 1rem;">In recent years, my research has made substantial contributions toward addressing long-standing issues using heavy-ion collision data collected with the ATLAS detector at the LHC and the STAR detector at RHIC.</p>
+        </section>
+        
+        <section id="research">
+            <h2>Research Highlights</h2>
+            
+            <div class="publication">
+                <div class="publication-title">Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions</div>
+                <div class="publication-meta">STAR Collaboration, Nature 635, 67–72 (2024) <span class="citation-count">94 citations</span></div>
+                <div class="impact"><strong>Impact:</strong> This landmark study pioneered a novel paradigm for nuclear structure physics, demonstrating for the first time that relativistic heavy-ion collisions can precisely image the three-dimensional shape of atomic nuclei. This work bridged the gap between high-energy and low-energy nuclear physics and resolved a major uncertainty that had long constrained the precision of Quark-Gluon Plasma studies.</div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">Evidence for the collective nature of radial flow in Pb+Pb collisions</div>
+                <div class="publication-meta">ATLAS Collaboration, Accepted in PRL (Editor's suggestion), arXiv:2503.24125 <span class="citation-count">15 citations</span></div>
+                <div class="impact"><strong>Impact:</strong> This analysis established an entirely new observational window into QGP dynamics. By performing the first measurement of the transverse momentum dependence of radial flow fluctuations, I demonstrated that radial flow is a collective phenomenon. This work establishes v₀(pT) as a powerful new tool with high sensitivity to the QGP's bulk viscosity.</div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions</div>
+                <div class="publication-meta">ATLAS Collaboration, PRL 133, 252301 (2024) <span class="citation-count">29 citations</span></div>
+                <div class="impact"><strong>Impact:</strong> This work achieved a critical breakthrough by experimentally isolating distinct sources of initial-state fluctuations for the first time. By disentangling geometric effects from intrinsic quantum fluctuations, my analysis solved a long-standing modeling challenge and enabled a cleaner extraction of QGP properties.</div>
+            </div>
+        </section>
+        
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <p>Full list available at: <a href="https://scholar.google.com" target="_blank">Google Scholar</a> | <a href="https://inspirehep.net" target="_blank">Inspire-HEP</a> | <a href="https://arxiv.org" target="_blank">ArXiv</a></p>
+            
+            <h3>First/Primary Author Papers</h3>
+            <ul style="margin-top: 1rem; line-height: 2;">
+                <li>Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions. STAR, Nature 635, 67–72 (2024)</li>
+                <li>Evidence for the collective nature of radial flow in Pb+Pb collisions. ATLAS, Accepted in PRL (2025)</li>
+                <li>Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions. ATLAS, PRL 133, 252301 (2024)</li>
+                <li>Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions at the LHC. ATLAS, PRC 105, 054910 (2023)</li>
+                <li>Higher-order transverse momentum fluctuations in heavy-ion collisions. PRC 105, 024904 (2022)</li>
+            </ul>
+        </section>
+        
+        <section id="talks">
+            <h2>Invited Talks & Presentations</h2>
+            
+            <h3>Recent Invited Seminars</h3>
+            <div class="talk">
+                <strong>CERN-TH Seminar 2025</strong> - Insights into Nuclear Geometry and Initial Conditions of Heavy-Ion Collisions from ATLAS
+            </div>
+            <div class="talk">
+                <strong>LHCP 2024</strong> - Probing medium properties in ultra-central collisions (Plenary talk on behalf of ATLAS+ALICE+CMS)
+            </div>
+            <div class="talk">
+                <strong>Nuclear Physics Seminars at BNL 2024</strong> - Disentangling sources of momentum fluctuations in heavy-ion collisions
+            </div>
+            
+            <h3>Conference Talks</h3>
+            <div class="talk">
+                <strong>Quark Matter 2025</strong> - Evidence for the collective nature of radial flow in Pb+Pb collisions
+            </div>
+            <div class="talk">
+                <strong>Initial Stages 2025</strong> - Recent flow and correlation measurements with ATLAS
+            </div>
+            <div class="talk">
+                <strong>ATHIC 2025</strong> - Unveiling initial state fluctuations using [pT] cumulants
+            </div>
+        </section>
+        
+        <section id="awards">
+            <h2>Awards & Recognition</h2>
+            
+            <div class="award">
+                <strong>Distinguished Travel Award</strong> - Stony Brook University (2025)
+            </div>
+            
+            <div class="award">
+                <strong>Young Scientist Award</strong> - Initial Stages Conference (2023)
+            </div>
+            
+            <div class="award">
+                <strong>CSIR-NET Fellowship</strong> - All India Rank 39 (2018)<br>
+                <small>Top 0.5% from 200,000 participants nationwide</small>
+            </div>
+            
+            <div class="award">
+                <strong>INSPIRE Fellowship</strong> - Department of Science & Technology, Govt. of India (2013-2018)
+            </div>
+            
+            <div class="award">
+                <strong>NTSE Fellowship Scholar</strong> - NCERT, Govt. of India (2009-2013)<br>
+                <small>Selected from approximately 1 million applicants nationwide</small>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">ROOT</span>
+                <span class="skill-tag">Mathematica</span>
+                <span class="skill-tag">Glauber Models</span>
+                <span class="skill-tag">HIJING</span>
+                <span class="skill-tag">AMPT</span>
+                <span class="skill-tag">TRAJECTUM</span>
+                <span class="skill-tag">ATLAS Detector</span>
+                <span class="skill-tag">STAR Detector</span>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">Collaborations</h3>
+            <p>Member of ATLAS Experiment at LHC and STAR Experiment at RHIC. Also affiliated with ALICE Experiment at LHC.</p>
+        </section>
+        
+        <section id="contact" class="contact-info">
+            <h2>Contact</h2>
+            <p style="margin-top: 1rem;">
+                <strong>Email:</strong> <a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
+            </p>
+            <p style="margin-top: 0.5rem;">
+                <strong>Institution:</strong> Institute for Gravitational and Subatomic Physics (GRASP)<br>
+                Utrecht University, Netherlands
+            </p>
+            <p style="margin-top: 1rem;">
+                <a href="https://scholar.google.com" target="_blank">Google Scholar</a> |
+                <a href="https://inspirehep.net" target="_blank">Inspire-HEP</a> |
+                <a href="https://arxiv.org" target="_blank">ArXiv</a>
+            </p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Dr. Somadutta Bhatta. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Postdoctoral Researcher in Nuclear Physics | Utrecht University</p>
+    </footer>
+</body>
+</html>
