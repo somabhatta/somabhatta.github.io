@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Somadutta Bhatta </title>
+    <title>Dr. Somadutta Bhatta | Nuclear Physicist</title>
     <style>
         :root {
             --primary-color: #003366; /* Academic Blue */
@@ -12,7 +12,7 @@
             --light-bg: #f4f7f9;
             --white: #ffffff;
             --border-color: #e1e4e8;
-            --sidebar-width: 300px;
+            --sidebar-width: 280px; /* Slightly reduced sidebar to give main content more room */
         }
 
         * {
@@ -42,8 +42,8 @@
         /* Layout Grid */
         .container {
             display: flex;
-            max-width: 1250px; /* Slightly wider to fit boxes comfortably */
-            margin: 40px auto;
+            max-width: 1300px; /* Increased width to fit 7 boxes */
+            margin: 30px auto;
             background-color: var(--white);
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border-radius: 8px;
@@ -55,7 +55,7 @@
         .sidebar {
             width: var(--sidebar-width);
             background-color: var(--light-bg);
-            padding: 40px 25px;
+            padding: 40px 20px;
             border-right: 1px solid var(--border-color);
             flex-shrink: 0;
             text-align: center;
@@ -66,11 +66,11 @@
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid var(--white);
+            border: 4px solid var(--white);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 20px;
             transition: transform 0.3s ease;
@@ -81,7 +81,7 @@
         }
 
         .sidebar-name {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 5px;
@@ -89,7 +89,7 @@
         }
 
         .sidebar-title {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -98,7 +98,7 @@
         }
 
         .sidebar-affil {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #555;
             margin-bottom: 25px;
             line-height: 1.5;
@@ -107,7 +107,7 @@
         }
 
         .contact-details {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-align: left;
             margin-top: 20px;
         }
@@ -123,17 +123,17 @@
             margin-top: 25px;
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 5px;
             flex-wrap: wrap;
         }
 
         .btn-social {
             display: inline-block;
-            padding: 6px 12px;
+            padding: 5px 10px;
             background-color: var(--white);
             border: 1px solid #ccc;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #555;
             transition: all 0.2s;
             text-decoration: none !important;
@@ -161,7 +161,7 @@
             background: none;
             border: none;
             padding: 10px 5px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #555;
             cursor: pointer;
             border-left: 3px solid transparent;
@@ -178,27 +178,27 @@
         /* Main Content Styling */
         .main-content {
             flex-grow: 1;
-            padding: 40px 50px; /* Reduced padding slightly to fit top bar */
+            padding: 30px 40px;
             position: relative;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- TOP NAV BOXES --- */
+        /* --- TOP NAV BOXES (Adjusted to fit 7 items) --- */
         .top-nav-grid {
             display: flex;
-            flex-wrap: nowrap; /* Forces one line */
-            gap: 15px;
+            flex-wrap: nowrap; /* Forces single line */
+            gap: 10px;
             margin-bottom: 30px;
             width: 100%;
         }
 
         .top-nav-card {
-            flex: 1; /* Distribute space equally */
+            flex: 1; 
             background: #fff;
             border: 1px solid #e1e4e8;
-            padding: 15px 10px; /* Compact padding */
-            border-radius: 8px;
+            padding: 12px 5px; /* Compact padding */
+            border-radius: 6px;
             text-align: center;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -207,31 +207,33 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 90px;
+            min-height: 85px; /* Compact height */
         }
 
-        .top-nav-card:hover {
+        .top-nav-card:hover, .top-nav-card.active-tab {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.08);
             border-color: var(--accent-color);
-            background-color: #fcfcfc;
+            background-color: #f0f7ff;
         }
 
         .top-nav-card h3 {
             margin: 0;
             color: var(--primary-color);
-            font-size: 1.05rem; /* Adjusted size */
+            font-size: 0.9rem; /* Smaller font to fit */
             background: none;
             padding: 0;
             border: none;
             line-height: 1.2;
+            font-weight: 700;
         }
 
         .top-nav-card p {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #666;
-            margin: 5px 0 0 0;
-            line-height: 1.2;
+            margin: 4px 0 0 0;
+            line-height: 1.1;
+            display: block;
         }
         /* -------------------------- */
 
@@ -404,14 +406,16 @@
                 height: auto;
                 padding: 30px 20px;
             }
+            .sidebar-nav { display: none; } /* Hide sidebar nav on mobile, rely on top nav */
             .main-content {
-                padding: 20px;
+                padding: 15px;
             }
             .top-nav-grid {
-                flex-wrap: wrap; /* Allow wrapping on mobile */
+                overflow-x: auto; /* Scroll horizontally if it doesn't fit */
+                padding-bottom: 5px;
             }
             .top-nav-card {
-                flex: 1 1 45%; /* 2 per row on mobile */
+                min-width: 120px; /* Ensure buttons don't get too squished */
             }
         }
     </style>
@@ -464,21 +468,33 @@
     <main class="main-content">
         
         <div class="top-nav-grid">
-            <div class="top-nav-card" onclick="showSection('publications')">
+            <div class="top-nav-card" onclick="showSection('publications')" id="top-publications">
                 <h3>Publications</h3>
-                <p>Full list & impact</p>
+                <p>Papers & Impact</p>
             </div>
-            <div class="top-nav-card" onclick="showSection('talks')">
+            <div class="top-nav-card" onclick="showSection('talks')" id="top-talks">
                 <h3>Talks</h3>
-                <p>Conferences & Seminars</p>
+                <p>Conf. & Seminars</p>
             </div>
-            <div class="top-nav-card" onclick="showSection('news')">
+            <div class="top-nav-card" onclick="showSection('awards')" id="top-awards">
+                <h3>Awards</h3>
+                <p>Honors & Grants</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('news')" id="top-news">
                 <h3>In the News</h3>
                 <p>Media coverage</p>
             </div>
-            <div class="top-nav-card" onclick="showSection('awards')">
-                <h3>Awards</h3>
-                <p>Honors & Grants</p>
+            <div class="top-nav-card" onclick="showSection('service')" id="top-service">
+                <h3>Service</h3>
+                <p>Committees & Reviews</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('skills')" id="top-skills">
+                <h3>Skills</h3>
+                <p>Tech & Models</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('hobbies')" id="top-hobbies">
+                <h3>Hobbies</h3>
+                <p>Personal Interests</p>
             </div>
         </div>
 
@@ -928,8 +944,14 @@
         });
         const activeBtn = document.getElementById('btn-' + sectionId);
         if(activeBtn) activeBtn.classList.add('active');
+        
+        // 4. Update Top Nav active state
+        const topCards = document.querySelectorAll('.top-nav-card');
+        topCards.forEach(card => card.classList.remove('active-tab'));
+        const activeTopCard = document.getElementById('top-' + sectionId);
+        if(activeTopCard) activeTopCard.classList.add('active-tab');
 
-        // 4. Update the Browser URL without reloading (Deep Linking)
+        // 5. Update the Browser URL without reloading (Deep Linking)
         if (updateHistory) {
             history.pushState({section: sectionId}, "", "#" + sectionId);
         }
