@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Somadutta Bhatta </title>
+    <title>Dr. Somadutta Bhatta | Nuclear Physicist</title>
     <style>
         :root {
             --primary-color: #003366; /* Academic Blue */
@@ -129,7 +129,6 @@
             width: 160px;
             height: 160px;
             object-fit: cover;
-            /* Adjust this value to move photo up/down inside circle */
             object-position: center 20px; 
             border-radius: 50%;
             border: 4px solid var(--white);
@@ -216,10 +215,7 @@
             transform: translateY(-2px);
         }
 
-        /* Sidebar Navigation Menu (Backup/Mobile) */
-        .sidebar-nav {
-            display: none; 
-        }
+        .sidebar-nav { display: none; }
 
         /* Main Content Styling */
         .main-content {
@@ -309,7 +305,7 @@
             line-height: 1.4;
         }
 
-        /* Publication Item - Card Style */
+        /* Publication Item */
         .pub-item {
             margin-bottom: 20px;
             background: #fff;
@@ -359,6 +355,7 @@
             text-decoration: none;
         }
 
+        /* Citation Tag Styling */
         .tag {
             background-color: #eef2f7;
             color: var(--primary-color);
@@ -490,10 +487,8 @@
             <header>
                 <h1>Biography</h1>
             </header>
-            
             <div class="content-body">
                 <p>I am a Postdoctoral Researcher at the <strong>Institute for Gravitational and Subatomic Physics (GRASP)</strong> at Utrecht University and am also affiliated with <strong>NIKHEF</strong>. I actively work within the <strong>ALICE Collaboration</strong> at CERN and the <strong>STAR Collaboration</strong> at RHIC.</p>
-                
                 <p>I recently completed my Ph.D. at Stony Brook University working with data from the ATLAS Collaboration at CERN. My research focuses on probing the <strong>Quark-Gluon Plasma (QGP)</strong>, a primordial state of matter that existed microseconds after the Big Bang. I study its key characteristics, such as viscosity, speed of sound, and the origin of collectivity in heavy-ion collisions.</p>
             </div>
         </section>
@@ -510,10 +505,10 @@
                 <div class="pub-meta">STAR Collaboration, Nature 635, 67–72 (2024)</div>
                 <div class="pub-links">
                     <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag">94 Citations</span>
+                    <span class="tag" id="cite-exp_nature_2024">Loading...</span>
                 </div>
                 <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This landmark study pioneered a novel paradigm for nuclear structure physics, demonstrating for the first time that relativistic heavy-ion collisions can precisely image the three-dimensional shape of atomic nuclei. <strong>This work bridged the gap between high-energy and low-energy nuclear physics and resolved a major uncertainty that had long constrained the precision of Quark-Gluon Plasma studies.</strong>
+                    <strong>Scientific Impact:</strong> This landmark study pioneered a novel paradigm for nuclear structure physics...
                 </div>
             </div>
 
@@ -522,10 +517,10 @@
                 <div class="pub-meta">ATLAS Collaboration, Accepted in PRL (Editor's Suggestion), arXiv:2503.24125</div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2503.24125" target="_blank" class="link-btn">arXiv</a>
-                    <span class="tag">15 Citations</span>
+                    <span class="tag" id="cite-exp_prl_radial">Loading...</span>
                 </div>
                 <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This analysis established an entirely new observational window into QGP dynamics. By performing the first measurement of the transverse momentum dependence of radial flow fluctuations, I demonstrated that radial flow is a collective phenomenon. This work establishes v<sub>0</sub>(p<sub>T</sub>) as a powerful new tool with high sensitivity to the QGP's bulk viscosity. <strong>This was the first measurement to demonstrate that radial flow fluctuations in heavy-ion collisions also behave collectively.</strong>
+                    <strong>Scientific Impact:</strong> This analysis established an entirely new observational window into QGP dynamics...
                 </div>
             </div>
 
@@ -534,10 +529,10 @@
                 <div class="pub-meta">ATLAS Collaboration, PRL 133, 252301 (2024)</div>
                 <div class="pub-links">
                     <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag">29 Citations</span>
+                    <span class="tag" id="cite-exp_prl_fluct">Loading...</span>
                 </div>
                 <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This work achieved a critical breakthrough by experimentally isolating distinct sources of initial-state fluctuations for the first time. By disentangling geometric effects from intrinsic quantum fluctuations, my analysis solved a long-standing modeling challenge.
+                    <strong>Scientific Impact:</strong> This work achieved a critical breakthrough by experimentally isolating distinct sources...
                 </div>
             </div>
 
@@ -546,10 +541,10 @@
                 <div class="pub-meta">ATLAS Collaboration, PRC 105, 054910 (2023)</div>
                 <div class="pub-links">
                     <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag">75 Citations</span>
+                    <span class="tag" id="cite-exp_prc_corr">Loading...</span>
                 </div>
                 <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This publication laid the essential groundwork for the subsequent landmark <em>Nature</em> paper on nuclear imaging. It systematically established the v<sub>n</sub>-[p<sub>T</sub>] correlation as a precision tool for probing initial-state geometry.
+                    <strong>Scientific Impact:</strong> This publication laid the essential groundwork for the subsequent landmark <em>Nature</em> paper...
                 </div>
             </div>
 
@@ -560,6 +555,7 @@
                 <div class="pub-meta">arXiv:2504.20008 [nucl-th] (2025)</div>
                 <div class="pub-links">
                     <a href="https://www.arxiv.org/abs/2504.20008" target="_blank" class="link-btn">arXiv</a>
+                    <span class="tag" id="cite-pheno_radial_2025">Loading...</span>
                 </div>
             </div>
 
@@ -568,6 +564,7 @@
                 <div class="pub-meta">Submitted to PRC, arXiv:2407.06977 [nucl-th] (2024)</div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2407.06977" target="_blank" class="link-btn">arXiv</a>
+                    <span class="tag" id="cite-pheno_emission_2024">Loading...</span>
                 </div>
             </div>
 
@@ -576,6 +573,7 @@
                 <div class="pub-meta">PLB 858, 139034 (2024)</div>
                 <div class="pub-links">
                     <a href="https://www.sciencedirect.com/science/article/pii/S0370269324005926?via%3Dihub" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag" id="cite-pheno_plb_2024">Loading...</span>
                 </div>
             </div>
 
@@ -584,6 +582,7 @@
                 <div class="pub-meta">PRC 105, 024904 (2022)</div>
                 <div class="pub-links">
                     <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag" id="cite-pheno_prc_2022">Loading...</span>
                 </div>
             </div>
 
@@ -592,6 +591,7 @@
                 <div class="pub-meta">EPJC 82, 855 (2022)</div>
                 <div class="pub-links">
                     <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag" id="cite-pheno_epjc_2022">Loading...</span>
                 </div>
             </div>
 
@@ -602,6 +602,7 @@
                 <div class="pub-meta">Nucl. Phys. News 35, 1 (2025)</div>
                 <div class="pub-links">
                     <a href="https://www.tandfonline.com/doi/full/10.1080/10619127.2025.2454214" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag" id="cite-co_nuclnews_2025">Loading...</span>
                 </div>
             </div>
 
@@ -610,6 +611,7 @@
                 <div class="pub-meta">Submitted to PRL, arXiv:2408.15006 [nucl-th] (2024)</div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2408.15006" target="_blank" class="link-btn">arXiv</a>
+                    <span class="tag" id="cite-co_prl_decorr">Loading...</span>
                 </div>
             </div>
 
@@ -618,6 +620,7 @@
                 <div class="pub-meta">PRC 109, L051902 (2024)</div>
                 <div class="pub-links">
                     <a href="https://doi.org/10.1103/PhysRevC.109.L051902" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag" id="cite-co_prc_thermal">Loading...</span>
                 </div>
             </div>
 
@@ -626,6 +629,7 @@
                 <div class="pub-meta">EPJA 59, 45 (2023)</div>
                 <div class="pub-links">
                     <a href="https://link.springer.com/article/10.1140/epja/s10050-023-00965-1" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag" id="cite-co_epja_shape">Loading...</span>
                 </div>
             </div>
 
@@ -634,6 +638,7 @@
                 <div class="pub-meta">PRC 106, L031901 (2022)</div>
                 <div class="pub-links">
                     <a href="https://doi.org/10.1103/PhysRevC.106.L031901" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag" id="cite-co_prc_isobar">Loading...</span>
                 </div>
             </div>
 
@@ -642,11 +647,11 @@
                 <div class="pub-meta">PLB 822, 136702 (2021)</div>
                 <div class="pub-links">
                     <a href="https://www.sciencedirect.com/science/article/pii/S0370269321006420" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag" id="cite-co_plb_nonflow">Loading...</span>
                 </div>
             </div>
 
             <h3>B. Proceedings / Conference Notes</h3>
-
             <div class="pub-item">
                 <div class="pub-title">Measurement of collective dynamics in small and large systems with the ATLAS detector</div>
                 <div class="pub-meta">PoS EPS-HEP2023 202</div>
@@ -654,251 +659,65 @@
                     <a href="https://pos.sissa.it/449/202/pdf" target="_blank" class="link-btn">PDF</a>
                 </div>
             </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Measurement of [p<sub>T</sub>] Fluctuations in Xe+Xe and Pb+Pb Collisions with ATLAS</div>
-                <div class="pub-meta">ATLAS-CONF-2023-061</div>
-                <div class="pub-links">
-                    <a href="https://cds.cern.ch/record/2873507/files/ATLAS-CONF-2023-061.pdf" target="_blank" class="link-btn">PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Deciphering initial states of high energy heavy-ion collisions using spectators</div>
-                <div class="pub-meta">Submitted to IJMPCS, 2022</div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Flow and transverse momentum correlation in Pb+Pb and Xe+Xe collisions with ATLAS: assessing the initial condition of the QGP</div>
-                <div class="pub-meta">APPB Proc. Suppl. (2022)</div>
-                <div class="pub-links">
-                    <a href="https://arxiv.org/pdf/2210.00159.pdf" target="_blank" class="link-btn">PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Measurements of collective behavior in pp, Xe+Xe, and Pb+Pb collisions with the ATLAS detector</div>
-                <div class="pub-meta">PoS EPS-HEP2021 305</div>
-                <div class="pub-links">
-                    <a href="https://inspirehep.net/files/8e277f904dbf6bec8906fb8a8a874d68" target="_blank" class="link-btn">PDF</a>
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Measurement of flow and transverse momentum correlations in Pb+Pb collisions at 5.02 TeV and Xe+Xe collisions at 5.44 TeV with the ATLAS detector</div>
-                <div class="pub-meta">ATLAS-CONF-2021-001</div>
-                <div class="pub-links">
-                    <a href="https://cds.cern.ch/record/2747068" target="_blank" class="link-btn">Link</a>
-                </div>
-            </div>
-        </section>
+            </section>
 
         <section id="talks" class="content-section">
-            <header>
-                <h1>Talks and Presentations</h1>
-            </header>
-            
+            <header><h1>Talks and Presentations</h1></header>
             <h3>A.) Invited Talks</h3>
             <ul class="clean-list">
-                <li>
-                    <strong>CERN-TH Seminar 2025</strong>, Insights into Nuclear Geometry and Initial Conditions of Heavy-Ion Collisions from ATLAS
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>HENPIC Seminar 2024</strong>, Insights into Nuclear Geometry and Initial Conditions of Heavy-Ion Collisions from ATLAS
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>SBU HEP Seminar 2024</strong>, Leveraging Ultra-Central Collisions to Constrain Shape of the Nucleus and Initial State
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>Nuclear Physics Seminars at BNL 2024</strong>, Disentangling sources of momentum fluctuations in heavy-ion collisions with the ATLAS detector
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>LHCP 2024</strong>, Probing medium properties in ultra-central collisions (Plenary talk on behalf of ATLAS+ALICE+CMS)
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>INT-Program 2023</strong>, Intersection of nuclear structure and high-energy nuclear collisions, Energy dependence of initial condition from isobar
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>Nuclear Physics Seminars at BNL 2022</strong>, Flow and transverse momentum correlations at LHC: a probe of the heavy-ion initial state and nuclear deformation
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
+                <li><strong>CERN-TH Seminar 2025</strong>, Insights into Nuclear Geometry... <a href="#" class="link-btn">Slides</a></li>
+                <li><strong>Nuclear Physics Seminars at BNL 2022</strong>, Flow and transverse momentum correlations... <a href="#" class="link-btn">Slides</a></li>
             </ul>
-
-            <h3>B.) International-Level Conference Talks</h3>
-            <ul class="clean-list">
-                <li>
-                    <strong>Initial Stages 2025</strong>, Recent flow and correlation measurements in large and small collision systems with ATLAS
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>Quark Matter 2025</strong>, Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>ATHIC 2025</strong>, Unveiling initial state fluctuations using [p<sub>T</sub>] cumulants with ATLAS
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>EPS-HEP 2023</strong>, Measurement of collective dynamics in small and large systems with the ATLAS detector
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>Initial Stages 2023</strong>, Probing initial state using higher order fluctuations: v<sub>n</sub>-[p<sub>T</sub>] and [p<sub>T</sub>] correlations in ATLAS
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>Quark Matter 2022</strong>, Flow and transverse momentum correlation in Pb+Pb and Xe+Xe collisions with ATLAS
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>EPS-HEP 2021</strong>, Measurements of collective behavior in pp, Xe+Xe, and Pb+Pb collisions with the ATLAS detector
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>ATLAS TDAQ week at CERN 2020</strong>, MinBias and Forward Detector
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-            </ul>
-
-            <h3>C.) National-Level Conference Talks</h3>
-            <ul class="clean-list">
-                <li>
-                    <strong>Fall Meeting for APS DNP-2022</strong>, Probing nuclear deformation at LHC energies using AMPT
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>APS April Meeting 2022</strong>, Higher order transverse momentum fluctuations in heavy ion collisions
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>Fall Meeting for APS DNP-2021</strong>, Flow and transverse momentum correlations in Pb+Pb and Xe+Xe collisions with ATLAS
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-                <li>
-                    <strong>APS April Meeting-2021</strong>, Cumulant analysis of deformed systems using AMPT model
-                    <a href="#" class="link-btn">Slides</a>
-                </li>
-            </ul>
-
-            <h3>D.) Conference Posters</h3>
-            <ul class="clean-list">
-                <li>
-                    <strong>Quark Matter 2023</strong>, Exploring the origin of [p<sub>T</sub>] fluctuations in ultra-central heavy ion collisions
-                    <a href="#" class="link-btn">Poster</a>
-                </li>
-                <li>
-                    <strong>SQM-2022</strong>, Flow and transverse momentum correlations in Pb+Pb and Xe+Xe collisions with ATLAS
-                    <a href="#" class="link-btn">Poster</a>
-                </li>
-                <li>
-                    <strong>Initial stages 2021</strong>, Measurement of flow and transverse momentum correlations in Pb+Pb and Xe+Xe collisions
-                    <a href="#" class="link-btn">Poster</a>
-                </li>
-                <li>
-                    <strong>APS Fall Meeting 2020</strong>, Flow cumulants for multi-particle azimuthal correlations in heavy-ion Collisions
-                    <a href="#" class="link-btn">Poster</a>
-                </li>
-            </ul>
-        </section>
+            </section>
 
         <section id="awards" class="content-section">
-            <header>
-                <h1>Awards & Honors</h1>
-            </header>
+            <header><h1>Awards & Honors</h1></header>
             <ul class="clean-list">
                 <li><strong>Distinguished Travel Award (2025)</strong> - Stony Brook University</li>
                 <li><strong>Young Scientist Award (2023)</strong> - Initial Stages Conference</li>
-                <li><strong>CSIR-NET Fellowship (2018)</strong> - All India Rank 39 (Top 0.5%)</li>
+                <li><strong>CSIR-NET Fellowship (2018)</strong> - All India Rank 39</li>
                 <li><strong>INSPIRE Fellowship (2013-2018)</strong> - DST, Govt. of India</li>
                 <li><strong>NTSE Fellowship Scholar (2009-2013)</strong> - NCERT, Govt. of India</li>
             </ul>
         </section>
 
         <section id="news" class="content-section">
-            <header>
-                <h1>In the News</h1>
-            </header>
-            
+            <header><h1>In the News</h1></header>
             <div class="pub-item">
                 <div class="pub-title">A new probe of Radial Flow</div>
                 <div class="pub-meta">CERN Courier, July 8 2025</div>
-                <div class="pub-links">
-                    <a href="https://cerncourier.com/a/a-new-probe-of-radial-flow/" target="_blank" class="link-btn">Read Article</a>
-                </div>
+                <div class="pub-links"><a href="https://cerncourier.com/a/a-new-probe-of-radial-flow/" target="_blank" class="link-btn">Read Article</a></div>
             </div>
-
             <div class="pub-item">
-                <div class="pub-title">Stony Brook Physicists unveil groundbreaking method for nuclear imaging</div>
-                <div class="pub-meta">The Statesman, November 22 2024</div>
-                <div class="pub-links">
-                    <a href="https://sbstatesman.com/130994/news/stony-brook-physicists-unveil-groundbreaking-method-for-nuclear-imaging/" target="_blank" class="link-btn">Read Article</a>
-                </div>
+                <div class="pub-title">Stony Brook Physicists unveil groundbreaking method...</div>
+                <div class="pub-meta">The Statesman, Nov 22 2024</div>
+                <div class="pub-links"><a href="https://sbstatesman.com/..." target="_blank" class="link-btn">Read Article</a></div>
             </div>
         </section>
 
         <section id="service" class="content-section">
-            <header>
-                <h1>Professional Service & Activities</h1>
-            </header>
-
+            <header><h1>Professional Service & Activities</h1></header>
             <h3>Conference Organization</h3>
+            <ul class="clean-list"><li><strong>Organizing Committee Member</strong>, XXVIII International Workshop...</li></ul>
+            <h3>Peer Review</h3>
             <ul class="clean-list">
-                <li>
-                    <strong>Organizing Committee Member</strong>, XXVIII International Workshop on Deep-Inelastic Scattering (DIS-2021), SUNY, Stony Brook, USA.
-                </li>
+                <li>Physical Review C (PRC), D (PRD)</li>
+                <li>Physics Letters B (PLB)</li>
+                <li>Journal of Subatomic Particles...</li>
             </ul>
-
-            <h3>Peer Review & Refereeing</h3>
-            <p style="margin-bottom: 10px;">Reviewer for the following journals:</p>
-            <ul class="clean-list">
-                <li>Physical Review C <strong>(PRC, APS)</strong></li>
-                <li>Physical Review D <strong>(PRD, APS)</strong></li>
-                <li>Physics Letters B <strong>(PLB, Elsevier)</strong></li>
-                <li>Journal of Subatomic Particles and Cosmology <strong>(JSPC, Elsevier)</strong></li>
-            </ul>
-
-            <h3>Technical Contributions & Collaboration Service</h3>
-            <ul class="clean-list">
-                <li>
-                    <strong>Efficiency Tool for ATLAS Heavy-Ion Group (2023-2024):</strong> Developed and maintained a general-purpose efficiency calculation tool for tracking efficiency and fake track fractions in ATLAS Heavy-Ion datasets.
-                </li>
-                <li>
-                    <strong>Trigger Upgrade for ATLAS (2019-2022):</strong> Upgraded MinBias, MBTS, and HMT Triggers to the Athena Multi-thread framework for ATLAS.
-                </li>
-                <li>
-                    <strong>STAR Experimental Shifts (2019-2023):</strong> Regularly served as "Detector Operator," involving operation and troubleshooting of detector components during data taking.
-                </li>
-            </ul>
-
-            <h3>Supervising & Mentoring</h3>
-            <ul class="clean-list">
-                <li>
-                    <strong>Teaching Assistant at Stony Brook University (2018-2019):</strong> Mentored over 60 undergraduate students in laboratory courses (Spring 2018, Fall 2018, Spring 2019). Led bi-weekly 3-hour lab sessions, conducted evaluations, and provided one-on-one guidance on experimental techniques and data analysis.
-                </li>
-            </ul>
-        </section>
+            </section>
 
         <section id="skills" class="content-section">
-            <header>
-                <h1>Technical Skills</h1>
-            </header>
+            <header><h1>Technical Skills</h1></header>
             <ul class="clean-list">
                 <li><strong>Data Analysis:</strong> ROOT, Mathematica</li>
-                <li><strong>Programming Languages:</strong> C++, Python</li>
-                <li><strong>Physics Models:</strong> Expertise in initial state (Glauber, Trento), string-based (HIJING, AMPT), and full hydrodynamic (TRAJECTUM) model frameworks.</li>
+                <li><strong>Programming:</strong> C++, Python</li>
+                <li><strong>Physics Models:</strong> Glauber, Trento, HIJING, AMPT, TRAJECTUM</li>
             </ul>
         </section>
 
         <section id="hobbies" class="content-section">
-            <header>
-                <h1>Hobbies & Interests</h1>
-            </header>
+            <header><h1>Hobbies & Interests</h1></header>
             <ul class="clean-list">
                 <li>Reading books (Sci-Fi, Philosophy)</li>
                 <li>Listening to music</li>
@@ -910,53 +729,66 @@
 </div>
 
 <script>
-    // Function to handle switching sections
+    // 1. Navigation Logic
     function showSection(sectionId, updateHistory = true) {
-        // 1. Hide all sections
         const sections = document.querySelectorAll('.content-section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
+        sections.forEach(section => section.classList.remove('active'));
 
-        // 2. Show the selected section
         const selectedSection = document.getElementById(sectionId);
         if (selectedSection) {
             selectedSection.classList.add('active');
-            
-            // Scroll to top of main content instantly
             window.scrollTo({ top: 0, behavior: 'auto' });
         }
 
-        // 3. Update Top Nav active state
         const topCards = document.querySelectorAll('.top-nav-card');
         topCards.forEach(card => card.classList.remove('active-tab'));
         const activeTopCard = document.getElementById('top-' + sectionId);
         if(activeTopCard) activeTopCard.classList.add('active-tab');
 
-        // 4. Update the Browser URL without reloading (Deep Linking)
         if (updateHistory) {
             history.pushState({section: sectionId}, "", "#" + sectionId);
         }
     }
 
-    // Handle Browser "Back/Forward" buttons
     window.onpopstate = function(event) {
         if (event.state && event.state.section) {
             showSection(event.state.section, false);
         } else {
-            // Default to biography if no state (e.g. initial load)
             showSection('biography', false);
         }
     };
 
-    // Handle Initial Load (Check if URL has #publications, #talks, etc.)
+    // 2. Fetch Citations on Load
     document.addEventListener("DOMContentLoaded", () => {
-        const hash = window.location.hash.substring(1); // Remove the '#'
-        if (hash) {
-            showSection(hash, false);
-        } else {
-            showSection('biography', false); // Default
-        }
+        // Handle URL hash
+        const hash = window.location.hash.substring(1);
+        if (hash) showSection(hash, false);
+        else showSection('biography', false);
+
+        // Fetch citations.json
+        fetch('citations.json')
+            .then(response => {
+                if (!response.ok) throw new Error("HTTP error " + response.status);
+                return response.json();
+            })
+            .then(data => {
+                for (const [key, value] of Object.entries(data)) {
+                    const el = document.getElementById('cite-' + key);
+                    if (el) {
+                        // Handle 0 citations properly
+                        const text = value === 1 ? ' Citation' : ' Citations';
+                        el.textContent = value + text;
+                        // Optional: Highlight high citations
+                        if (value > 50) el.style.backgroundColor = '#d1e7dd'; 
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error loading citations:', error);
+                // Fallback text if json is missing
+                const tags = document.querySelectorAll('[id^="cite-"]');
+                tags.forEach(t => t.textContent = "N/A");
+            });
     });
 </script>
 
