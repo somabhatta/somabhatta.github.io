@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Somadutta Bhatta | Nuclear Physicist</title>
+    <title> Somadutta Bhatta </title>
     <style>
         :root {
             --primary-color: #003366; /* Academic Blue */
@@ -501,6 +501,19 @@
             <h3>A.i) Selected First/Primary Author Experimental Papers</h3>
 
             <div class="pub-item">
+                <div class="pub-title">Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector</div>
+                <div class="pub-meta">ATLAS Collaboration, Accepted in PRL (Editor's Suggestion), arXiv:2503.24125</div>
+                <div class="pub-links">
+                    <a href="https://journals.aps.org/prl/accepted/10.1103/ldcn-r2lq" target="_blank" class="link-btn">arXiv</a>
+                    <span class="tag" id="cite-exp_prl_radial">Loading...</span>
+                </div>
+                <div class="scientific-impact">
+                    <strong>Scientific Impact:</strong> This analysis established an entirely new observational window into QGP dynamics...
+                </div>
+            </div>
+
+            
+            <div class="pub-item">
                 <div class="pub-title">Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions</div>
                 <div class="pub-meta">STAR Collaboration, Nature 635, 67–72 (2024)</div>
                 <div class="pub-links">
@@ -509,18 +522,6 @@
                 </div>
                 <div class="scientific-impact">
                     <strong>Scientific Impact:</strong> This landmark study pioneered a novel paradigm for nuclear structure physics...
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector</div>
-                <div class="pub-meta">ATLAS Collaboration, Accepted in PRL (Editor's Suggestion), arXiv:2503.24125</div>
-                <div class="pub-links">
-                    <a href="https://arxiv.org/abs/2503.24125" target="_blank" class="link-btn">arXiv</a>
-                    <span class="tag" id="cite-exp_prl_radial">Loading...</span>
-                </div>
-                <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This analysis established an entirely new observational window into QGP dynamics...
                 </div>
             </div>
 
@@ -788,6 +789,105 @@
                 // Fallback text if json is missing
                 const tags = document.querySelectorAll('[id^="cite-"]');
                 tags.forEach(t => t.textContent = "N/A");
+            });
+    });
+<script>
+    // --- 1. DEFAULT DATA (Fallback) ---
+    // This ensures citations show up even if you open the file locally (file://)
+    const defaultCitations = {
+        "exp_nature_2024": 94,
+        "exp_prl_radial": 15,
+        "exp_prl_fluct": 29,
+        "exp_prc_corr": 75,
+        "pheno_radial_2025": 0,
+        "pheno_emission_2024": 1,
+        "pheno_plb_2024": 5,
+        "pheno_prc_2022": 12,
+        "pheno_epjc_2022": 8,
+        "co_nuclnews_2025": 0,
+        "co_prl_decorr": 2,
+        "co_prc_thermal": 6,
+        "co_epja_shape": 24,
+        "co_prc_isobar": 18,
+        "co_plb_nonflow": 19
+    };
+
+    // --- 2. UPDATE FUNCTION ---
+    function updateCitationDisplay(data) {
+        for (const [key, value] of Object.entries(data)) {
+            const el = document.getElementById('cite-' + key);
+            if (el) {
+                if (value === 0 || value === "0") {
+                    // Hide the tag completely if 0 citations
+                    el.style.display = 'none'; 
+                } else {
+                    const text = value === 1 ? ' Citation' : ' Citations';
+                    el.textContent = value + text;
+                    el.style.display = 'inline-block'; // Ensure it's visible
+                    
+                    // Style High Impact papers
+                    if (value > 50) {
+                        el.style.backgroundColor = '#d1e7dd'; // Light green
+                        el.style.color = '#0f5132';
+                        el.style.border = '1px solid #badbcc';
+                    }
+                }
+            }
+        }
+    }
+
+    // --- 3. NAVIGATION LOGIC ---
+    function showSection(sectionId, updateHistory = true) {
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => section.classList.remove('active'));
+
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+
+        const topCards = document.querySelectorAll('.top-nav-card');
+        topCards.forEach(card => card.classList.remove('active-tab'));
+        const activeTopCard = document.getElementById('top-' + sectionId);
+        if(activeTopCard) activeTopCard.classList.add('active-tab');
+
+        if (updateHistory) {
+            history.pushState({section: sectionId}, "", "#" + sectionId);
+        }
+    }
+
+    window.onpopstate = function(event) {
+        if (event.state && event.state.section) {
+            showSection(event.state.section, false);
+        } else {
+            showSection('biography', false);
+        }
+    };
+
+    // --- 4. INITIALIZATION ---
+    document.addEventListener("DOMContentLoaded", () => {
+        // Handle URL hash
+        const hash = window.location.hash.substring(1);
+        if (hash) showSection(hash, false);
+        else showSection('biography', false);
+
+        // First, apply default data immediately (Instant load)
+        updateCitationDisplay(defaultCitations);
+
+        // Then, try to fetch fresh data from json file
+        fetch('citations.json')
+            .then(response => {
+                if (!response.ok) throw new Error("Network response was not ok");
+                return response.json();
+            })
+            .then(data => {
+                console.log("Loaded citations from file.");
+                updateCitationDisplay(data);
+            })
+            .catch(error => {
+                console.log("Using default citations (Local file mode).");
+                // No action needed, defaults already applied
             });
     });
 </script>
