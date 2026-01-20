@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Somadutta Bhatta | Nuclear Physicist</title>
+    <title> Somadutta Bhatta </title>
     <style>
         :root {
             --primary-color: #003366; /* Academic Blue */
@@ -12,7 +12,8 @@
             --light-bg: #f4f7f9;
             --white: #ffffff;
             --border-color: #e1e4e8;
-            --sidebar-width: 280px; /* Slightly reduced sidebar to give main content more room */
+            --sidebar-width: 280px;
+            --page-max-width: 1350px;
         }
 
         * {
@@ -26,6 +27,7 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: #eef2f5;
+            padding: 20px;
         }
 
         a {
@@ -39,23 +41,83 @@
             text-decoration: underline;
         }
 
-        /* Layout Grid */
+        /* --- TOP NAVIGATION BAR --- */
+        .top-nav-wrapper {
+            max-width: var(--page-max-width);
+            margin: 0 auto 20px auto;
+            /* "margin on both ends" handled by max-width centering + body padding */
+        }
+
+        .top-nav-grid {
+            display: flex;
+            flex-wrap: nowrap; /* Force single line */
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .top-nav-card {
+            flex: 1; 
+            background: #fff;
+            border: 1px solid #d1d9e6;
+            padding: 10px 5px; 
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 75px; /* Compact height */
+        }
+
+        .top-nav-card:hover, .top-nav-card.active-tab {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+            background-color: #fff;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .top-nav-card h3 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 0.95rem; 
+            background: none;
+            padding: 0;
+            border: none;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .top-nav-card p {
+            font-size: 0.75rem;
+            color: #666;
+            margin: 2px 0 0 0;
+            line-height: 1.1;
+            display: block;
+        }
+
+        /* --- MAIN LAYOUT GRID --- */
         .container {
             display: flex;
-            max-width: 1300px; /* Increased width to fit 7 boxes */
-            margin: 30px auto;
+            max-width: var(--page-max-width);
+            margin: 0 auto;
             background-color: var(--white);
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border-radius: 8px;
             overflow: hidden;
-            min-height: 90vh;
+            min-height: 85vh;
         }
 
         /* Sidebar Styling */
         .sidebar {
             width: var(--sidebar-width);
             background-color: var(--light-bg);
-            padding: 40px 20px;
+            /* Increased top padding to bring photo lower */
+            padding: 60px 20px 40px 20px; 
             border-right: 1px solid var(--border-color);
             flex-shrink: 0;
             text-align: center;
@@ -72,7 +134,7 @@
             border-radius: 50%;
             border: 4px solid var(--white);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             transition: transform 0.3s ease;
         }
 
@@ -94,7 +156,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .sidebar-affil {
@@ -115,15 +177,23 @@
         .contact-item {
             margin-bottom: 12px;
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Better for long emails */
+            align-items: flex-start;
             word-break: break-all;
+        }
+        
+        .contact-label {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            margin-bottom: 2px;
         }
 
         .social-links {
-            margin-top: 25px;
+            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 5px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
@@ -146,96 +216,23 @@
             transform: translateY(-2px);
         }
 
-        /* Sidebar Navigation Menu */
+        /* Sidebar Navigation Menu (Backup/Mobile) */
         .sidebar-nav {
             margin-top: 30px;
             text-align: left;
             border-top: 1px solid #ddd;
             padding-top: 20px;
-        }
-        
-        .sidebar-nav button {
-            display: block;
-            width: 100%;
-            text-align: left;
-            background: none;
-            border: none;
-            padding: 10px 5px;
-            font-size: 0.9rem;
-            color: #555;
-            cursor: pointer;
-            border-left: 3px solid transparent;
-            transition: all 0.2s;
-        }
-
-        .sidebar-nav button:hover, .sidebar-nav button.active {
-            color: var(--primary-color);
-            font-weight: 600;
-            border-left-color: var(--primary-color);
-            background-color: rgba(0, 51, 102, 0.05);
+            display: none; /* Hidden on desktop since we have top nav */
         }
 
         /* Main Content Styling */
         .main-content {
             flex-grow: 1;
-            padding: 30px 40px;
+            padding: 40px 60px;
             position: relative;
             display: flex;
             flex-direction: column;
         }
-
-        /* --- TOP NAV BOXES (Adjusted to fit 7 items) --- */
-        .top-nav-grid {
-            display: flex;
-            flex-wrap: nowrap; /* Forces single line */
-            gap: 10px;
-            margin-bottom: 30px;
-            width: 100%;
-        }
-
-        .top-nav-card {
-            flex: 1; 
-            background: #fff;
-            border: 1px solid #e1e4e8;
-            padding: 12px 5px; /* Compact padding */
-            border-radius: 6px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 85px; /* Compact height */
-        }
-
-        .top-nav-card:hover, .top-nav-card.active-tab {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-            border-color: var(--accent-color);
-            background-color: #f0f7ff;
-        }
-
-        .top-nav-card h3 {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 0.9rem; /* Smaller font to fit */
-            background: none;
-            padding: 0;
-            border: none;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .top-nav-card p {
-            font-size: 0.75rem;
-            color: #666;
-            margin: 4px 0 0 0;
-            line-height: 1.1;
-            display: block;
-        }
-        /* -------------------------- */
 
         /* Section Visibility Logic */
         .content-section {
@@ -248,7 +245,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -259,7 +256,7 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
             margin: 0;
             display: inline-block;
@@ -291,7 +288,7 @@
         p {
             margin-bottom: 18px;
             color: #444;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         /* List Styles */
@@ -391,12 +388,19 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .top-nav-grid {
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            .top-nav-card {
+                min-width: 130px;
+            }
+        }
+
         @media (max-width: 900px) {
             .container {
                 flex-direction: column;
-                margin: 0;
-                border-radius: 0;
-                box-shadow: none;
             }
             .sidebar {
                 width: 100%;
@@ -404,23 +408,52 @@
                 border-bottom: 1px solid var(--border-color);
                 position: relative;
                 height: auto;
-                padding: 30px 20px;
+                padding: 40px 20px;
             }
-            .sidebar-nav { display: none; } /* Hide sidebar nav on mobile, rely on top nav */
             .main-content {
-                padding: 15px;
-            }
-            .top-nav-grid {
-                overflow-x: auto; /* Scroll horizontally if it doesn't fit */
-                padding-bottom: 5px;
-            }
-            .top-nav-card {
-                min-width: 120px; /* Ensure buttons don't get too squished */
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
+
+    <div class="top-nav-wrapper">
+        <div class="top-nav-grid">
+            <div class="top-nav-card active-tab" onclick="showSection('biography')" id="top-biography">
+                <h3>About</h3>
+                <p>Biography</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('publications')" id="top-publications">
+                <h3>Publications</h3>
+                <p>Papers & Impact</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('talks')" id="top-talks">
+                <h3>Talks</h3>
+                <p>Conf. & Seminars</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('awards')" id="top-awards">
+                <h3>Awards</h3>
+                <p>Honors & Grants</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('news')" id="top-news">
+                <h3>In the News</h3>
+                <p>Media coverage</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('service')" id="top-service">
+                <h3>Service</h3>
+                <p>Committees</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('skills')" id="top-skills">
+                <h3>Skills</h3>
+                <p>Tech & Models</p>
+            </div>
+            <div class="top-nav-card" onclick="showSection('hobbies')" id="top-hobbies">
+                <h3>Hobbies</h3>
+                <p>Interests</p>
+            </div>
+        </div>
+    </div>
 
 <div class="container">
     <aside class="sidebar">
@@ -440,10 +473,16 @@
 
         <div class="contact-details">
             <div class="contact-item">
-                <strong>Email:</strong>&nbsp;<a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
+                <span class="contact-label">Email 1:</span>
+                <a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
             </div>
             <div class="contact-item">
-                <strong>Location:</strong>&nbsp;Utrecht, Netherlands
+                <span class="contact-label">Email 2:</span>
+                <a href="mailto:somadutta.bhatta4@gmail.com">somadutta.bhatta4@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Location:</span>
+                Utrecht, Netherlands
             </div>
         </div>
 
@@ -452,61 +491,19 @@
             <a href="https://inspirehep.net" target="_blank" class="btn-social">Inspire-HEP</a>
             <a href="https://arxiv.org" target="_blank" class="btn-social">ArXiv</a>
         </div>
-
-        <div class="sidebar-nav">
-            <button onclick="showSection('biography')" class="active" id="btn-biography">Biography</button>
-            <button onclick="showSection('publications')" id="btn-publications">Publications</button>
-            <button onclick="showSection('talks')" id="btn-talks">Talks & Presentations</button>
-            <button onclick="showSection('awards')" id="btn-awards">Awards & Honors</button>
-            <button onclick="showSection('news')" id="btn-news">In the News</button>
-            <button onclick="showSection('service')" id="btn-service">Professional Service</button>
-            <button onclick="showSection('skills')" id="btn-skills">Technical Skills</button>
-            <button onclick="showSection('hobbies')" id="btn-hobbies">Hobbies</button>
-        </div>
     </aside>
 
     <main class="main-content">
         
-        <div class="top-nav-grid">
-            <div class="top-nav-card" onclick="showSection('publications')" id="top-publications">
-                <h3>Publications</h3>
-                <p>Papers & Impact</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('talks')" id="top-talks">
-                <h3>Talks</h3>
-                <p>Conf. & Seminars</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('awards')" id="top-awards">
-                <h3>Awards</h3>
-                <p>Honors & Grants</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('news')" id="top-news">
-                <h3>In the News</h3>
-                <p>Media coverage</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('service')" id="top-service">
-                <h3>Service</h3>
-                <p>Committees & Reviews</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('skills')" id="top-skills">
-                <h3>Skills</h3>
-                <p>Tech & Models</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('hobbies')" id="top-hobbies">
-                <h3>Hobbies</h3>
-                <p>Personal Interests</p>
-            </div>
-        </div>
-
         <section id="biography" class="content-section active">
             <header>
                 <h1>Biography</h1>
             </header>
             
             <div class="content-body">
-                <p>I am a Postdoctoral Researcher at the <strong>Institute for Gravitational and Subatomic Physics (GRASP)</strong> at Utrecht University, working with Prof. dr. R.J.M. Snellings. I am also affiliated with <strong>NIKHEF</strong> and actively work within the <strong>ALICE Collaboration</strong> at CERN and the <strong>STAR Collaboration</strong> at RHIC.</p>
+                <p>I am a Postdoctoral Researcher at the <strong>Institute for Gravitational and Subatomic Physics (GRASP)</strong> at Utrecht University and am also affiliated with <strong>NIKHEF</strong>. I actively work within the <strong>ALICE Collaboration</strong> at CERN and the <strong>STAR Collaboration</strong> at RHIC.</p>
                 
-                <p>I recently completed my Ph.D. at Stony Brook University under the supervision of Prof. Jiangyong Jia. My research focuses on probing the <strong>Quark-Gluon Plasma (QGP)</strong>, a primordial state of matter that existed microseconds after the Big Bang. I study its key characteristics, such as viscosity, speed of sound, and the origin of collectivity in heavy-ion collisions.</p>
+                <p>I recently completed my Ph.D. at Stony Brook University working with data from the ATLAS Collaboration at CERN. My research focuses on probing the <strong>Quark-Gluon Plasma (QGP)</strong>, a primordial state of matter that existed microseconds after the Big Bang. I study its key characteristics, such as viscosity, speed of sound, and the origin of collectivity in heavy-ion collisions.</p>
             </div>
         </section>
 
@@ -934,24 +931,18 @@
         const selectedSection = document.getElementById(sectionId);
         if (selectedSection) {
             selectedSection.classList.add('active');
-            // No scroll needed since the top nav stays in view and only content changes
+            
+            // Scroll to top of main content instantly
+            window.scrollTo({ top: 0, behavior: 'auto' });
         }
 
-        // 3. Update Sidebar active state
-        const buttons = document.querySelectorAll('.sidebar-nav button');
-        buttons.forEach(btn => {
-            btn.classList.remove('active');
-        });
-        const activeBtn = document.getElementById('btn-' + sectionId);
-        if(activeBtn) activeBtn.classList.add('active');
-        
-        // 4. Update Top Nav active state
+        // 3. Update Top Nav active state
         const topCards = document.querySelectorAll('.top-nav-card');
         topCards.forEach(card => card.classList.remove('active-tab'));
         const activeTopCard = document.getElementById('top-' + sectionId);
         if(activeTopCard) activeTopCard.classList.add('active-tab');
 
-        // 5. Update the Browser URL without reloading (Deep Linking)
+        // 4. Update the Browser URL without reloading (Deep Linking)
         if (updateHistory) {
             history.pushState({section: sectionId}, "", "#" + sectionId);
         }
