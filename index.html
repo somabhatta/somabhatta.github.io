@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Somadutta Bhatta </title>
+    <title>Somadutta Bhatta</title>
     <style>
         :root {
             --primary-color: #003366; /* Academic Blue */
@@ -729,68 +729,6 @@
     </main>
 </div>
 
-<script>
-    // 1. Navigation Logic
-    function showSection(sectionId, updateHistory = true) {
-        const sections = document.querySelectorAll('.content-section');
-        sections.forEach(section => section.classList.remove('active'));
-
-        const selectedSection = document.getElementById(sectionId);
-        if (selectedSection) {
-            selectedSection.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'auto' });
-        }
-
-        const topCards = document.querySelectorAll('.top-nav-card');
-        topCards.forEach(card => card.classList.remove('active-tab'));
-        const activeTopCard = document.getElementById('top-' + sectionId);
-        if(activeTopCard) activeTopCard.classList.add('active-tab');
-
-        if (updateHistory) {
-            history.pushState({section: sectionId}, "", "#" + sectionId);
-        }
-    }
-
-    window.onpopstate = function(event) {
-        if (event.state && event.state.section) {
-            showSection(event.state.section, false);
-        } else {
-            showSection('biography', false);
-        }
-    };
-
-    // 2. Fetch Citations on Load
-    document.addEventListener("DOMContentLoaded", () => {
-        // Handle URL hash
-        const hash = window.location.hash.substring(1);
-        if (hash) showSection(hash, false);
-        else showSection('biography', false);
-
-        // Fetch citations.json
-        fetch('citations.json')
-            .then(response => {
-                if (!response.ok) throw new Error("HTTP error " + response.status);
-                return response.json();
-            })
-            .then(data => {
-                for (const [key, value] of Object.entries(data)) {
-                    const el = document.getElementById('cite-' + key);
-                    if (el) {
-                        // Handle 0 citations properly
-                        const text = value === 1 ? ' Citation' : ' Citations';
-                        el.textContent = value + text;
-                        // Optional: Highlight high citations
-                        if (value > 50) el.style.backgroundColor = '#d1e7dd'; 
-                    }
-                }
-            })
-            .catch(error => {
-                console.error('Error loading citations:', error);
-                // Fallback text if json is missing
-                const tags = document.querySelectorAll('[id^="cite-"]');
-                tags.forEach(t => t.textContent = "N/A");
-            });
-    });
 <script>
     // --- 1. DEFAULT DATA (Fallback) ---
     // This ensures citations show up even if you open the file locally (file://)
