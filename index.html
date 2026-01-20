@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somadutta Bhatta</title>
+    <title>Dr. Somadutta Bhatta</title>
     <style>
         :root {
             --primary-color: #003366; /* Academic Blue */
@@ -49,7 +49,7 @@
 
         .top-nav-grid {
             display: flex;
-            flex-wrap: nowrap; /* Force single line */
+            flex-wrap: nowrap;
             justify-content: space-between;
             gap: 10px;
             width: 100%;
@@ -215,8 +215,6 @@
             transform: translateY(-2px);
         }
 
-        .sidebar-nav { display: none; }
-
         /* Main Content Styling */
         .main-content {
             flex-grow: 1;
@@ -226,7 +224,6 @@
             flex-direction: column;
         }
 
-        /* Section Visibility Logic */
         .content-section {
             display: none;
             animation: fadeIn 0.4s ease;
@@ -283,7 +280,6 @@
             font-size: 1.05rem;
         }
 
-        /* List Styles */
         ul.clean-list {
             list-style: none;
             padding-left: 0;
@@ -356,7 +352,7 @@
         }
 
         /* Citation Tag Styling */
-        .tag {
+        .citation-badge {
             background-color: #eef2f7;
             color: var(--primary-color);
             padding: 2px 8px;
@@ -365,6 +361,9 @@
             font-weight: 600;
             margin-left: 5px;
             border: 1px solid #dbeafe;
+            display: inline-block;
+            min-width: 60px;
+            text-align: center;
         }
 
         .scientific-impact {
@@ -376,92 +375,61 @@
             color: #555;
         }
 
-        #hobbies ul li {
-            font-style: italic;
-        }
-
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .top-nav-grid {
-                overflow-x: auto;
-                padding-bottom: 10px;
-            }
-            .top-nav-card {
-                min-width: 130px;
-            }
+            .top-nav-grid { overflow-x: auto; padding-bottom: 10px; }
+            .top-nav-card { min-width: 130px; }
         }
 
         @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid var(--border-color);
-                position: relative;
-                height: auto;
-                padding: 40px 20px;
-            }
-            .main-content {
-                padding: 20px;
-            }
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border-color); position: relative; height: auto; padding: 40px 20px; }
+            .main-content { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-nav-wrapper">
-        <div class="top-nav-grid">
-            <div class="top-nav-card active-tab" onclick="showSection('biography')" id="top-biography">
-                <h3>About</h3>
-                <p>Biography</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('publications')" id="top-publications">
-                <h3>Publications</h3>
-                <p>Papers & Impact</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('talks')" id="top-talks">
-                <h3>Talks</h3>
-                <p>Conf. & Seminars</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('awards')" id="top-awards">
-                <h3>Awards</h3>
-                <p>Honors & Grants</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('news')" id="top-news">
-                <h3>In the News</h3>
-                <p>Media coverage</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('service')" id="top-service">
-                <h3>Service</h3>
-                <p>Committees</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('skills')" id="top-skills">
-                <h3>Skills</h3>
-                <p>Tech & Models</p>
-            </div>
-            <div class="top-nav-card" onclick="showSection('hobbies')" id="top-hobbies">
-                <h3>Hobbies</h3>
-                <p>Interests</p>
-            </div>
+<div class="top-nav-wrapper">
+    <div class="top-nav-grid">
+        <div class="top-nav-card active-tab" onclick="showSection('biography')" id="top-biography">
+            <h3>About</h3><p>Biography</p>
+        </div>
+        <div class="top-nav-card" onclick="showSection('publications')" id="top-publications">
+            <h3>Publications</h3><p>Papers & Impact</p>
+        </div>
+        <div class="top-nav-card" onclick="showSection('talks')" id="top-talks">
+            <h3>Talks</h3><p>Conf. & Seminars</p>
+        </div>
+        <div class="top-nav-card" onclick="showSection('awards')" id="top-awards">
+            <h3>Awards</h3><p>Honors & Grants</p>
+        </div>
+        <div class="top-nav-card" onclick="showSection('news')" id="top-news">
+            <h3>In the News</h3><p>Media coverage</p>
+        </div>
+        <div class="top-nav-card" onclick="showSection('service')" id="top-service">
+            <h3>Service</h3><p>Committees</p>
+        </div>
+        <div class="top-nav-card" onclick="showSection('skills')" id="top-skills">
+            <h3>Skills</h3><p>Tech & Models</p>
+        </div>
+        <div class="top-nav-card" onclick="showSection('hobbies')" id="top-hobbies">
+            <h3>Hobbies</h3><p>Interests</p>
         </div>
     </div>
+</div>
 
 <div class="container">
     <aside class="sidebar">
         <img src="passport2.jpg" alt="Somadutta Bhatta" class="profile-img">
-        
         <div class="sidebar-name">Dr. Somadutta Bhatta</div>
         <div class="sidebar-title">Postdoctoral Researcher</div>
-        
         <div class="sidebar-affil">
             Institute for Gravitational and Subatomic Physics (GRASP)<br>
             <strong>Utrecht University and NIKHEF</strong>
             <br><br>
             Member of <strong>ALICE</strong> & <strong>STAR</strong> Collaborations
         </div>
-
         <div class="contact-details">
             <div class="contact-item">
                 <span class="contact-label">Emails:</span>
@@ -473,7 +441,6 @@
                 Utrecht, Netherlands
             </div>
         </div>
-
         <div class="social-links">
             <a href="https://scholar.google.com" target="_blank" class="btn-social">Google Scholar</a>
             <a href="https://inspirehep.net" target="_blank" class="btn-social">Inspire-HEP</a>
@@ -484,9 +451,7 @@
     <main class="main-content">
         
         <section id="biography" class="content-section active">
-            <header>
-                <h1>Biography</h1>
-            </header>
+            <header><h1>Biography</h1></header>
             <div class="content-body">
                 <p>I am a Postdoctoral Researcher at the <strong>Institute for Gravitational and Subatomic Physics (GRASP)</strong> at Utrecht University and am also affiliated with <strong>NIKHEF</strong>. I actively work within the <strong>ALICE Collaboration</strong> at CERN and the <strong>STAR Collaboration</strong> at RHIC.</p>
                 <p>I recently completed my Ph.D. at Stony Brook University working with data from the ATLAS Collaboration at CERN. My research focuses on probing the <strong>Quark-Gluon Plasma (QGP)</strong>, a primordial state of matter that existed microseconds after the Big Bang. I study its key characteristics, such as viscosity, speed of sound, and the origin of collectivity in heavy-ion collisions.</p>
@@ -494,9 +459,7 @@
         </section>
 
         <section id="publications" class="content-section">
-            <header>
-                <h1>Full Publication List</h1>
-            </header>
+            <header><h1>Full Publication List</h1></header>
             
             <h3>A.i) Selected First/Primary Author Experimental Papers</h3>
 
@@ -505,23 +468,16 @@
                 <div class="pub-meta">ATLAS Collaboration, Accepted in PRL (Editor's Suggestion), arXiv:2503.24125</div>
                 <div class="pub-links">
                     <a href="https://journals.aps.org/prl/accepted/10.1103/ldcn-r2lq" target="_blank" class="link-btn">arXiv</a>
-                    <span class="tag" id="cite-exp_prl_radial">Loading...</span>
-                </div>
-                <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This analysis established an entirely new observational window into QGP dynamics...
+                    <span class="citation-badge" data-query="arxiv:2503.24125">Loading...</span>
                 </div>
             </div>
 
-            
             <div class="pub-item">
                 <div class="pub-title">Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions</div>
                 <div class="pub-meta">STAR Collaboration, Nature 635, 67–72 (2024)</div>
                 <div class="pub-links">
                     <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-exp_nature_2024">Loading...</span>
-                </div>
-                <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This landmark study pioneered a novel paradigm for nuclear structure physics...
+                    <span class="citation-badge" data-query="doi:10.1038/s41586-024-08097-2">Loading...</span>
                 </div>
             </div>
 
@@ -530,10 +486,7 @@
                 <div class="pub-meta">ATLAS Collaboration, PRL 133, 252301 (2024)</div>
                 <div class="pub-links">
                     <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-exp_prl_fluct">Loading...</span>
-                </div>
-                <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This work achieved a critical breakthrough by experimentally isolating distinct sources...
+                    <span class="citation-badge" data-query="doi:10.1103/PhysRevLett.133.252301">Loading...</span>
                 </div>
             </div>
 
@@ -542,10 +495,7 @@
                 <div class="pub-meta">ATLAS Collaboration, PRC 105, 054910 (2023)</div>
                 <div class="pub-links">
                     <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-exp_prc_corr">Loading...</span>
-                </div>
-                <div class="scientific-impact">
-                    <strong>Scientific Impact:</strong> This publication laid the essential groundwork for the subsequent landmark <em>Nature</em> paper...
+                    <span class="citation-badge" data-query="doi:10.1103/PhysRevC.107.054910">Loading...</span>
                 </div>
             </div>
 
@@ -556,7 +506,7 @@
                 <div class="pub-meta">arXiv:2504.20008 [nucl-th] (2025)</div>
                 <div class="pub-links">
                     <a href="https://www.arxiv.org/abs/2504.20008" target="_blank" class="link-btn">arXiv</a>
-                    <span class="tag" id="cite-pheno_radial_2025">Loading...</span>
+                    <span class="citation-badge" data-query="arxiv:2504.20008">Loading...</span>
                 </div>
             </div>
 
@@ -565,7 +515,7 @@
                 <div class="pub-meta">Submitted to PRC, arXiv:2407.06977 [nucl-th] (2024)</div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2407.06977" target="_blank" class="link-btn">arXiv</a>
-                    <span class="tag" id="cite-pheno_emission_2024">Loading...</span>
+                    <span class="citation-badge" data-query="arxiv:2407.06977">Loading...</span>
                 </div>
             </div>
 
@@ -574,7 +524,7 @@
                 <div class="pub-meta">PLB 858, 139034 (2024)</div>
                 <div class="pub-links">
                     <a href="https://www.sciencedirect.com/science/article/pii/S0370269324005926?via%3Dihub" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-pheno_plb_2024">Loading...</span>
+                    <span class="citation-badge" data-query="doi:10.1016/j.physletb.2024.139034">Loading...</span>
                 </div>
             </div>
 
@@ -583,7 +533,7 @@
                 <div class="pub-meta">PRC 105, 024904 (2022)</div>
                 <div class="pub-links">
                     <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-pheno_prc_2022">Loading...</span>
+                    <span class="citation-badge" data-query="doi:10.1103/PhysRevC.105.024904">Loading...</span>
                 </div>
             </div>
 
@@ -592,7 +542,7 @@
                 <div class="pub-meta">EPJC 82, 855 (2022)</div>
                 <div class="pub-links">
                     <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-pheno_epjc_2022">Loading...</span>
+                    <span class="citation-badge" data-query="doi:10.1140/epjc/s10052-022-10824-w">Loading...</span>
                 </div>
             </div>
 
@@ -603,7 +553,7 @@
                 <div class="pub-meta">Nucl. Phys. News 35, 1 (2025)</div>
                 <div class="pub-links">
                     <a href="https://www.tandfonline.com/doi/full/10.1080/10619127.2025.2454214" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-co_nuclnews_2025">Loading...</span>
+                    <span class="citation-badge" data-query="doi:10.1080/10619127.2025.2454214">Loading...</span>
                 </div>
             </div>
 
@@ -612,7 +562,7 @@
                 <div class="pub-meta">Submitted to PRL, arXiv:2408.15006 [nucl-th] (2024)</div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/pdf/2408.15006" target="_blank" class="link-btn">arXiv</a>
-                    <span class="tag" id="cite-co_prl_decorr">Loading...</span>
+                    <span class="citation-badge" data-query="arxiv:2408.15006">Loading...</span>
                 </div>
             </div>
 
@@ -621,7 +571,7 @@
                 <div class="pub-meta">PRC 109, L051902 (2024)</div>
                 <div class="pub-links">
                     <a href="https://doi.org/10.1103/PhysRevC.109.L051902" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-co_prc_thermal">Loading...</span>
+                    <span class="citation-badge" data-query="doi:10.1103/PhysRevC.109.L051902">Loading...</span>
                 </div>
             </div>
 
@@ -630,7 +580,7 @@
                 <div class="pub-meta">EPJA 59, 45 (2023)</div>
                 <div class="pub-links">
                     <a href="https://link.springer.com/article/10.1140/epja/s10050-023-00965-1" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-co_epja_shape">Loading...</span>
+                    <span class="citation-badge" data-query="doi:10.1140/epja/s10050-023-00965-1">Loading...</span>
                 </div>
             </div>
 
@@ -639,7 +589,7 @@
                 <div class="pub-meta">PRC 106, L031901 (2022)</div>
                 <div class="pub-links">
                     <a href="https://doi.org/10.1103/PhysRevC.106.L031901" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-co_prc_isobar">Loading...</span>
+                    <span class="citation-badge" data-query="doi:10.1103/PhysRevC.106.L031901">Loading...</span>
                 </div>
             </div>
 
@@ -648,11 +598,12 @@
                 <div class="pub-meta">PLB 822, 136702 (2021)</div>
                 <div class="pub-links">
                     <a href="https://www.sciencedirect.com/science/article/pii/S0370269321006420" target="_blank" class="link-btn">Journal</a>
-                    <span class="tag" id="cite-co_plb_nonflow">Loading...</span>
+                    <span class="citation-badge" data-query="recid:1845762">Loading...</span>
                 </div>
             </div>
 
             <h3>B. Proceedings / Conference Notes</h3>
+            
             <div class="pub-item">
                 <div class="pub-title">Measurement of collective dynamics in small and large systems with the ATLAS detector</div>
                 <div class="pub-meta">PoS EPS-HEP2023 202</div>
@@ -660,7 +611,72 @@
                     <a href="https://pos.sissa.it/449/202/pdf" target="_blank" class="link-btn">PDF</a>
                 </div>
             </div>
-            </section>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurement of [pT] Fluctuations in Xe+Xe and Pb+Pb Collisions with ATLAS</div>
+                <div class="pub-meta">ATLAS-CONF-2023-061</div>
+                <div class="pub-links">
+                    <a href="https://cds.cern.ch/record/2873507/files/ATLAS-CONF-2023-061.pdf" target="_blank" class="link-btn">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Deciphering initial states of high energy heavy-ion collisions using spectators</div>
+                <div class="pub-meta">Submitted to IJMPCS, 2022</div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Flow and transverse momentum correlation in Pb+Pb and Xe+Xe collisions with ATLAS: assessing the initial condition of the QGP</div>
+                <div class="pub-meta">APPB Proc. Suppl. (2022)</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2210.00159.pdf" target="_blank" class="link-btn">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurements of collective behavior in pp, Xe+Xe, and Pb+Pb collisions with the ATLAS detector</div>
+                <div class="pub-meta">PoS EPS-HEP2021 305</div>
+                <div class="pub-links">
+                    <a href="https://inspirehep.net/files/8e277f904dbf6bec8906fb8a8a874d68" target="_blank" class="link-btn">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurement of flow and transverse momentum correlations in Pb+Pb collisions at 5.02 TeV and Xe+Xe collisions at 5.44 TeV with the ATLAS detector</div>
+                <div class="pub-meta">ATLAS-CONF-2021-001</div>
+                <div class="pub-links">
+                    <a href="https://cds.cern.ch/record/2747068" target="_blank" class="link-btn">Link</a>
+                </div>
+            </div>
+
+            <h3>C. Internal Collaboration Notes (As Primary Author)</h3>
+            
+            <div class="pub-item">
+                <div class="pub-title">Transverse dynamics of mean transverse momentum fluctuations in Pb+Pb collisions at 5.02 TeV with the ATLAS detector</div>
+                <div class="pub-meta">ATLAS Collaboration</div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurement of the mean transverse momentum fluctuations of charged particles in Xe+Xe collisions at 5.44 TeV and Pb+Pb collisions at 5.02 TeV</div>
+                <div class="pub-meta">ATLAS Collaboration</div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurement of flow and transverse momentum correlations in Xe+Xe collisions at 5.44 TeV and Pb+Pb collisions at 5.02 TeV</div>
+                <div class="pub-meta">ATLAS Collaboration</div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Imaging Shapes of Atomic Nuclei in High-energy Nuclear Collisions</div>
+                <div class="pub-meta">STAR Collaboration</div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Beam-energy dependence of transverse momentum-flow correlations in Au+Au collisions</div>
+                <div class="pub-meta">STAR Collaboration</div>
+            </div>
+
+        </section>
 
         <section id="talks" class="content-section">
             <header><h1>Talks and Presentations</h1></header>
@@ -669,7 +685,7 @@
                 <li><strong>CERN-TH Seminar 2025</strong>, Insights into Nuclear Geometry... <a href="#" class="link-btn">Slides</a></li>
                 <li><strong>Nuclear Physics Seminars at BNL 2022</strong>, Flow and transverse momentum correlations... <a href="#" class="link-btn">Slides</a></li>
             </ul>
-            </section>
+        </section>
 
         <section id="awards" class="content-section">
             <header><h1>Awards & Honors</h1></header>
@@ -706,7 +722,7 @@
                 <li>Physics Letters B (PLB)</li>
                 <li>Journal of Subatomic Particles...</li>
             </ul>
-            </section>
+        </section>
 
         <section id="skills" class="content-section">
             <header><h1>Technical Skills</h1></header>
@@ -730,51 +746,77 @@
 </div>
 
 <script>
-    // --- 1. DEFAULT DATA (Fallback) ---
-    // This ensures citations show up even if you open the file locally (file://)
-    const defaultCitations = {
-        "exp_nature_2024": 94,
-        "exp_prl_radial": 15,
-        "exp_prl_fluct": 29,
-        "exp_prc_corr": 75,
-        "pheno_radial_2025": 0,
-        "pheno_emission_2024": 1,
-        "pheno_plb_2024": 5,
-        "pheno_prc_2022": 12,
-        "pheno_epjc_2022": 8,
-        "co_nuclnews_2025": 0,
-        "co_prl_decorr": 2,
-        "co_prc_thermal": 6,
-        "co_epja_shape": 24,
-        "co_prc_isobar": 18,
-        "co_plb_nonflow": 19
-    };
+    // --- 1. AUTOMATIC CITATION FETCHER (INSPIRE-HEP API) ---
+    async function fetchCitations() {
+        const badges = document.querySelectorAll('.citation-badge');
+        
+        badges.forEach(async (badge) => {
+            const query = badge.getAttribute('data-query');
+            if (!query) return;
 
-    // --- 2. UPDATE FUNCTION ---
-    function updateCitationDisplay(data) {
-        for (const [key, value] of Object.entries(data)) {
-            const el = document.getElementById('cite-' + key);
-            if (el) {
-                if (value === 0 || value === "0") {
-                    // Hide the tag completely if 0 citations
-                    el.style.display = 'none'; 
+            // Determine if query is a specific Record ID (recid) or a search query (arxiv, doi)
+            let apiUrl = '';
+            
+            if (query.startsWith('recid:')) {
+                // Fetch by ID (e.g., 1845762)
+                const id = query.split(':')[1];
+                apiUrl = `https://inspirehep.net/api/literature/${id}`;
+            } else {
+                // Fetch by search (e.g., arxiv:..., doi:...)
+                apiUrl = `https://inspirehep.net/api/literature?q=${query}&format=json`;
+            }
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Failed');
+                
+                const data = await response.json();
+                let count = 0;
+
+                // Handle API response differences
+                if (query.startsWith('recid:')) {
+                    count = data.metadata.citation_count;
                 } else {
-                    const text = value === 1 ? ' Citation' : ' Citations';
-                    el.textContent = value + text;
-                    el.style.display = 'inline-block'; // Ensure it's visible
-                    
-                    // Style High Impact papers
-                    if (value > 50) {
-                        el.style.backgroundColor = '#d1e7dd'; // Light green
-                        el.style.color = '#0f5132';
-                        el.style.border = '1px solid #badbcc';
+                    // Search returns an array of hits
+                    if (data.hits && data.hits.hits.length > 0) {
+                        count = data.hits.hits[0].metadata.citation_count;
                     }
                 }
+
+                // Update UI
+                updateBadge(badge, count);
+
+            } catch (error) {
+                console.error("Error fetching " + query, error);
+                badge.textContent = "N/A";
+                badge.style.display = 'none';
+            }
+        });
+    }
+
+    function updateBadge(badge, count) {
+        if (count === undefined || count === null) return;
+
+        if (count === 0) {
+            badge.style.display = 'none'; // Hide if 0 citations
+        } else {
+            badge.style.display = 'inline-block';
+            badge.textContent = count + (count === 1 ? ' Citation' : ' Citations');
+            
+            // Highlight High Impact (>50 citations)
+            if (count >= 50) {
+                badge.style.backgroundColor = '#d1e7dd'; 
+                badge.style.color = '#0f5132';
+                badge.style.border = '1px solid #badbcc';
+            } else {
+                badge.style.backgroundColor = '#eef2f7';
+                badge.style.color = '#003366';
+                badge.style.border = '1px solid #dbeafe';
             }
         }
     }
 
-    // --- 3. NAVIGATION LOGIC ---
+    // --- 2. NAVIGATION LOGIC ---
     function showSection(sectionId, updateHistory = true) {
         const sections = document.querySelectorAll('.content-section');
         sections.forEach(section => section.classList.remove('active'));
@@ -803,30 +845,15 @@
         }
     };
 
-    // --- 4. INITIALIZATION ---
+    // --- 3. INITIALIZATION ---
     document.addEventListener("DOMContentLoaded", () => {
-        // Handle URL hash
+        // Navigation Hash
         const hash = window.location.hash.substring(1);
         if (hash) showSection(hash, false);
         else showSection('biography', false);
 
-        // First, apply default data immediately (Instant load)
-        updateCitationDisplay(defaultCitations);
-
-        // Then, try to fetch fresh data from json file
-        fetch('citations.json')
-            .then(response => {
-                if (!response.ok) throw new Error("Network response was not ok");
-                return response.json();
-            })
-            .then(data => {
-                console.log("Loaded citations from file.");
-                updateCitationDisplay(data);
-            })
-            .catch(error => {
-                console.log("Using default citations (Local file mode).");
-                // No action needed, defaults already applied
-            });
+        // Fetch Live Citations
+        fetchCitations();
     });
 </script>
 
