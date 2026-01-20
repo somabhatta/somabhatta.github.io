@@ -3,460 +3,767 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somadutta Bhatta</title>
-    
+    <title>Dr. Somadutta Bhatta | Nuclear Physicist</title>
     <style>
+        :root {
+            --primary-color: #003366; /* Academic Blue */
+            --accent-color: #0056b3;
+            --text-color: #333;
+            --light-bg: #f4f7f9;
+            --white: #ffffff;
+            --border-color: #e1e4e8;
+            --sidebar-width: 300px;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            color: var(--text-color);
+            background-color: #eef2f5;
         }
-        
-        header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 3rem 2rem;
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Layout Grid */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 90vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--light-bg);
+            padding: 40px 25px;
+            border-right: 1px solid var(--border-color);
+            flex-shrink: 0;
             text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 0.3rem;
-        }
-        
-        /* Navigation */
-        nav {
-            background: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* Sticky Sidebar Logic */
             position: sticky;
             top: 0;
-            z-index: 100;
+            height: 100vh;
+            overflow-y: auto;
         }
-        
-        nav ul {
-            list-style: none;
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        .sidebar-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .sidebar-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-affil {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .contact-details {
+            font-size: 0.9rem;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            word-break: break-all;
+        }
+
+        .social-links {
+            margin-top: 25px;
             display: flex;
             justify-content: center;
+            gap: 8px;
             flex-wrap: wrap;
-            gap: 2rem;
         }
-        
-        nav a {
-            color: #1e3a8a;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
+
+        .btn-social {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: var(--white);
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #555;
+            transition: all 0.2s;
+            text-decoration: none !important;
         }
-        
-        nav a:hover {
-            color: #3b82f6;
+
+        .btn-social:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
         }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
+
+        /* Main Content Styling */
+        .main-content {
+            flex-grow: 1;
+            padding: 50px 60px;
         }
-        
-        section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+        header {
+            margin-bottom: 40px;
         }
-        
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
         h2 {
-            color: #1e3a8a;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #3b82f6;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            position: relative;
         }
         
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
         h3 {
-            color: #1e3a8a;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+            color: #444;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 4px 4px 0;
         }
-        
-        /* Publications & Links */
-        .publication {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #f9fafb;
-            border-radius: 4px;
-            border-left: 4px solid #3b82f6;
-        }
-        
-        .publication-title {
-            font-weight: 600;
-            color: #1e3a8a;
-            margin-bottom: 0.3rem;
+
+        p {
+            margin-bottom: 18px;
+            color: #444;
             font-size: 1.05rem;
         }
-        
-        .publication-meta {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.8rem;
+
+        /* List Styles */
+        ul.clean-list {
+            list-style: none;
+            padding-left: 0;
         }
-        
-        .citation-count {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.2rem 0.5rem;
+
+        ul.clean-list li {
+            margin-bottom: 14px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        ul.clean-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            line-height: 1.4;
+        }
+
+        /* Publication Item - Card Style */
+        .pub-item {
+            margin-bottom: 25px;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-left: 3px solid var(--primary-color);
             border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-left: 5px;
+            transition: box-shadow 0.2s ease;
         }
 
-        .btn-group {
-            margin-top: 0.5rem;
+        .pub-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .pub-title {
+            font-weight: 700;
+            color: #222;
+            font-size: 1.05rem;
+            margin-bottom: 5px;
         }
 
-        .btn-link {
+        .pub-meta {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .pub-links {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .link-btn {
             display: inline-block;
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
             text-decoration: none;
-            padding: 4px 12px;
+            margin-right: 5px;
+        }
+        
+        .link-btn:hover {
+            background-color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .tag {
+            background-color: #eef2f7;
+            color: var(--primary-color);
+            padding: 3px 8px;
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 600;
-            margin-right: 8px;
-            transition: background 0.2s;
+            margin-left: 5px;
+            border: 1px solid #dbeafe;
         }
 
-        .btn-arxiv {
-            background-color: #b31b1b;
-            color: white;
-        }
-        
-        .btn-arxiv:hover { background-color: #8b0000; }
-
-        .btn-journal {
-            background-color: #1e3a8a;
-            color: white;
-        }
-
-        .btn-journal:hover { background-color: #152c6b; }
-        
-        .btn-slides {
-            background-color: #4b5563;
-            color: white;
-            font-size: 0.75rem;
-            padding: 2px 8px;
-            margin-left: 8px;
-        }
-        
-        /* Talk Items */
-        .talk-item {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        .talk-item:last-child { border-bottom: none; }
-        
-        /* Service Lists */
-        ul.service-list {
-            list-style-position: inside;
-            padding-left: 0.5rem;
-        }
-        ul.service-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Awards */
-        .award {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: #fef3c7;
-            border-radius: 4px;
-            border-left: 4px solid #f59e0b;
-        }
-        
-        /* News */
-        .news-item {
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            border-left: 3px solid #10b981; /* Green for news */
-        }
-        
-        /* Skills */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .skill-tag {
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
+        /* Section Specifics */
+        .scientific-impact {
+            background-color: #fcfcfc;
+            border-top: 1px solid #eee;
+            padding-top: 8px;
+            margin-top: 10px;
             font-size: 0.9rem;
-        }
-        
-        .contact-info {
-            text-align: center;
-            padding: 1.5rem;
-        }
-        
-        .contact-info a {
-            color: #3b82f6;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            background: #1e3a8a;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            color: #555;
         }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            nav ul { gap: 1rem; }
-            .container { padding: 1rem; }
+        #hobbies ul li {
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                position: relative;
+                height: auto;
+                padding: 40px 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Dr. Somadutta Bhatta</h1>
-        <p>Postdoctoral Researcher in Nuclear Physics</p>
-        <p>Institute for Gravitational and Subatomic Physics (GRASP), Utrecht University</p>
-        <p>National Institute for Subatomic Physics (NIKHEF)</p>
-        <p style="font-size: 1rem; margin-top: 5px; opacity: 0.8;">Member of ALICE Collaboration</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#talks">Talks</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
+<div class="container">
+    <aside class="sidebar">
+        <img src="passport2.jpg" alt="Somadutta Bhatta" class="profile-img">
+        
+        <div class="sidebar-name">Dr. Somadutta Bhatta</div>
+        <div class="sidebar-title">Postdoctoral Researcher</div>
+        
+        <div class="sidebar-affil">
+            Institute for Gravitational and Subatomic Physics (GRASP)<br>
+            <strong>Utrecht University</strong>
+            <br><br>
+            <strong>NIKHEF</strong>
+            <br><br>
+            Member of <strong>ALICE</strong> & <strong>STAR</strong> Collaborations
+        </div>
+
+        <div class="contact-details">
+            <div class="contact-item">
+                <strong>Email:</strong>&nbsp;<a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
+            </div>
+            <div class="contact-item">
+                <strong>Location:</strong>&nbsp;Utrecht, Netherlands
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://scholar.google.com" target="_blank" class="btn-social">Google Scholar</a>
+            <a href="https://inspirehep.net" target="_blank" class="btn-social">Inspire-HEP</a>
+            <a href="https://arxiv.org" target="_blank" class="btn-social">ArXiv</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Biography</h1>
+        </header>
+
         <section id="about">
-            <h2>About Me</h2>
-            <p>I am a Postdoctoral Researcher affiliated with both the <strong>Institute for Gravitational and Subatomic Physics (GRASP)</strong> at Utrecht University and <strong>NIKHEF</strong>. I work with Prof. dr. R.J.M. Snellings within the <strong>ALICE Collaboration</strong> at CERN.</p>
+            <p>I am a Postdoctoral Researcher at the <strong>Institute for Gravitational and Subatomic Physics (GRASP)</strong> at Utrecht University, working with Prof. dr. R.J.M. Snellings. I am also affiliated with <strong>NIKHEF</strong> and actively work within the <strong>ALICE Collaboration</strong> at CERN and the <strong>STAR Collaboration</strong> at RHIC.</p>
             
-            <p style="margin-top: 1rem;">Previously, I completed my Ph.D. at Stony Brook University under the supervision of Prof. Jiangyong Jia. My research probes the Quark-Gluon Plasma (QGP), focusing on viscosities, the speed of sound in the medium, and the origin of collectivity in heavy-ion collisions using data from ATLAS (LHC) and STAR (RHIC).</p>
+            <p>I recently completed my Ph.D. at Stony Brook University under the supervision of Prof. Jiangyong Jia. My research focuses on probing the <strong>Quark-Gluon Plasma (QGP)</strong>, a primordial state of matter that existed microseconds after the Big Bang. I study its key characteristics, such as viscosity, speed of sound, and the origin of collectivity in heavy-ion collisions.</p>
         </section>
-        
+
         <section id="research">
-            <h2>Research Highlights</h2>
-            
-            <div class="publication">
-                <div class="publication-title">Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions</div>
-                <div class="publication-meta">STAR Collaboration, Nature 635, 67–72 (2024) <span class="citation-count">94 citations</span></div>
-                <div class="impact"><strong>Impact:</strong> Pioneered a novel paradigm for nuclear structure physics, bridging high-energy and low-energy nuclear physics by imaging the 3D shape of nuclei.</div>
-                <div class="btn-group">
-                    <a href="#" class="btn-link btn-arxiv">arXiv</a>
-                    <a href="#" class="btn-link btn-journal">Journal</a>
-                </div>
-            </div>
-            
-            <div class="publication">
-                <div class="publication-title">Evidence for the collective nature of radial flow in Pb+Pb collisions</div>
-                <div class="publication-meta">ATLAS Collaboration, Accepted in PRL (Editor's suggestion), arXiv:2503.24125 <span class="citation-count">15 citations</span></div>
-                <div class="impact"><strong>Impact:</strong> Established v₀(pT) as a tool sensitive to QGP bulk viscosity and demonstrated the collective nature of radial flow.</div>
-                <div class="btn-group">
-                    <a href="#" class="btn-link btn-arxiv">arXiv</a>
-                    <a href="#" class="btn-link btn-journal">Journal</a>
-                </div>
-            </div>
-            
-            <div class="publication">
-                <div class="publication-title">Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions</div>
-                <div class="publication-meta">ATLAS Collaboration, PRL 133, 252301 (2024) <span class="citation-count">29 citations</span></div>
-                <div class="impact"><strong>Impact:</strong> Experimentally isolated distinct sources of initial-state fluctuations, solving a long-standing modeling challenge.</div>
-                <div class="btn-group">
-                    <a href="#" class="btn-link btn-arxiv">arXiv</a>
-                    <a href="#" class="btn-link btn-journal">Journal</a>
-                </div>
-            </div>
+            <h2>Research Interests</h2>
+            <ul class="clean-list">
+                <li>Experimental High Energy Nuclear Physics</li>
+                <li>Heavy-Ion Collisions & Quark-Gluon Plasma (QGP)</li>
+                <li>Flow Fluctuations & Collectivity</li>
+                <li>Nuclear Imaging using High-Energy Collisions</li>
+            </ul>
         </section>
-        
+
         <section id="publications">
-            <h2>Selected Publications</h2>
-            <p style="margin-bottom: 1rem;">See full list at: <a href="https://scholar.google.com" target="_blank">Google Scholar</a> | <a href="https://inspirehep.net" target="_blank">Inspire-HEP</a></p>
-            
-            <h3>Primary Author Papers</h3>
-            
-            <div class="publication" style="border-left: 2px solid #ccc; background: white; padding: 0.5rem 0;">
-                <div class="publication-title" style="font-size: 1rem;">Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions</div>
-                <div class="publication-meta">ATLAS Collaboration, PRC 105, 054910 (2023)</div>
-                <div class="btn-group">
-                    <a href="#" class="btn-link btn-arxiv">arXiv</a>
-                    <a href="#" class="btn-link btn-journal">Journal</a>
+            <h2>Full Publication List</h2>
+
+            <h3>A.i) Selected First/Primary Author Experimental Papers</h3>
+
+            <div class="pub-item">
+                <div class="pub-title">Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions</div>
+                <div class="pub-meta">STAR Collaboration, Nature 635, 67–72 (2024)</div>
+                <div class="pub-links">
+                    <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag">94 Citations</span>
+                </div>
+                <div class="scientific-impact">
+                    <strong>Scientific Impact:</strong> This landmark study pioneered a novel paradigm for nuclear structure physics, demonstrating for the first time that relativistic heavy-ion collisions can precisely image the three-dimensional shape of atomic nuclei. <strong>This work bridged the gap between high-energy and low-energy nuclear physics and resolved a major uncertainty that had long constrained the precision of Quark-Gluon Plasma studies.</strong>
                 </div>
             </div>
 
-            <div class="publication" style="border-left: 2px solid #ccc; background: white; padding: 0.5rem 0;">
-                <div class="publication-title" style="font-size: 1rem;">Higher-order transverse momentum fluctuations in heavy-ion collisions</div>
-                <div class="publication-meta">PRC 105, 024904 (2022)</div>
-                <div class="btn-group">
-                    <a href="#" class="btn-link btn-arxiv">arXiv</a>
-                    <a href="#" class="btn-link btn-journal">Journal</a>
+            <div class="pub-item">
+                <div class="pub-title">Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector</div>
+                <div class="pub-meta">ATLAS Collaboration, Accepted in PRL (Editor's Suggestion), arXiv:2503.24125</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2503.24125" target="_blank" class="link-btn">arXiv</a>
+                    <span class="tag">15 Citations</span>
+                </div>
+                <div class="scientific-impact">
+                    <strong>Scientific Impact:</strong> This analysis established an entirely new observational window into QGP dynamics. By performing the first measurement of the transverse momentum dependence of radial flow fluctuations, I demonstrated that radial flow is a collective phenomenon. This work establishes v<sub>0</sub>(p<sub>T</sub>) as a powerful new tool with high sensitivity to the QGP's bulk viscosity. <strong>This was the first measurement to demonstrate that radial flow fluctuations in heavy-ion collisions also behave collectively.</strong>
                 </div>
             </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions with the ATLAS detector</div>
+                <div class="pub-meta">ATLAS Collaboration, PRL 133, 252301 (2024)</div>
+                <div class="pub-links">
+                    <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag">29 Citations</span>
+                </div>
+                <div class="scientific-impact">
+                    <strong>Scientific Impact:</strong> This work achieved a critical breakthrough by experimentally isolating distinct sources of initial-state fluctuations for the first time. By disentangling geometric effects from intrinsic quantum fluctuations, my analysis solved a long-standing modeling challenge.
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions at the LHC with the ATLAS detector</div>
+                <div class="pub-meta">ATLAS Collaboration, PRC 105, 054910 (2023)</div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" class="link-btn">Journal</a>
+                    <span class="tag">75 Citations</span>
+                </div>
+                <div class="scientific-impact">
+                    <strong>Scientific Impact:</strong> This publication laid the essential groundwork for the subsequent landmark <em>Nature</em> paper on nuclear imaging. It systematically established the v<sub>n</sub>-[p<sub>T</sub>] correlation as a precision tool for probing initial-state geometry.
+                </div>
+            </div>
+
+            <h3>A.ii) Selected First/Primary Author Phenomenological Papers</h3>
+
+            <div class="pub-item">
+                <div class="pub-title">Disentangling the global multiplicity and spectral shape fluctuations in radial flow</div>
+                <div class="pub-meta">arXiv:2504.20008 [nucl-th] (2025)</div>
+                <div class="pub-links">
+                    <a href="https://www.arxiv.org/abs/2504.20008" target="_blank" class="link-btn">arXiv</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Experimental method to constrain preferential emission and spectator dynamics in heavy-ion collisions</div>
+                <div class="pub-meta">Submitted to PRC, arXiv:2407.06977 [nucl-th] (2024)</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2407.06977" target="_blank" class="link-btn">arXiv</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Energy dependence of heavy-ion initial condition in isobar collisions</div>
+                <div class="pub-meta">PLB 858, 139034 (2024)</div>
+                <div class="pub-links">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0370269324005926?via%3Dihub" target="_blank" class="link-btn">Journal</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Higher-order transverse momentum fluctuations in heavy-ion collisions</div>
+                <div class="pub-meta">PRC 105, 024904 (2022)</div>
+                <div class="pub-links">
+                    <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" class="link-btn">Journal</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">An improved method to access initial states in relativistic heavy-ion collisions</div>
+                <div class="pub-meta">EPJC 82, 855 (2022)</div>
+                <div class="pub-links">
+                    <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" class="link-btn">Journal</a>
+                </div>
+            </div>
+
+            <h3>B. Other Papers (as contributing author)</h3>
+            
+            <div class="pub-item">
+                <div class="pub-title">Imaging Nuclei by Smashing Them: A New Way to Unveil the Nuclear Shapes</div>
+                <div class="pub-meta">Nucl. Phys. News 35, 1 (2025)</div>
+                <div class="pub-links">
+                    <a href="https://www.tandfonline.com/doi/full/10.1080/10619127.2025.2454214" target="_blank" class="link-btn">Journal</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Sources of longitudinal flow decorrelations in high-energy nuclear collisions</div>
+                <div class="pub-meta">Submitted to PRL, arXiv:2408.15006 [nucl-th] (2024)</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2408.15006" target="_blank" class="link-btn">arXiv</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Thermalization at the femtoscale seen in high-energy Pb+Pb collisions</div>
+                <div class="pub-meta">PRC 109, L051902 (2024)</div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1103/PhysRevC.109.L051902" target="_blank" class="link-btn">Journal</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Impact of nuclear shape fluctuations in high-energy heavy ion collisions</div>
+                <div class="pub-meta">EPJA 59, 45 (2023)</div>
+                <div class="pub-links">
+                    <a href="https://link.springer.com/article/10.1140/epja/s10050-023-00965-1" target="_blank" class="link-btn">Journal</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Ratios of collective flow observables in high-energy isobar collisions are insensitive to final state interactions</div>
+                <div class="pub-meta">PRC 106, L031901 (2022)</div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1103/PhysRevC.106.L031901" target="_blank" class="link-btn">Journal</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Non-flow effects in correlation between harmonic flow and transverse momentum in nuclear collisions</div>
+                <div class="pub-meta">PLB 822, 136702 (2021)</div>
+                <div class="pub-links">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0370269321006420" target="_blank" class="link-btn">Journal</a>
+                </div>
+            </div>
+
+            <h3>B. Proceedings / Conference Notes</h3>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurement of collective dynamics in small and large systems with the ATLAS detector</div>
+                <div class="pub-meta">PoS EPS-HEP2023 202</div>
+                <div class="pub-links">
+                    <a href="https://pos.sissa.it/449/202/pdf" target="_blank" class="link-btn">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurement of [p<sub>T</sub>] Fluctuations in Xe+Xe and Pb+Pb Collisions with ATLAS</div>
+                <div class="pub-meta">ATLAS-CONF-2023-061</div>
+                <div class="pub-links">
+                    <a href="https://cds.cern.ch/record/2873507/files/ATLAS-CONF-2023-061.pdf" target="_blank" class="link-btn">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Deciphering initial states of high energy heavy-ion collisions using spectators</div>
+                <div class="pub-meta">Submitted to IJMPCS, 2022</div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Flow and transverse momentum correlation in Pb+Pb and Xe+Xe collisions with ATLAS: assessing the initial condition of the QGP</div>
+                <div class="pub-meta">APPB Proc. Suppl. (2022)</div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/pdf/2210.00159.pdf" target="_blank" class="link-btn">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurements of collective behavior in pp, Xe+Xe, and Pb+Pb collisions with the ATLAS detector</div>
+                <div class="pub-meta">PoS EPS-HEP2021 305</div>
+                <div class="pub-links">
+                    <a href="https://inspirehep.net/files/8e277f904dbf6bec8906fb8a8a874d68" target="_blank" class="link-btn">PDF</a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Measurement of flow and transverse momentum correlations in Pb+Pb collisions at 5.02 TeV and Xe+Xe collisions at 5.44 TeV with the ATLAS detector</div>
+                <div class="pub-meta">ATLAS-CONF-2021-001</div>
+                <div class="pub-links">
+                    <a href="https://cds.cern.ch/record/2747068" target="_blank" class="link-btn">Link</a>
+                </div>
+            </div>
+
         </section>
-        
+
         <section id="talks">
-            <h2>Invited Talks & Seminars</h2>
+            <h2>Talks and Presentations</h2>
             
-            <h3>2025</h3>
-            <div class="talk-item">
-                <strong>CERN-TH Seminar</strong> - "Insights into Nuclear Geometry and Initial Conditions" 
-                <a href="#" class="btn-link btn-slides">Slides</a>
-            </div>
-            <div class="talk-item">
-                <strong>Quark Matter 2025</strong> - "Evidence for the collective nature of radial flow in Pb+Pb collisions"
-                <a href="#" class="btn-link btn-slides">Slides</a>
-            </div>
-            <div class="talk-item">
-                <strong>Initial Stages 2025</strong> - "Recent flow and correlation measurements with ATLAS"
-                <a href="#" class="btn-link btn-slides">Slides</a>
-            </div>
-
-            <h3>2024</h3>
-            <div class="talk-item">
-                <strong>LHCP 2024 (Plenary)</strong> - "Probing medium properties in ultra-central collisions" (On behalf of ATLAS+ALICE+CMS)
-                <a href="#" class="btn-link btn-slides">Slides</a>
-            </div>
-            <div class="talk-item">
-                <strong>BNL Nuclear Physics Seminar</strong> - "Disentangling sources of momentum fluctuations"
-                <a href="#" class="btn-link btn-slides">Slides</a>
-            </div>
-        </section>
-
-        <section id="service">
-            <h2>Service & Refereeing</h2>
-            
-            <h3>Refereeing</h3>
-            <ul class="service-list">
-                <li>Referee for <strong>Physical Review C (PRC)</strong></li>
-                <li>Referee for <strong>Physical Review D (PRD)</strong></li>
-                <li>Referee for <strong>Physics Letters B (PLB)</strong></li>
+            <h3>A.) Invited Talks</h3>
+            <ul class="clean-list">
+                <li>
+                    <strong>CERN-TH Seminar 2025</strong>, Insights into Nuclear Geometry and Initial Conditions of Heavy-Ion Collisions from ATLAS
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>HENPIC Seminar 2024</strong>, Insights into Nuclear Geometry and Initial Conditions of Heavy-Ion Collisions from ATLAS
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>SBU HEP Seminar 2024</strong>, Leveraging Ultra-Central Collisions to Constrain Shape of the Nucleus and Initial State
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>Nuclear Physics Seminars at BNL 2024</strong>, Disentangling sources of momentum fluctuations in heavy-ion collisions with the ATLAS detector
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>LHCP 2024</strong>, Probing medium properties in ultra-central collisions (Plenary talk on behalf of ATLAS+ALICE+CMS)
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>INT-Program 2023</strong>, Intersection of nuclear structure and high-energy nuclear collisions, Energy dependence of initial condition from isobar
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>Nuclear Physics Seminars at BNL 2022</strong>, Flow and transverse momentum correlations at LHC: a probe of the heavy-ion initial state and nuclear deformation
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
             </ul>
 
-            <h3 style="margin-top: 1.5rem;">Collaboration Service</h3>
-            <ul class="service-list">
-                <li><strong>ATLAS Collaboration:</strong> Development and maintenance of the Heavy-Ion Efficiency Tool.</li>
-                <li><strong>ALICE Collaboration:</strong> [Add specific ALICE service work here]</li>
+            <h3>B.) International-Level Conference Talks</h3>
+            <ul class="clean-list">
+                <li>
+                    <strong>Initial Stages 2025</strong>, Recent flow and correlation measurements in large and small collision systems with ATLAS
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>Quark Matter 2025</strong>, Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>ATHIC 2025</strong>, Unveiling initial state fluctuations using [p<sub>T</sub>] cumulants with ATLAS
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>EPS-HEP 2023</strong>, Measurement of collective dynamics in small and large systems with the ATLAS detector
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>Initial Stages 2023</strong>, Probing initial state using higher order fluctuations: v<sub>n</sub>-[p<sub>T</sub>] and [p<sub>T</sub>] correlations in ATLAS
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>Quark Matter 2022</strong>, Flow and transverse momentum correlation in Pb+Pb and Xe+Xe collisions with ATLAS
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>EPS-HEP 2021</strong>, Measurements of collective behavior in pp, Xe+Xe, and Pb+Pb collisions with the ATLAS detector
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>ATLAS TDAQ week at CERN 2020</strong>, MinBias and Forward Detector
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+            </ul>
+
+            <h3>C.) National-Level Conference Talks</h3>
+            <ul class="clean-list">
+                <li>
+                    <strong>Fall Meeting for APS DNP-2022</strong>, Probing nuclear deformation at LHC energies using AMPT
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>APS April Meeting 2022</strong>, Higher order transverse momentum fluctuations in heavy ion collisions
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>Fall Meeting for APS DNP-2021</strong>, Flow and transverse momentum correlations in Pb+Pb and Xe+Xe collisions with ATLAS
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+                <li>
+                    <strong>APS April Meeting-2021</strong>, Cumulant analysis of deformed systems using AMPT model
+                    <a href="#" class="link-btn">Slides</a>
+                </li>
+            </ul>
+
+            <h3>D.) Conference Posters</h3>
+            <ul class="clean-list">
+                <li>
+                    <strong>Quark Matter 2023</strong>, Exploring the origin of [p<sub>T</sub>] fluctuations in ultra-central heavy ion collisions
+                    <a href="#" class="link-btn">Poster</a>
+                </li>
+                <li>
+                    <strong>SQM-2022</strong>, Flow and transverse momentum correlations in Pb+Pb and Xe+Xe collisions with ATLAS
+                    <a href="#" class="link-btn">Poster</a>
+                </li>
+                <li>
+                    <strong>Initial stages 2021</strong>, Measurement of flow and transverse momentum correlations in Pb+Pb and Xe+Xe collisions
+                    <a href="#" class="link-btn">Poster</a>
+                </li>
+                <li>
+                    <strong>APS Fall Meeting 2020</strong>, Flow cumulants for multi-particle azimuthal correlations in heavy-ion Collisions
+                    <a href="#" class="link-btn">Poster</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="awards">
+            <h2>Awards & Honors</h2>
+            <ul class="clean-list">
+                <li><strong>Distinguished Travel Award (2025)</strong> - Stony Brook University</li>
+                <li><strong>Young Scientist Award (2023)</strong> - Initial Stages Conference</li>
+                <li><strong>CSIR-NET Fellowship (2018)</strong> - All India Rank 39 (Top 0.5%)</li>
+                <li><strong>INSPIRE Fellowship (2013-2018)</strong> - DST, Govt. of India</li>
+                <li><strong>NTSE Fellowship Scholar (2009-2013)</strong> - NCERT, Govt. of India</li>
             </ul>
         </section>
 
         <section id="news">
             <h2>In the News</h2>
-            <div class="news-item">
-                <strong>CERN Courier:</strong> <a href="#">"New insights into flow fluctuations"</a> - Coverage of our recent Nature publication results.
-            </div>
-            <div class="news-item">
-                <strong>The Statesman:</strong> <a href="#">"Young Scientist Award 2023"</a> - Feature article on early career achievements in nuclear physics.
-            </div>
+            <ul class="clean-list">
+                <li><a href="#">CERN Courier:</a> Coverage of recent nature publication results.</li>
+                <li><a href="#">The Statesman:</a> Feature on Young Scientist Award 2023.</li>
+            </ul>
         </section>
         
-        <section id="awards">
-            <h2>Awards & Recognition</h2>
-            
-            <div class="award">
-                <strong>Distinguished Travel Award (2025)</strong><br>
-                Stony Brook University
-            </div>
-            
-            <div class="award">
-                <strong>Young Scientist Award (2023)</strong><br>
-                Initial Stages Conference
-            </div>
-            
-            <div class="award">
-                <strong>CSIR-NET Fellowship (2018)</strong><br>
-                All India Rank 39 (Top 0.5% nationwide)
-            </div>
-            
-            <div class="award">
-                <strong>INSPIRE Fellowship (2013-2018)</strong><br>
-                Department of Science & Technology, Govt. of India
-            </div>
-            
-            <div class="award">
-                <strong>NTSE Fellowship Scholar (2009-2013)</strong><br>
-                NCERT, Govt. of India (Selected from ~1 million applicants)
-            </div>
+        <section id="service">
+            <h2>Professional Service & Activities</h2>
+
+            <h3>Conference Organization</h3>
+            <ul class="clean-list">
+                <li>
+                    <strong>Organizing Committee Member</strong>, XXVIII International Workshop on Deep-Inelastic Scattering (DIS-2021), SUNY, Stony Brook, USA.
+                </li>
+            </ul>
+
+            <h3>Peer Review & Refereeing</h3>
+            <p style="margin-bottom: 10px;">Reviewer for the following journals:</p>
+            <ul class="clean-list">
+                <li>Physical Review C <strong>(PRC, APS)</strong></li>
+                <li>Physical Review D <strong>(PRD, APS)</strong></li>
+                <li>Physics Letters B <strong>(PLB, Elsevier)</strong></li>
+                <li>Journal of Subatomic Particles and Cosmology <strong>(JSPC, Elsevier)</strong></li>
+            </ul>
+
+            <h3>Technical Contributions & Collaboration Service</h3>
+            <ul class="clean-list">
+                <li>
+                    <strong>Efficiency Tool for ATLAS Heavy-Ion Group (2023-2024):</strong> Developed and maintained a general-purpose efficiency calculation tool for tracking efficiency and fake track fractions in ATLAS Heavy-Ion datasets.
+                </li>
+                <li>
+                    <strong>Trigger Upgrade for ATLAS (2019-2022):</strong> Upgraded MinBias, MBTS, and HMT Triggers to the Athena Multi-thread framework for ATLAS.
+                </li>
+                <li>
+                    <strong>STAR Experimental Shifts (2019-2023):</strong> Regularly served as "Detector Operator," involving operation and troubleshooting of detector components during data taking.
+                </li>
+            </ul>
+
+            <h3>Supervising & Mentoring</h3>
+            <ul class="clean-list">
+                <li>
+                    <strong>Teaching Assistant at Stony Brook University (2018-2019):</strong> Mentored over 60 undergraduate students in laboratory courses (Spring 2018, Fall 2018, Spring 2019). Led bi-weekly 3-hour lab sessions, conducted evaluations, and provided one-on-one guidance on experimental techniques and data analysis.
+                </li>
+            </ul>
         </section>
-        
+
         <section id="skills">
             <h2>Technical Skills</h2>
-            <div class="skills">
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">ROOT</span>
-                <span class="skill-tag">Mathematica</span>
-                <span class="skill-tag">Glauber Models</span>
-                <span class="skill-tag">HIJING</span>
-                <span class="skill-tag">AMPT</span>
-                <span class="skill-tag">TRAJECTUM</span>
-                <span class="skill-tag">ATLAS Detector</span>
-                <span class="skill-tag">STAR Detector</span>
-                <span class="skill-tag">ALICE Detector</span>
-            </div>
+            <ul class="clean-list">
+                <li><strong>Data Analysis:</strong> ROOT, Mathematica</li>
+                <li><strong>Programming Languages:</strong> C++, Python</li>
+                <li><strong>Physics Models:</strong> Expertise in initial state (Glauber, Trento), string-based (HIJING, AMPT), and full hydrodynamic (TRAJECTUM) model frameworks.</li>
+            </ul>
         </section>
-        
-        <section id="contact" class="contact-info">
-            <h2>Contact</h2>
-            <p style="margin-top: 1rem;">
-                <strong>Email:</strong> <a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
-            </p>
-            <p style="margin-top: 0.5rem;">
-                <strong>Affiliation:</strong> GRASP (Utrecht University) & NIKHEF
-            </p>
-            <p style="margin-top: 1rem;">
-                <a href="https://scholar.google.com" target="_blank">Google Scholar</a> |
-                <a href="https://inspirehep.net" target="_blank">Inspire-HEP</a> |
-                <a href="https://arxiv.org" target="_blank">ArXiv</a>
-            </p>
+
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <ul class="clean-list">
+                <li>Reading books (Sci-Fi, Philosophy)</li>
+                <li>Listening to music</li>
+                <li>Long hiking</li>
+            </ul>
         </section>
-    </div>
-    
-    <footer>
-        <p>&copy; 2026 Dr. Somadutta Bhatta. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Postdoctoral Researcher in Nuclear Physics | Utrecht University & NIKHEF</p>
-    </footer>
+
+    </main>
+</div>
 
 </body>
 </html>
