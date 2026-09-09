@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Somadutta Bhatta</title>
-    <meta name="description" content="Personal website of Somadutta Bhatta, Postdoctoral Researcher at Utrecht University & NIKHEF.">
-    <meta name="google-site-verification" content="r4szhweStBfrAHpg18Hk6eJ7X1xuICpzAVr3IchkxYQ" />
+    <title>Somadutta Bhatta - Physicist at Utrecht University</title>
     <meta name="description" content="Dr. Somadutta Bhatta - Postdoctoral Researcher at Utrecht University and NIKHEF, working on Quark-Gluon Plasma research with ALICE and STAR Collaborations">
     <meta name="keywords" content="Somadutta Bhatta, physicist, SBU, CERN, ALICE, ATLAS, STAR, quark-gluon plasma, QGP, heavy-ion collisions, Radial Flow, Triaxiality, Utrecht University">
     <meta name="author" content="Somadutta Bhatta">
-    <title>Somadutta Bhatta - Physicist at Utrecht University</title>
-    <meta name="author" content="Somadutta Bhatta">
+    <meta name="google-site-verification" content="r4szhweStBfrAHpg18Hk6eJ7X1xuICpzAVr3IchkxYQ" />
     <style>
         :root {
             --primary-color: #003366; /* Academic Blue */
@@ -79,12 +76,13 @@
             min-height: 75px;
         }
 
-        .top-nav-card:hover, .top-nav-card.active-tab {
+        .top-nav-card:hover, .top-nav-card.active-tab, .top-nav-card:focus-visible {
             transform: translateY(-2px);
             box-shadow: 0 8px 15px rgba(0,0,0,0.08);
             border-color: var(--accent-color);
             background-color: #fff;
             border-bottom: 3px solid var(--accent-color);
+            outline: none;
         }
 
         .top-nav-card h3 {
@@ -330,6 +328,17 @@
             margin-bottom: 5px;
         }
 
+        .pub-authors {
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .pub-authors strong {
+            color: var(--primary-color);
+        }
+
         /* UPDATED: Changed color from #666 to #000 */
         .pub-meta {
             font-style: italic;
@@ -400,28 +409,28 @@
 
 <div class="top-nav-wrapper">
     <div class="top-nav-grid">
-        <div class="top-nav-card active-tab" onclick="showSection('biography')" id="top-biography">
+        <div class="top-nav-card active-tab" role="button" tabindex="0" onclick="showSection('biography')" id="top-biography">
             <h3>About Me</h3><p></p>
         </div>
-        <div class="top-nav-card" onclick="showSection('publications')" id="top-publications">
+        <div class="top-nav-card" role="button" tabindex="0" onclick="showSection('publications')" id="top-publications">
             <h3>Publications</h3><p>Papers & Impact</p>
         </div>
-        <div class="top-nav-card" onclick="showSection('talks')" id="top-talks">
+        <div class="top-nav-card" role="button" tabindex="0" onclick="showSection('talks')" id="top-talks">
             <h3>Talks</h3><p>Conf. & Seminars</p>
         </div>
-        <div class="top-nav-card" onclick="showSection('awards')" id="top-awards">
+        <div class="top-nav-card" role="button" tabindex="0" onclick="showSection('awards')" id="top-awards">
             <h3>Awards</h3><p>Honors & Grants</p>
         </div>
-        <div class="top-nav-card" onclick="showSection('news')" id="top-news">
+        <div class="top-nav-card" role="button" tabindex="0" onclick="showSection('news')" id="top-news">
             <h3>In the News</h3><p>Media coverage</p>
         </div>
-        <div class="top-nav-card" onclick="showSection('service')" id="top-service">
+        <div class="top-nav-card" role="button" tabindex="0" onclick="showSection('service')" id="top-service">
             <h3>Service</h3><p>Supervision & Committees</p>
         </div>
-        <div class="top-nav-card" onclick="showSection('skills')" id="top-skills">
+        <div class="top-nav-card" role="button" tabindex="0" onclick="showSection('skills')" id="top-skills">
             <h3>Skills</h3><p>Tech & Models</p>
         </div>
-        <div class="top-nav-card" onclick="showSection('hobbies')" id="top-hobbies">
+        <div class="top-nav-card" role="button" tabindex="0" onclick="showSection('hobbies')" id="top-hobbies">
             <h3>Hobbies</h3><p>Interests</p>
         </div>
     </div>
@@ -451,9 +460,9 @@
         </div>
         <div class="social-links">
         <div class="contact-label" style="margin-bottom:6px;">Full List of Papers:</div>
-        <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=somadutta+bhatta&hl=en&oi=ao" target="_blank" class="btn-social">Google Scholar</a>
-        <a href="https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=somadutta%20bhatta&ui-citation-summary=true" target="_blank" class="btn-social">Inspire-HEP</a>
-        <a href="https://arxiv.org/search/?query=Somadutta++bhatta&searchtype=all&source=header" target="_blank" class="btn-social">ArXiv</a>
+        <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=somadutta+bhatta&hl=en&oi=ao" target="_blank" rel="noopener" class="btn-social">Google Scholar</a>
+        <a href="https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=somadutta%20bhatta&ui-citation-summary=true" target="_blank" rel="noopener" class="btn-social">Inspire-HEP</a>
+        <a href="https://arxiv.org/search/?query=Somadutta++bhatta&searchtype=all&source=header" target="_blank" rel="noopener" class="btn-social">ArXiv</a>
         </div>
     </aside>
 
@@ -475,13 +484,13 @@
     </span>
 
     <div class="highlight-links">
-        <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=somadutta+bhatta&hl=en&oi=ao" target="_blank" class="btn-social">
+        <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=somadutta+bhatta&hl=en&oi=ao" target="_blank" rel="noopener" class="btn-social">
             <i class="fas fa-graduation-cap"></i> Google Scholar
         </a>
-        <a href="https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=somadutta%20bhatta&ui-citation-summary=true" target="_blank" class="btn-social">
+        <a href="https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=somadutta%20bhatta&ui-citation-summary=true" target="_blank" rel="noopener" class="btn-social">
             <i class="fas fa-atom"></i> Inspire-HEP
         </a>
-        <a href="https://arxiv.org/search/?query=Somadutta++bhatta&searchtype=all&source=header" target="_blank" class="btn-social">
+        <a href="https://arxiv.org/search/?query=Somadutta++bhatta&searchtype=all&source=header" target="_blank" rel="noopener" class="btn-social">
             <i class="fas fa-file-alt"></i> ArXiv
         </a>
     </div>
@@ -492,36 +501,40 @@
 
             <div class="pub-item">
                 <div class="pub-title">Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta">ATLAS Collaboration, <strong> PRL 136, 032301 (2026) (Editors’ Suggestion)</strong></div>
                 <div class="pub-links">
-                    <a href="https://journals.aps.org/prl/pdf/10.1103/ldcn-r2lq" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://journals.aps.org/prl/pdf/10.1103/ldcn-r2lq" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="arxiv:2503.24125">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Imaging Shapes of Atomic Nuclei in High-Energy Nuclear Collisions</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the STAR Collaboration</div>
                 <div class="pub-meta">STAR Collaboration, <strong>Nature 635, 67–72 (2024)</strong></div>
                 <div class="pub-links">
-                    <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.1038/s41586-024-08097-2">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions with the ATLAS detector</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta">ATLAS Collaboration, <strong>PRL 133, 252301 (2024)</strong></div>
                 <div class="pub-links">
-                    <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.1103/PhysRevLett.133.252301">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions at the LHC with the ATLAS detector</div>
-                <div class="pub-meta">ATLAS Collaboration, <strong>PRC 105, 054910 (2023)</strong></div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
+                <div class="pub-meta">ATLAS Collaboration, <strong>PRC 107, 054910 (2023)</strong></div>
                 <div class="pub-links">
-                    <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.1103/PhysRevC.107.054910">Loading...</span>
                 </div>
             </div>
@@ -530,45 +543,50 @@
 
             <div class="pub-item">
                 <div class="pub-title">Disentangling the global multiplicity and spectral shape fluctuations in radial flow</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong>, A. Dimri, J. Jia</div>
                 <div class="pub-meta">arXiv:2504.20008 [nucl-th] (2025)</div>
                 <div class="pub-links">
-                    <a href="https://www.arxiv.org/abs/2504.20008" target="_blank" class="link-btn">arXiv</a>
+                    <a href="https://www.arxiv.org/abs/2504.20008" target="_blank" rel="noopener" class="link-btn">arXiv</a>
                     <span class="citation-badge" data-query="arxiv:2504.20008">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Method to constrain preferential emission and spectator dynamics in heavy-ion collisions</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong>, V. Bairathi</div>
                 <div class="pub-meta"><strong>PRC 113, 024917 (2026)</strong></div>
                 <div class="pub-links">
-                    <a href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" class="link-btn">Journal</a>
-                    <span class="citation-badge" data-query="https://doi.org/10.1103/kzyy-2wtv">Loading...</span>
+                    <a href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener" class="link-btn">Journal</a>
+                    <span class="citation-badge" data-query="doi:10.1103/kzyy-2wtv">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Energy dependence of heavy-ion initial condition in isobar collisions</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong>, C. Zhang, J. Jia</div>
                 <div class="pub-meta"><strong>PLB 858, 139034 (2024)</strong></div>
                 <div class="pub-links">
-                    <a href="https://www.sciencedirect.com/science/article/pii/S0370269324005926?via%3Dihub" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0370269324005926?via%3Dihub" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.1016/j.physletb.2024.139034">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Higher-order transverse momentum fluctuations in heavy-ion collisions</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong>, C. Zhang, J. Jia</div>
                 <div class="pub-meta"><strong>PRC 105, 024904 (2022)</strong></div>
                 <div class="pub-links">
-                    <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.1103/PhysRevC.105.024904">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">An improved method to access initial states in relativistic heavy-ion collisions</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong>, V. Bairathi</div>
                 <div class="pub-meta"><strong>EPJC 82, 855 (2022)</strong></div>
                 <div class="pub-links">
-                    <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.1140/epjc/s10052-022-10824-w">Loading...</span>
                 </div>
             </div>
@@ -577,9 +595,10 @@
             
             <div class="pub-item">
                 <div class="pub-title">Imaging Nuclei by Smashing Them: A New Way to Unveil the Nuclear Shapes</div>
+                <div class="pub-authors">J. Jia et al. (incl. <strong>S. Bhatta</strong>)</div>
                 <div class="pub-meta"><strong>Nucl. Phys. News 35, 1 (2025)</strong></div>
                 <div class="pub-links">
-                    <a href="https://www.tandfonline.com/doi/full/10.1080/10619127.2025.2454214" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://www.tandfonline.com/doi/full/10.1080/10619127.2025.2454214" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.1080/10619127.2025.2454214">Loading...</span>
                 </div>
             </div>
@@ -588,54 +607,60 @@
 
             <div class="pub-item">
                 <div class="pub-title">Measurement of collective dynamics in small and large systems with the ATLAS detector</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta"><strong>PoS EPS-HEP2023, 202 (2024)</strong></div>
                 <div class="pub-links">
-                    <a href="https://pos.sissa.it/449/202/pdf" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://pos.sissa.it/449/202/pdf" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.22323/1.449.0202">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Measurement of p<sub>T</sub> Fluctuations in Xe+Xe and Pb+Pb Collisions with ATLAS</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta"><strong>ATLAS-CONF-2023-061</strong></div>
                 <div class="pub-links">
-                    <a href="https://cds.cern.ch/record/2873507/files/ATLAS-CONF-2023-061.pdf" target="_blank" class="link-btn">Link</a>
+                    <a href="https://cds.cern.ch/record/2873507/files/ATLAS-CONF-2023-061.pdf" target="_blank" rel="noopener" class="link-btn">Link</a>
                     <span class="citation-badge" data-query="recid:2693895">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Deciphering initial states of high energy heavy-ion collisions using spectators</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong></div>
                 <div class="pub-meta"><strong>Int. J. Mod. Phys. E 33, 2450015 (2024)</strong></div>
                 <div class="pub-links">
-                    <a href="https://www.worldscientific.com/doi/abs/10.1142/S021830132450015X" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://www.worldscientific.com/doi/abs/10.1142/S021830132450015X" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.1142/S021830132450015X">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Flow and transverse momentum correlation in Pb+Pb and Xe+Xe collisions with ATLAS: assessing the initial condition of the QGP</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta"><strong>Acta Phys. Polon. Supp. 15, 1-A90 (2022)</strong></div>
                 <div class="pub-links">
-                    <a href="https://www.actaphys.uj.edu.pl/fulltext?series=Sup&vol=16&aid=1-A90" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://www.actaphys.uj.edu.pl/fulltext?series=Sup&vol=16&aid=1-A90" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.5506/APhysPolBSupp.15.1-A90">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Measurements of collective behavior in pp, Xe+Xe, and Pb+Pb collisions with the ATLAS detector</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta"><strong>PoS EPS-HEP2021, 305 (2022)</strong></div>
                 <div class="pub-links">
-                    <a href="https://pos.sissa.it/398/305" target="_blank" class="link-btn">Journal</a>
+                    <a href="https://pos.sissa.it/398/305" target="_blank" rel="noopener" class="link-btn">Journal</a>
                     <span class="citation-badge" data-query="doi:10.22323/1.398.0305">Loading...</span>
                 </div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Measurement of flow and transverse momentum correlations in Pb+Pb collisions at 5.02 TeV and Xe+Xe collisions at 5.44 TeV with the ATLAS detector</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta"><strong>ATLAS-CONF-2021-001</strong></div>
                 <div class="pub-links">
-                    <a href="https://cds.cern.ch/record/2747068" target="_blank" class="link-btn">Link</a>
+                    <a href="https://cds.cern.ch/record/2747068" target="_blank" rel="noopener" class="link-btn">Link</a>
                     <span class="citation-badge" data-query="recid:1831518">Loading...</span>
                 </div>
             </div>
@@ -644,26 +669,31 @@
             
             <div class="pub-item">
                 <div class="pub-title">Transverse dynamics of mean transverse momentum fluctuations in Pb+Pb collisions at 5.02 TeV with the ATLAS detector</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta">ATLAS Collaboration</div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Measurement of the mean transverse momentum fluctuations of charged particles in Xe+Xe collisions at 5.44 TeV and Pb+Pb collisions at 5.02 TeV</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta">ATLAS Collaboration</div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Measurement of flow and transverse momentum correlations in Xe+Xe collisions at 5.44 TeV and Pb+Pb collisions at 5.02 TeV</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the ATLAS Collaboration</div>
                 <div class="pub-meta">ATLAS Collaboration</div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Imaging Shapes of Atomic Nuclei in High-energy Nuclear Collisions</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the STAR Collaboration</div>
                 <div class="pub-meta">STAR Collaboration</div>
             </div>
 
             <div class="pub-item">
                 <div class="pub-title">Beam-energy dependence of transverse momentum-flow correlations in Au+Au collisions</div>
+                <div class="pub-authors"><strong>S. Bhatta</strong> for the STAR Collaboration</div>
                 <div class="pub-meta">STAR Collaboration</div>
             </div>
 
@@ -728,42 +758,42 @@
             <div class="pub-item">
                 <div class="pub-title">World’s most powerful particle collider reveals nature of quark soup’s radial expansion</div>
                 <div class="pub-meta">Interesting Engineering, January 24 2026</div>
-                <div class="pub-links"><a href="https://interestingengineering.com/science/particle-collider-quark-soups-radial-expansion-lhc" target="_blank" class="link-btn">Read Article</a></div>
+                <div class="pub-links"><a href="https://interestingengineering.com/science/particle-collider-quark-soups-radial-expansion-lhc" target="_blank" rel="noopener" class="link-btn">Read Article</a></div>
             </div>
             <div class="pub-item">
                 <div class="pub-title">ATLAS Confirms Collective Nature of Quark Soup’s Radial Expansion</div>
                 <div class="pub-meta">sciencesprings, January 23 2026</div>
-                <div class="pub-links"><a href="https://sciencesprings.wordpress.com/2026/01/23/from-the-does-brookhaven-national-laboratory-atlas-confirms-collective-nature-of-quark-soups-radial-expansion/" target="_blank" class="link-btn">Read Article</a></div>
+                <div class="pub-links"><a href="https://sciencesprings.wordpress.com/2026/01/23/from-the-does-brookhaven-national-laboratory-atlas-confirms-collective-nature-of-quark-soups-radial-expansion/" target="_blank" rel="noopener" class="link-btn">Read Article</a></div>
             </div>
             <div class="pub-item">
                 <div class="pub-title">ATLAS Confirms Collective Nature of Quark Soup’s Radial Expansion</div>
                 <div class="pub-meta">newswise, January 22 2026</div>
-                <div class="pub-links"><a href="https://www.newswise.com/doescience/atlas-confirms-collective-nature-of-quark-soup-s-radial-expansion" target="_blank" class="link-btn">Read Article</a></div>
+                <div class="pub-links"><a href="https://www.newswise.com/doescience/atlas-confirms-collective-nature-of-quark-soup-s-radial-expansion" target="_blank" rel="noopener" class="link-btn">Read Article</a></div>
             </div>
              <div class="pub-item">
                 <div class="pub-title">Research Confirms Collective Nature of Quark Soup’s Radial Expansion</div>
                 <div class="pub-meta">Stony Brook University News, January 22 2026</div>
-                <div class="pub-links"><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://news.stonybrook.edu/university/research-confirms-collective-nature-of-quark-soups-radial-expansion/&ved=2ahUKEwjUvfaT0aGSAxXY6AIHHX92MNwQFnoECBwQAQ&usg=AOvVaw3ZhzuCnTuBNMGoY_n_x3Kr" target="_blank" class="link-btn">Read Article</a></div>
+                <div class="pub-links"><a href="https://news.stonybrook.edu/university/research-confirms-collective-nature-of-quark-soups-radial-expansion/" target="_blank" rel="noopener" class="link-btn">Read Article</a></div>
             </div>
             <div class="pub-item">
                 <div class="pub-title">ATLAS Confirms Collective Nature of Quark Soup's Radial Expansion</div>
                 <div class="pub-meta">BNL Newsroom, January 22 2026</div>
-                <div class="pub-links"><a href="https://www.bnl.gov/newsroom/news.php?a=122793" target="_blank" class="link-btn">Read Article</a></div>
+                <div class="pub-links"><a href="https://www.bnl.gov/newsroom/news.php?a=122793" target="_blank" rel="noopener" class="link-btn">Read Article</a></div>
             </div>
             <div class="pub-item">
                 <div class="pub-title">A new probe of Radial Flow</div>
                 <div class="pub-meta">CERN Courier, July 8 2025</div>
-                <div class="pub-links"><a href="https://cerncourier.com/a/a-new-probe-of-radial-flow/" target="_blank" class="link-btn">Read Article</a></div>
+                <div class="pub-links"><a href="https://cerncourier.com/a/a-new-probe-of-radial-flow/" target="_blank" rel="noopener" class="link-btn">Read Article</a></div>
             </div>
              <div class="pub-item">
                 <div class="pub-title">Scientists observe collective behavior of femtoscopic droplets at CERN</div>
                 <div class="pub-meta">Phys. Org, May 16 2025</div>
-                <div class="pub-links"><a href="https://phys.org/news/2025-05-scientists-behavior-femtoscopic-droplets-cern.html" target="_blank" class="link-btn">Read Article</a></div>
+                <div class="pub-links"><a href="https://phys.org/news/2025-05-scientists-behavior-femtoscopic-droplets-cern.html" target="_blank" rel="noopener" class="link-btn">Read Article</a></div>
             </div>
             <div class="pub-item">
                 <div class="pub-title">Stony Brook physicists unveil groundbreaking method for nuclear imaging</div>
                 <div class="pub-meta">The Statesman, Nov 22 2024</div>
-                <div class="pub-links"><a href="https://sbstatesman.com/130994/news/stony-brook-physicists-unveil-groundbreaking-method-for-nuclear-imaging/" target="_blank" class="link-btn">Read Article</a></div>
+                <div class="pub-links"><a href="https://sbstatesman.com/130994/news/stony-brook-physicists-unveil-groundbreaking-method-for-nuclear-imaging/" target="_blank" rel="noopener" class="link-btn">Read Article</a></div>
             </div>
         </section>
 
@@ -853,52 +883,138 @@
 </div>
 
 <script>
-    // --- 1. AUTOMATIC CITATION FETCHER (INSPIRE-HEP API) ---
-    async function fetchCitations() {
-        const badges = document.querySelectorAll('.citation-badge');
-        
-        badges.forEach(async (badge) => {
-            const query = badge.getAttribute('data-query');
-            if (!query) return;
+    // --- 1. CITATION BADGES -------------------------------------------------
+    //
+    // Primary source: a static citations.json committed next to this file and
+    // refreshed by build_citations.py. Reading it is SAME-ORIGIN, so there is
+    // no CORS check, no rate limit, and it loads instantly.
+    //
+    // Fallback: if citations.json is missing (not generated yet) or lacks a
+    // given paper, we try the INSPIRE API directly, best-effort. That call is
+    // cross-origin and can be blocked (CORS) or rate-limited -- the "Load
+    // failed" console errors come from exactly this -- so here its failures are
+    // swallowed QUIETLY: a badge that can't be resolved is simply hidden, never
+    // logged as an error. Successful live results are cached in localStorage.
 
-            // Determine if query is a specific Record ID (recid) or a search query (arxiv, doi)
-            let apiUrl = '';
-            
-            if (query.startsWith('recid:')) {
-                // Fetch by ID (e.g., 1845762)
-                const id = query.split(':')[1];
-                apiUrl = `https://inspirehep.net/api/literature/${id}`;
-            } else {
-                // Fetch by search (e.g., arxiv:..., doi:...)
-                apiUrl = `https://inspirehep.net/api/literature?q=${query}&format=json`;
-            }
+    const INSPIRE_API = 'https://inspirehep.net/api/literature';
+    const CITATIONS_JSON_URL = 'citations.json';
+    const CITATION_CACHE_KEY = 'inspireCitations.v1';
+    const CITATION_TTL_MS = 12 * 60 * 60 * 1000;   // live-fetch cache lifetime
+    const REQUEST_GAP_MS = 200;                    // spacing between API calls
+    const MAX_RETRIES = 3;
 
+    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    // Turn a data-query value into a clean INSPIRE query token (used only for
+    // the live fallback). Accepts arxiv:/doi:/recid: and repairs loose values
+    // such as a full "https://doi.org/..." URL.
+    function normalizeQuery(raw) {
+        const s = (raw || '').trim();
+        if (!s) return '';
+        const low = s.toLowerCase();
+        if (low.startsWith('recid:') || low.startsWith('arxiv:') || low.startsWith('doi:')) {
+            return s;
+        }
+        if (low.includes('doi.org/')) return 'doi:' + s.split(/doi\.org\//i)[1];
+        if (s.startsWith('10.')) return 'doi:' + s;                       // bare DOI
+        if (/^\d+$/.test(s)) return 'recid:' + s;                         // bare recid
+        if (/^\d{4}\.\d{4,5}(v\d+)?$/.test(s)) return 'arxiv:' + s;       // new arXiv id
+        if (/^[a-z-]+(\.[A-Z]{2})?\/\d{7}$/.test(s)) return 'arxiv:' + s; // old arXiv id
+        return s;                                                          // free-text fallback
+    }
+
+    // Load the precomputed counts (keyed by the raw data-query value).
+    async function loadPrecomputed() {
+        try {
+            const resp = await fetch(CITATIONS_JSON_URL, { cache: 'no-cache' });
+            if (!resp.ok) return null;
+            const data = await resp.json();
+            return (data && data.counts) ? data.counts : null;
+        } catch (e) {
+            return null;   // file not present (e.g. not generated yet)
+        }
+    }
+
+    function readCache() {
+        try { return JSON.parse(localStorage.getItem(CITATION_CACHE_KEY)) || {}; }
+        catch (e) { return {}; }
+    }
+    function writeCache(cache) {
+        try { localStorage.setItem(CITATION_CACHE_KEY, JSON.stringify(cache)); }
+        catch (e) { /* private mode or quota exceeded: skip caching */ }
+    }
+
+    // Best-effort live fetch of one query (only used when citations.json can't
+    // answer). Retries on rate limits / transient errors. Returns a number, or
+    // null if not found. May THROW on CORS/network failure -- callers swallow it.
+    async function fetchCitationCount(query) {
+        const url = INSPIRE_API + '?q=' + encodeURIComponent(query) +
+                    '&fields=citation_count&size=1';
+        let delay = 1500;
+        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+            let resp;
             try {
-                const response = await fetch(apiUrl);
-                if (!response.ok) throw new Error('Failed');
-                
-                const data = await response.json();
-                let count = 0;
-
-                // Handle API response differences
-                if (query.startsWith('recid:')) {
-                    count = data.metadata.citation_count;
-                } else {
-                    // Search returns an array of hits
-                    if (data.hits && data.hits.hits.length > 0) {
-                        count = data.hits.hits[0].metadata.citation_count;
-                    }
-                }
-
-                // Update UI
-                updateBadge(badge, count);
-
-            } catch (error) {
-                console.error("Error fetching " + query, error);
-                badge.textContent = "N/A";
-                badge.style.display = 'none';
+                resp = await fetch(url);
+            } catch (networkError) {
+                if (attempt === MAX_RETRIES) throw networkError;
+                await sleep(delay); delay *= 2; continue;
             }
-        });
+            if (resp.status === 429 || resp.status >= 500) {
+                if (attempt === MAX_RETRIES) throw new Error('HTTP ' + resp.status);
+                const retryAfter = parseFloat(resp.headers.get('Retry-After'));
+                await sleep(Number.isFinite(retryAfter) ? retryAfter * 1000 : delay);
+                delay *= 2; continue;
+            }
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            const data = await resp.json();
+            const hits = (data.hits && data.hits.hits) || [];
+            if (!hits.length) return null;
+            const count = hits[0].metadata && hits[0].metadata.citation_count;
+            return (typeof count === 'number') ? count : null;
+        }
+        return null;
+    }
+
+    async function fetchCitations() {
+        const badges = Array.from(document.querySelectorAll('.citation-badge'));
+        const precomputed = await loadPrecomputed();   // null if unavailable
+        const cache = readCache();
+        const now = Date.now();
+        const pending = [];
+
+        // Pass 1: prefer the precomputed file, then a fresh localStorage cache.
+        for (const badge of badges) {
+            const raw = badge.getAttribute('data-query');
+            if (!raw) { badge.style.display = 'none'; continue; }
+
+            if (precomputed && typeof precomputed[raw] === 'number') {
+                updateBadge(badge, precomputed[raw]);
+                continue;
+            }
+            const query = normalizeQuery(raw);
+            const cached = cache[query];
+            if (cached && (now - cached.ts) < CITATION_TTL_MS &&
+                typeof cached.count === 'number') {
+                updateBadge(badge, cached.count);
+                continue;
+            }
+            pending.push({ badge, query });
+        }
+
+        // Pass 2: best-effort live fetch for anything still missing. Failures
+        // here (CORS, rate limit, offline) are expected and stay silent.
+        for (const { badge, query } of pending) {
+            try {
+                const count = await fetchCitationCount(query);
+                if (count === null) { badge.style.display = 'none'; continue; }
+                cache[query] = { count: count, ts: Date.now() };
+                writeCache(cache);
+                updateBadge(badge, count);
+            } catch (error) {
+                badge.style.display = 'none';   // stay quiet; page still renders
+            }
+            await sleep(REQUEST_GAP_MS);
+        }
     }
 
     function updateBadge(badge, count) {
@@ -954,6 +1070,16 @@
 
     // --- 3. INITIALIZATION ---
     document.addEventListener("DOMContentLoaded", () => {
+        // Keyboard access for the div-based nav cards (Enter / Space).
+        document.querySelectorAll('.top-nav-card').forEach((card) => {
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+        });
+
         // Navigation Hash
         const hash = window.location.hash.substring(1);
         if (hash) showSection(hash, false);
