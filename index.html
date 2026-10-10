@@ -359,7 +359,7 @@
         /* --- About-page highlights --- */
         .highlight-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 14px;
             margin: 10px 0 25px 0;
         }
@@ -375,7 +375,9 @@
             line-height: 1.45;
         }
 
-        .highlight-card strong { display: block; color: var(--primary-color); margin-bottom: 4px; }
+        .highlight-card strong { display: block; color: var(--primary-color); margin-bottom: 6px; line-height: 1.35; }
+        .highlight-card .hl-meta { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.4px; color: #e8710a; margin-bottom: 4px; }
+        .highlight-card .hl-links { display: block; margin-top: 8px; font-size: 0.88rem; }
 
         .interest-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
         .interest-tags span {
@@ -603,26 +605,31 @@
                 <h3>Research Highlights</h3>
                 <div class="highlight-grid">
                     <div class="highlight-card">
-                        <strong>Imaging nuclear shapes, <em>Nature</em> (2024)</strong>
-                        Primary author of the STAR result that uses high-energy collisions to image the shapes of atomic nuclei.
-                        <a href="research/imaging-nuclear-shapes.html">Animated explainer</a>
+                        <span class="hl-meta">2023 · ATLAS · <em>Phys. Rev. C</em> 107, 054910</span>
+                        <strong>First experimental evidence that heavy-ion measurements are sensitive to nuclear triaxiality</strong>
+                        Correlating elliptic flow with mean momentum in Xe+Xe and Pb+Pb collisions shows that the ¹²⁹Xe nucleus is triaxial.
+                        <span class="hl-links"><a href="research/flow-momentum-correlations.html">Animated explainer</a> · <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" rel="noopener">Paper</a></span>
                     </div>
                     <div class="highlight-card">
-                        <strong>Collective radial flow, <em>PRL</em> (2026)</strong>
-                        Primary author of the ATLAS evidence for the collective nature of radial flow, chosen as an Editors' Suggestion.
-                        <a href="research/radial-flow-collectivity.html">Animated explainer</a>
+                        <span class="hl-meta">Nov 2024 · STAR · <em>Nature</em> 635, 67–72</span>
+                        <strong>First imaging of the shapes of atomic nuclei in high-energy collisions</strong>
+                        U+U and Au+Au collisions take snapshots of nuclear shapes, measuring uranium's deformation and triaxiality.
+                        <span class="hl-links"><a href="research/imaging-nuclear-shapes.html">Animated explainer</a> · <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" rel="noopener">Paper</a></span>
                     </div>
                     <div class="highlight-card">
-                        <strong>In the media</strong>
-                        Covered by CERN Courier, Phys.org, BNL Newsroom, Interesting Engineering and others.
-                        <a href="#news">See coverage</a>
+                        <span class="hl-meta">Dec 2024 · ATLAS · <em>Phys. Rev. Lett.</em> 133, 252301</span>
+                        <strong>First measurement disentangling geometrical and intrinsic fluctuations in the initial state</strong>
+                        Ultra-central collisions switch off size fluctuations, separating the two sources and constraining the QGP speed of sound.
+                        <span class="hl-links"><a href="research/momentum-fluctuations.html">Animated explainer</a> · <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener">Paper</a></span>
                     </div>
                     <div class="highlight-card">
-                        <strong>Invited talks</strong>
-                        Including a CERN-TH seminar (2025), BNL Nuclear Physics seminars and a joint ATLAS+ALICE+CMS talk at LHCP 2024.
-                        <a href="#talks">All talks</a>
+                        <span class="hl-meta">2026 · ATLAS · <em>Phys. Rev. Lett.</em> 136, 032301 · Editors' Suggestion</span>
+                        <strong>First experimental study showing radial flow is collective</strong>
+                        The momentum dependence of radial-flow fluctuations, v₀(pT), passes all three tests of collectivity and is sensitive to bulk viscosity.
+                        <span class="hl-links"><a href="research/radial-flow-collectivity.html">Animated explainer</a> · <a href="https://journals.aps.org/prl/abstract/10.1103/ldcn-r2lq" target="_blank" rel="noopener">Paper</a></span>
                     </div>
                 </div>
+                <p style="font-size:0.95rem;">Covered by CERN Courier, Phys.org, BNL Newsroom and others (<a href="#news">see coverage</a>) and presented in invited talks including a CERN-TH seminar (<a href="#talks">all talks</a>).</p>
 
                 <h3>Research Interests</h3>
                 <div class="interest-tags">
