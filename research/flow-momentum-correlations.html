@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow–Momentum Correlations and the Shape of Xenon, Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of the ATLAS measurement of correlations between elliptic flow and mean transverse momentum in Xe+Xe and Pb+Pb collisions (Phys. Rev. C 107, 054910, 2023), which found strong evidence that the 129Xe nucleus is triaxial. Analysis led by Somadutta Bhatta.">
+    <link rel="canonical" href="https://somabhatta.github.io/research/flow-momentum-correlations.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Is the xenon nucleus a cigar, a pancake, or neither? (ATLAS, PRC 2023)">
+    <meta property="og:description" content="Animated explainer of how flow–momentum correlations in heavy-ion collisions reveal the triaxial shape of 129Xe.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/flow-momentum-correlations.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/flow-momentum-correlations/fig_09.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions at the LHC with the ATLAS detector: a probe of the heavy-ion initial state and nuclear deformation",
+      "author": [{"@type": "Organization", "name": "ATLAS Collaboration"}],
+      "contributor": {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+      "isPartOf": {"@type": "Periodical", "name": "Physical Review C"},
+      "datePublished": "2023",
+      "sameAs": ["https://doi.org/10.1103/PhysRevC.107.054910", "https://arxiv.org/abs/2205.00039"],
+      "about": ["Nuclear deformation", "Triaxiality", "Anisotropic flow", "Heavy-ion collisions", "Xenon-129"],
+      "url": "https://somabhatta.github.io/research/flow-momentum-correlations.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="radial-flow-shape.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">ATLAS experiment · LHC · Xe+Xe at 5.44 TeV and Pb+Pb at 5.02 TeV</div>
+    <h1>Is the xenon nucleus shaped like a cigar, a pancake, or neither?</h1>
+    <p class="r-paper-ref"><em>Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions at the LHC with the ATLAS detector: a probe of the heavy-ion initial state and nuclear deformation</em><br>
+        ATLAS Collaboration, <strong>Phys. Rev. C 107, 054910 (2023)</strong></p>
+    <p class="r-role"><strong>My role:</strong> lead analyzer, author of the internal analysis note and of the paper.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" rel="noopener">Read the paper (PRC)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2205.00039" target="_blank" rel="noopener">arXiv:2205.00039</a>
+        <a class="r-btn ghost" href="https://indico.cern.ch/event/854124/contributions/4135395/attachments/2168366/3660382/IS21_ATLAS_VnpT_Poster_Somadutta.pdf" target="_blank" rel="noopener">My Initial Stages 2021 poster</a>
+        <a class="r-btn ghost" href="https://indico.cern.ch/event/1153707/contributions/4844803/attachments/2430789/4162922/multparticleDefATLAS_24Apr.pdf" target="_blank" rel="noopener">Talk: nuclear deformation with ATLAS</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>In every heavy-ion collision we measure two things: how elliptical the fireball's expansion is (v₂) and how hard it pushes outward (mean momentum, [pT]). How strongly these two go together depends on the shape of the colliding nuclei. Comparing xenon with nearly spherical lead, we found strong evidence that ¹²⁹Xe is <em>triaxial</em>: all three of its axes differ.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: how much a nucleus is deformed, but not how</h2>
+        <p>Most nuclei are not round. Their shape is described by two numbers: β, how strongly deformed the nucleus is, and γ, the <em>type</em> of deformation (cigar-like, pancake-like, or in between). Earlier LHC flow data had already shown that ¹²⁹Xe is strongly deformed (β ≈ 0.16–0.2). Its γ was unknown, and it is hard to get from low-energy nuclear spectroscopy for an odd-mass nucleus like ¹²⁹Xe.</p>
+        <figure class="anim-panel" data-anim="flow-momentum-correlations-shapes">
+            <figcaption><strong>What you're seeing (schematic):</strong> a deformed nucleus with fixed β while γ changes from 0° (cigar) through 30° (all axes different, "triaxial") to 60° (pancake). The meter shows the γ-dependent part of the correlation ρ₂ measured here: it lowers ρ₂ for a cigar, raises it for a pancake, and vanishes near 30°. That is why ρ₂ can tell the shapes apart.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 2. MEASURE -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we measure: shape and size, in the same collision</h2>
+        <p>The overlap of the two nuclei sets two properties of the fireball. Its <em>shape</em> drives elliptic flow, v₂. Its <em>size</em> drives the radial push: a more compact fireball gives particles a higher mean momentum, [pT]. We measure both in each event and compute their correlation coefficient, ρ₂ = ρ(v₂², [pT]), as a function of how head-on the collisions are (centrality). We repeat this for v₃ and v₄.</p>
+        <figure class="anim-panel" data-anim="flow-momentum-correlations-pearson">
+            <figcaption><strong>What you're seeing (schematic):</strong> each dot is one collision. If the cloud tilts up, ρ is positive. If it is flat, ρ is zero. If it tilts down, ρ is negative.</figcaption>
+        </figure>
+        <p>A deformed nucleus adds a negative contribution. When two cigar-shaped nuclei collide tip-on-tip, the fireball is round and compact. When they collide side-on-side, it is elongated and spread out. So large v₂ comes with small [pT].</p>
+        <figure class="anim-panel" data-anim="flow-momentum-correlations-orient">
+            <figcaption><strong>What you're seeing (cartoon):</strong> on the left, a tip-on-tip collision makes a small, round, hot fireball: little v₂, high [pT]. On the right, a side-on-side collision makes an elongated, larger one: strong v₂, lower [pT]. This pairing lowers ρ₂, most strongly in central collisions.</figcaption>
+        </figure>
+        <figure class="anim-panel" data-anim="ucc" data-params='{"nucleus":"Xe129","beta2":0.3,"gamma":0,"compare":true,"bmax":0.5}'>
+            <figcaption><strong>What you're seeing:</strong> a toy simulation (Glauber model) of head-on collisions. Each event adds a dot: compactness (a stand-in for [pT]) against squared eccentricity (a stand-in for v₂²). Grey: round nuclei. Orange: cigar-shaped nuclei, with the deformation exaggerated (β = 0.3, γ = 0°). The orange cloud reaches higher and tilts down, which gives a negative ρ. This is an illustration, not the paper's calculation.</figcaption>
+        </figure>
+        <p>To remove correlations that are not flow, such as jets and decays, we take the particles for v₂ and for [pT] from separate slices of the detector (the "three-subevent" method). We classify events by the energy in the far-forward calorimeters, which reduces the effect of centrality fluctuations.</p>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe: xenon's correlation is weaker, by just the right amount</h2>
+        <p>ρ₂ is positive in most collisions and drops sharply in the most head-on ones. At the same centrality, xenon's ρ₂ is lower than lead's everywhere.</p>
+        <figure class="paper-fig">
+            <img src="fig/flow-momentum-correlations/fig_02.png" alt="rho_2, rho_3 and rho_4 versus centrality and versus forward transverse energy in Pb+Pb and Xe+Xe collisions" loading="lazy" width="1600" height="976">
+            <figcaption><strong>Fig. 2 of the paper.</strong> Top row: ρ₂, ρ₃, ρ₄ versus centrality (0% = head-on) for Pb+Pb (blue) and Xe+Xe (red). Look at ρ₂ (top left): xenon sits below lead at every centrality, while ρ₃ is almost the same in both.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" rel="noopener">Phys. Rev. C 107, 054910 (2023)</a>, <a href="https://arxiv.org/abs/2205.00039" target="_blank" rel="noopener">arXiv:2205.00039</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>A model of the initial state (Trento) predicts how ρ₂ in central Xe+Xe collisions depends on γ. Model and data can differ in their dependence on momentum, so we also compare the Xe/Pb <em>ratio</em>, in which that dependence largely cancels. The ratio is about 0.7.</p>
+        <figure class="paper-fig">
+            <img src="fig/flow-momentum-correlations/fig_08.png" alt="rho_2 in the 0-20 percent most central Pb+Pb and Xe+Xe collisions compared with Trento model curves for several xenon triaxiality values" loading="lazy" width="1600" height="752">
+            <figcaption><strong>Fig. 8 of the paper.</strong> ρ₂ in the 20% most central collisions (red dots: Xe+Xe, open blue: Pb+Pb) for two momentum ranges. The lines are Trento with β = 0.2 and γ from 0° (green, lowest) to 60° (orange, highest). The curves fan out towards 0%, where γ matters most.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" rel="noopener">Phys. Rev. C 107, 054910 (2023)</a>, <a href="https://arxiv.org/abs/2205.00039" target="_blank" rel="noopener">arXiv:2205.00039</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <figure class="paper-fig narrow">
+            <img src="fig/flow-momentum-correlations/fig_09.png" alt="Ratio of rho_2 in Xe+Xe to Pb+Pb compared with Trento model for different triaxiality values" loading="lazy" width="1600" height="912">
+            <figcaption><strong>Fig. 9 of the paper.</strong> The ratio ρ₂(Xe+Xe)/ρ₂(Pb+Pb) is about 0.7 for both momentum ranges. In the 0–10% most central collisions, the data favour the black γ = 30° line over the cigar (γ = 0°) and pancake (γ = 60°) curves.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" rel="noopener">Phys. Rev. C 107, 054910 (2023)</a>, <a href="https://arxiv.org/abs/2205.00039" target="_blank" rel="noopener">arXiv:2205.00039</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude: ¹²⁹Xe is a triaxial ellipsoid</h2>
+        <p>The comparison favours γ ≈ 30°: ¹²⁹Xe is a highly deformed ellipsoid that is neither cigar-like nor pancake-like. This is strong evidence for triaxial deformation of ¹²⁹Xe from high-energy heavy-ion collisions. It shows that flow measurements in central collisions can constrain a nucleus's deformation, including its triaxiality.</p>
+        <p>Models reproduce the overall trends with centrality and between the two systems, but not every detail of the data.</p>
+        <figure class="anim-panel" data-anim="nucleus3d" data-params='{"nucleus":"Xe129","beta2":0.2,"gamma":30}'>
+            <figcaption><strong>What you're seeing:</strong> a model ¹²⁹Xe nucleus with β = 0.2 and γ = 30°, the shape favoured by our data, rotating. Red dots are protons and blue dots neutrons. All three axes have different lengths.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Precise numbers for β and γ:</strong> compare the Xe/Pb ratio with state-of-the-art hydrodynamic calculations.</li>
+            <li><strong>Rigid or soft?</strong> Telling a rigid triaxial shape from one that fluctuates in γ needs complementary observables. Nuclear shape fluctuations are a natural next target.</li>
+            <li><strong>Peripheral collisions and small systems:</strong> more precise ρ₂ there could reveal a possible momentum anisotropy already present at the start of the collision.</li>
+            <li><strong>Other nuclei:</strong> this method laid the groundwork for <a href="imaging-nuclear-shapes.html">imaging nuclear shapes with STAR</a> (Nature 2024).</li>
+        </ul>
+        <figure class="anim-panel" data-anim="collision" data-params='{"nucleus":"U238","b":2,"flowScale":0.3,"note":"next: other deformed nuclei"}'>
+            <figcaption><strong>What you're seeing:</strong> a collision of two strongly deformed uranium-238 nuclei with random orientations. Each new event has a different overlap shape. The same shape–size correlation was later used to image such nuclei.</figcaption>
+        </figure>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> ATLAS Collaboration, "Correlations between flow and transverse momentum in Xe+Xe and Pb+Pb collisions at the LHC with the ATLAS detector: a probe of the heavy-ion initial state and nuclear deformation", Phys. Rev. C 107, 054910 (2023), <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" rel="noopener">doi:10.1103/PhysRevC.107.054910</a>, <a href="https://arxiv.org/abs/2205.00039" target="_blank" rel="noopener">arXiv:2205.00039</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="momentum-fluctuations.html">← Previous: Disentangling sources of momentum fluctuations</a>
+        <a href="radial-flow-shape.html">Next: Global multiplicity vs. spectral-shape fluctuations in radial flow →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/flow-momentum-correlations.js"></script>
+</body>
+</html>

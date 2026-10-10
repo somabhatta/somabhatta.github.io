@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferential Emission and Spectator Dynamics Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of a new correlator linking spectator asymmetry (measured by zero-degree calorimeters) to the forward-backward asymmetry of produced particles (Phys. Rev. C 113, 024917, 2026), by Vipul Bairathi and Somadutta Bhatta.">
+    <link rel="canonical" href="https://somabhatta.github.io/research/preferential-emission-spectators.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Do particles remember which nucleus they came from? (PRC 2026)">
+    <meta property="og:description" content="Animated explainer of a method to measure preferential emission and spectator breakup in heavy-ion collisions.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/preferential-emission-spectators.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/preferential-emission-spectators/cRhoNspecNchFBEta.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Method to constrain preferential emission and spectator dynamics in heavy-ion collisions",
+      "author": [
+        {"@type": "Person", "name": "Vipul Bairathi"},
+        {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"}
+      ],
+      "isPartOf": {"@type": "Periodical", "name": "Physical Review C"},
+      "datePublished": "2026",
+      "sameAs": ["https://doi.org/10.1103/kzyy-2wtv", "https://arxiv.org/abs/2407.06977"],
+      "about": ["Preferential emission", "Spectator fragmentation", "Zero-degree calorimeter", "Pseudorapidity distribution", "Heavy-ion collisions"],
+      "url": "https://somabhatta.github.io/research/preferential-emission-spectators.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="isobar-energy-dependence.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">Phenomenology · RHIC · Au+Au collisions at 200 GeV (AMPT model)</div>
+    <h1>Do particles remember which nucleus they came from?</h1>
+    <p class="r-paper-ref"><em>Method to constrain preferential emission and spectator dynamics in heavy-ion collisions</em><br>
+        V. Bairathi and S. Bhatta, <strong>Phys. Rev. C 113, 024917 (2026)</strong></p>
+    <p class="r-role"><strong>My role:</strong> corresponding author.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener">Read the paper (PRC)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2407.06977" target="_blank" rel="noopener">arXiv:2407.06977</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>In a collision of two nuclei, each colliding nucleon sends more particles along its own direction of motion. If one nucleus contributes more nucleons, particle production tilts toward its side. We propose a way to measure this at colliders: correlate the imbalance of leftover "spectator" nucleons, counted by forward calorimeters, with the forward–backward imbalance of produced particles.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: the long axis of the collision is poorly constrained</h2>
+        <p>How particles spread along the beam direction (in <span class="r-term" title="pseudorapidity: a measure of the angle relative to the beam; η = 0 is perpendicular to it">pseudorapidity η</span>) is shaped by two effects. <strong>Preferential emission:</strong> each participating nucleon emits more particles along its own direction of motion. <strong>Spectator breakup:</strong> the nucleons that miss the collision form hot remnants that evaporate and fragment near the beam direction.</p>
+        <figure class="anim-panel" data-anim="preferential-emission-spectators-emission">
+            <figcaption><strong>What you're seeing (schematic):</strong> blue and purple show particles emitted by participants from the right- and left-moving nucleus; black is their sum. When one side contributes more participants, the total tilts toward that side, and the ratio to a symmetric event (bottom) becomes a slope that grows with |η|.</figcaption>
+        </figure>
+        <div class="r-keypoint"><strong>The open question:</strong> fixed-target data at the SPS used spectator counts to study this, but at RHIC and the LHC there was no direct, model-independent observable. Models of spectator breakup are also poorly tested.</div>
+    </section>
+
+    <!-- 2. MEASURE -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we compute: a spectator–particle correlation</h2>
+        <p>The spectators that fly on down the beam are counted by <span class="r-term" title="zero-degree calorimeters: detectors on the beam axis far downstream on each side">zero-degree calorimeters (ZDCs)</span> on each side. Fewer spectators on one side means more participants from that nucleus, so more particles should appear on that side.</p>
+        <figure class="anim-panel" data-anim="preferential-emission-spectators-sideview">
+            <figcaption><strong>What you're seeing (schematic):</strong> a Monte Carlo Au+Au event seen from the side. The nucleus that loses more nucleons to the collision leaves fewer spectators in its ZDC, and the produced particles lean toward its direction of motion. Each loop shows an event tilted the other way.</figcaption>
+        </figure>
+        <p>For every event we form two normalized imbalances: the spectator asymmetry from the two ZDCs, and the particle asymmetry between two narrow windows at +η and −η. Their Pearson correlation, ρ, is measured as a function of η. Normalizing makes detector efficiencies cancel, and a rescaled variance makes ρ independent of the window width.</p>
+        <figure class="anim-panel" data-anim="preferential-emission-spectators-correlator">
+            <figcaption><strong>What you're seeing (toy model):</strong> each dot is one event. With windows near η = 0 the two asymmetries are unrelated. As the windows move forward, the trend strengthens, which is the signature of preferential emission.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe: a clean, η-odd signal that is sensitive to spectator breakup</h2>
+        <p>We tested the method on Au+Au collisions at 200 GeV simulated with the AMPT transport model, after removing a known spurious forward–backward asymmetry in that model.</p>
+        <div class="fig-row">
+            <figure class="paper-fig">
+                <img src="fig/preferential-emission-spectators/cDistNspecFB.png" alt="Distribution of spectator asymmetry in 10-20% Au+Au collisions split into three regions" loading="lazy" width="1575" height="1275">
+                <figcaption><strong>Fig. 1(a).</strong> Events sorted by spectator imbalance: Region 1 has more forward participants, Region 3 more backward ones.
+                    <span class="fig-source">Figure: V. Bairathi, S. Bhatta, <a href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener">PRC 113, 024917 (2026)</a>, <a href="https://arxiv.org/abs/2407.06977" target="_blank" rel="noopener">arXiv:2407.06977</a>, CC BY 4.0.</span></figcaption>
+            </figure>
+            <figure class="paper-fig">
+                <img src="fig/preferential-emission-spectators/cRatioDistEtaFB.png" alt="Ratio of pseudorapidity distributions for asymmetric to symmetric events" loading="lazy" width="1575" height="1219">
+                <figcaption><strong>Fig. 1(c).</strong> Particle distributions relative to symmetric events. More forward participants (blue) means more particles at positive η, by several percent at large |η|.
+                    <span class="fig-source">Figure: V. Bairathi, S. Bhatta, <a href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener">PRC 113, 024917 (2026)</a>, <a href="https://arxiv.org/abs/2407.06977" target="_blank" rel="noopener">arXiv:2407.06977</a>, CC BY 4.0.</span></figcaption>
+            </figure>
+        </div>
+
+        <figure class="paper-fig narrow">
+            <img src="fig/preferential-emission-spectators/cRhoNspecNchFBEta.png" alt="Correlation coefficient rho versus eta, odd in eta, rising to about 0.6 at eta of 4" loading="lazy" width="1575" height="1219">
+            <figcaption><strong>Fig. 2.</strong> The correlator is odd in η: zero at η = 0, growing to about 0.6 at |η| ≈ 4. Particles at larger |η| keep a stronger memory of their parent nucleons.
+                <span class="fig-source">Figure: V. Bairathi, S. Bhatta, <a href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener">PRC 113, 024917 (2026)</a>, <a href="https://arxiv.org/abs/2407.06977" target="_blank" rel="noopener">arXiv:2407.06977</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <figure class="paper-fig narrow">
+            <img src="fig/preferential-emission-spectators/cCentRhoEta.png" alt="Variances, covariance and correlation coefficient versus eta for four centralities" loading="lazy" width="1317" height="2047">
+            <figcaption><strong>Fig. 4.</strong> The covariance (b) is nearly the same in all centralities, as expected if each source emits the same way. The centrality dependence of ρ (c) comes from the two variances (a): spectator-number fluctuations and the particle-production asymmetry.
+                <span class="fig-source">Figure: V. Bairathi, S. Bhatta, <a href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener">PRC 113, 024917 (2026)</a>, <a href="https://arxiv.org/abs/2407.06977" target="_blank" rel="noopener">arXiv:2407.06977</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <p>Real ZDCs only see free neutrons: protons and charged fragments are swept away by magnets. Breakup adds extra event-by-event scatter to the measured spectator count, which lowers ρ. We modelled this with a parameterization based on PHENIX measurements.</p>
+        <figure class="anim-panel" data-anim="preferential-emission-spectators-breakup">
+            <figcaption><strong>What you're seeing (schematic):</strong> without breakup (top) the ZDC counts every spectator neutron. In reality (bottom) the remnant fragments, some neutrons stay bound in charged pieces, and the free-neutron count fluctuates from event to event.</figcaption>
+        </figure>
+        <figure class="paper-fig narrow">
+            <img src="fig/preferential-emission-spectators/cRhoNspecNchEta.png" alt="Correlator for total spectators, neutron spectators and free-neutron spectators in four centralities" loading="lazy" width="1575" height="1506">
+            <figcaption><strong>Fig. 6.</strong> Using only spectator neutrons (blue) lowers ρ by about 20%. Including breakup (green, magenta for doubled fluctuations) suppresses it much more, and in 30–40% collisions it nearly vanishes.
+                <span class="fig-source">Figure: V. Bairathi, S. Bhatta, <a href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener">PRC 113, 024917 (2026)</a>, <a href="https://arxiv.org/abs/2407.06977" target="_blank" rel="noopener">arXiv:2407.06977</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude</h2>
+        <ul>
+            <li><strong>A direct probe of preferential emission:</strong> ρ is an η-differential, data-driven measure built only from quantities that collider experiments record.</li>
+            <li><strong>Robust:</strong> it is insensitive to detector efficiency and to the η window width.</li>
+            <li><strong>A handle on spectator breakup:</strong> if data show a smaller ρ than models without breakup, the difference constrains how strongly spectator remnants evaporate and fragment.</li>
+        </ul>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Measure it:</strong> a program at RHIC and the LHC using ZDCs and forward detectors.</li>
+            <li><strong>From SPS to colliders:</strong> test how longitudinal stopping changes with energy, from the "mixing" seen at the SPS toward more transparency.</li>
+            <li><strong>Broaden it:</strong> other energies, collision systems and identified hadrons, for an η-resolved picture of particle production.</li>
+        </ul>
+        <figure class="anim-panel" data-anim="preferential-emission-spectators-stopping">
+            <figcaption><strong>What you're seeing (schematic):</strong> three limiting pictures of where each nucleus's matter ends up. NA49 data at 17.3 GeV favoured mixing. The new correlator can test which picture holds at RHIC and LHC energies.</figcaption>
+        </figure>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> V. Bairathi and S. Bhatta, "Method to constrain preferential emission and spectator dynamics in heavy-ion collisions", Phys. Rev. C 113, 024917 (2026), <a href="https://doi.org/10.1103/kzyy-2wtv" target="_blank" rel="noopener">doi:10.1103/kzyy-2wtv</a>, <a href="https://arxiv.org/abs/2407.06977" target="_blank" rel="noopener">arXiv:2407.06977</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="radial-flow-shape.html">← Previous: Global multiplicity vs. spectral-shape fluctuations in radial flow</a>
+        <a href="isobar-energy-dependence.html">Next: Energy dependence of the initial condition in isobar collisions →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/preferential-emission-spectators.js"></script>
+</body>
+</html>

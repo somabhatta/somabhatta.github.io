@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isobar Collisions at RHIC and LHC Energies Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of how isobar ratios between Ru+Ru and Zr+Zr collisions depend on collision energy and rapidity (Bhatta, Zhang, Jia, Phys. Lett. B 858, 139034, 2024).">
+    <link rel="canonical" href="https://somabhatta.github.io/research/isobar-energy-dependence.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Do isobar collisions see nuclear shapes the same way at RHIC and the LHC? (PLB 2024)">
+    <meta property="og:description" content="Animated explainer of the energy and rapidity dependence of Ru+Ru / Zr+Zr isobar ratios in the AMPT model.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/isobar-energy-dependence.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/isobar-energy-dependence/fig_3_1_e3.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Energy dependence of heavy-ion initial condition in isobar collisions",
+      "author": [
+        {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+        {"@type": "Person", "name": "Chunjian Zhang"},
+        {"@type": "Person", "name": "Jiangyong Jia"}
+      ],
+      "isPartOf": {"@type": "Periodical", "name": "Physics Letters B"},
+      "datePublished": "2024",
+      "sameAs": ["https://doi.org/10.1016/j.physletb.2024.139034", "https://arxiv.org/abs/2301.01294"],
+      "about": ["Isobar collisions", "Nuclear structure", "Initial condition", "Harmonic flow", "AMPT"],
+      "url": "https://somabhatta.github.io/research/isobar-energy-dependence.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="higher-order-pt-fluctuations.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">Phenomenology · AMPT model · Ru+Ru and Zr+Zr at 0.2 and 5.02 TeV</div>
+    <h1>Do isobar collisions see nuclear shapes the same way at RHIC and at the LHC?</h1>
+    <p class="r-paper-ref"><em>Energy dependence of heavy-ion initial condition in isobar collisions</em><br>
+        S. Bhatta, C. Zhang, J. Jia, <strong>Phys. Lett. B 858, 139034 (2024)</strong></p>
+    <p class="r-role"><strong>My role:</strong> first author of this phenomenology study.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://doi.org/10.1016/j.physletb.2024.139034" target="_blank" rel="noopener">Read the paper (PLB)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2301.01294" target="_blank" rel="noopener">arXiv:2301.01294</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>Ruthenium-96 and zirconium-96 have the same number of nucleons but different shapes. Comparing their collisions through ratios cancels most of the poorly known plasma physics. Using the AMPT model at RHIC (0.2 TeV) and LHC (5.02 TeV) energies, we find the ratios are robust and nearly independent of rapidity, but respond more strongly to nuclear deformation at the LHC.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: does the "initial condition" change with energy?</h2>
+        <p>The initial condition, the shape and density of matter just after two nuclei collide, cannot be calculated from first principles. In model fits it is entangled with the plasma's own properties, so both must be determined together.</p>
+        <figure class="anim-panel" data-anim="isobar-energy-dependence-twins">
+            <figcaption><strong>What you're seeing (schematic):</strong> the two isobars, drawn with exaggerated shapes. ⁹⁶Ru is more elongated; ⁹⁶Zr is pear-shaped, slightly smaller and has a fuzzier surface. The numbers are the values used in our simulations.</figcaption>
+        </figure>
+        <p>Isobars offer a clean handle: if Ru+Ru and Zr+Zr collisions give different results, the difference must come from nuclear structure. But at high energy the initial condition is built from gluons carrying a small fraction <em>x</em> of the nucleon's momentum, whose distribution should change with collision energy and with rapidity (angle relative to the beam).</p>
+        <figure class="anim-panel" data-anim="isobar-energy-dependence-ratio">
+            <figcaption><strong>What you're seeing (schematic):</strong> flow v₂ is roughly the initial shape ε₂ times a response k of the plasma. In the ratio Ru/Zr, k cancels. If the shape had a single source, the ratio would stay the same even when k grows from RHIC to the LHC.</figcaption>
+        </figure>
+        <div class="r-keypoint"><strong>The open question:</strong> are isobar ratios the same at RHIC and LHC energies, and at different rapidities? Any change would reveal how the initial condition itself depends on energy.</div>
+    </section>
+
+    <!-- 2. METHOD -->
+    <section class="r-section" id="method">
+        <h2><span class="r-num">2</span>What we compute: ratios, one structure parameter at a time</h2>
+        <p>We simulated isobar collisions with the AMPT transport model at 0.2 and 5.02 TeV. Five nuclear configurations step from Ru to Zr by changing one parameter at a time (β₂, β₃, surface width a₀, radius R₀), so each effect can be isolated. We compute the multiplicity distribution and elliptic (v₂) and triangular (v₃) flow. To compare energies fairly, LHC multiplicities are scaled by 1/3.9 to match RHIC.</p>
+        <p>We also split the flow into a part aligned with the initial shape, the participant-plane flow v<sub>pp</sub>, and a remainder δ that is uncorrelated with it.</p>
+        <figure class="anim-panel" data-anim="isobar-energy-dependence-components">
+            <figcaption><strong>What you're seeing (schematic):</strong> each dot is one event's flow. The red arrow is the part driven by the overlap shape; the blue arrow is a random extra kick, for example from local hot spots. The usual two-particle flow v{2} contains both.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe</h2>
+
+        <h3>Multiplicity ratios do not depend on energy</h3>
+        <figure class="paper-fig narrow">
+            <img src="fig/isobar-energy-dependence/fig_1b.png" alt="Ratios of multiplicity distributions for successive nuclear structure changes at RHIC and LHC energies" loading="lazy" width="1600" height="1180">
+            <figcaption><strong>Fig. 2 of the paper.</strong> Ratios of the multiplicity distribution as structure differences are added step by step. RHIC (lines) and LHC (symbols) nearly coincide, so these ratios are a robust probe of structure.
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://doi.org/10.1016/j.physletb.2024.139034" target="_blank" rel="noopener">Phys. Lett. B 858, 139034 (2024)</a>, <a href="https://arxiv.org/abs/2301.01294" target="_blank" rel="noopener">arXiv:2301.01294</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <h3>A large part of flow ignores the initial shape</h3>
+        <figure class="paper-fig narrow">
+            <img src="fig/isobar-energy-dependence/fig_2_1.png" alt="v2 and v3 components in Ru+Ru collisions at RHIC and LHC energies" loading="lazy" width="1600" height="2553">
+            <figcaption><strong>Fig. 3 of the paper.</strong> Flow is larger at the LHC (lines) than at RHIC (symbols). The uncorrelated part δ (blue) is comparable in size to the shape-driven part v<sub>pp</sub> (red).
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://doi.org/10.1016/j.physletb.2024.139034" target="_blank" rel="noopener">Phys. Lett. B 858, 139034 (2024)</a>, <a href="https://arxiv.org/abs/2301.01294" target="_blank" rel="noopener">arXiv:2301.01294</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <h3>Only the shape-driven flow carries the structure signal, and more so at the LHC</h3>
+        <figure class="paper-fig narrow">
+            <img src="fig/isobar-energy-dependence/fig_3_1_e3.png" alt="Ru+Ru over Zr+Zr ratios of v2 and v3 components at RHIC and LHC energies" loading="lazy" width="1600" height="2313">
+            <figcaption><strong>Fig. 4 of the paper.</strong> Ru/Zr ratios of each flow component. The δ ratio (blue) stays near 1, while v<sub>pp</sub> (red) deviates most, so δ only dilutes the signal in v{2}. Toward central collisions (right), LHC lines deviate more from 1 than RHIC symbols, most clearly for v₃.
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://doi.org/10.1016/j.physletb.2024.139034" target="_blank" rel="noopener">Phys. Lett. B 858, 139034 (2024)</a>, <a href="https://arxiv.org/abs/2301.01294" target="_blank" rel="noopener">arXiv:2301.01294</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <h3>Ratios barely change with rapidity</h3>
+        <figure class="anim-panel" data-anim="isobar-energy-dependence-rapidity">
+            <figcaption><strong>What you're seeing:</strong> particles at mid-rapidity and in forward windows probe different gluon momentum fractions <em>x</em> in the colliding nuclei. We measured flow in four such windows at the LHC energy.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/isobar-energy-dependence/fig_4.png" alt="v2{2} and v3{2} in four pseudorapidity ranges at the LHC energy" loading="lazy" width="1600" height="731">
+            <img src="fig/isobar-energy-dependence/fig_4b.png" alt="Ru+Ru over Zr+Zr ratios of v2{2} and v3{2} in four pseudorapidity ranges" loading="lazy" width="1600" height="731">
+            <figcaption><strong>Fig. 9 of the paper.</strong> Top: flow drops by about 20–30% from |η|&lt;1 to 3.5&lt;|η|&lt;5. Bottom: the Ru/Zr ratios hardly change, with only a slight rise in the most forward window in mid-central and peripheral collisions.
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://doi.org/10.1016/j.physletb.2024.139034" target="_blank" rel="noopener">Phys. Lett. B 858, 139034 (2024)</a>, <a href="https://arxiv.org/abs/2301.01294" target="_blank" rel="noopener">arXiv:2301.01294</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude</h2>
+        <p>The initial shape has several independent sources: random fluctuations, the average almond shape, and the nuclear deformations β₂ and β₃. Each is converted into flow with its own response coefficient k. In AMPT these coefficients all grow with energy, but at rates that differ by about 20–30%, and the deformation responses grow faster than the fluctuation response. That is why the ratios deviate more from 1 at the LHC.</p>
+        <figure class="anim-panel" data-anim="isobar-energy-dependence-sources">
+            <figcaption><strong>What you're seeing (schematic):</strong> the share of v₂² from each source in central collisions. When the deformation responses k₂ and k₃ grow faster than k₀, the nuclear-shape share grows, and so does the Ru/Zr difference.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/isobar-energy-dependence/fig_7_ck1rat3.png" alt="LHC over RHIC ratios of flow response coefficients for v2 and v3" loading="lazy" width="1600" height="731">
+            <figcaption><strong>Fig. 8 of the paper.</strong> LHC/RHIC ratio of each response coefficient. They differ from one another; in central collisions k₂{β₃} and k₃{β₃} grow more than k<sub>n</sub>{pp}.
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://doi.org/10.1016/j.physletb.2024.139034" target="_blank" rel="noopener">Phys. Lett. B 858, 139034 (2024)</a>, <a href="https://arxiv.org/abs/2301.01294" target="_blank" rel="noopener">arXiv:2301.01294</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <ul>
+            <li><strong>Robust probes:</strong> isobar ratios are similar at both energies and nearly independent of rapidity.</li>
+            <li><strong>Stronger at the LHC:</strong> the response to deformation grows with energy, most visibly for β₃ in v₃.</li>
+            <li><strong>Structure lives in the geometry:</strong> the structure effect is carried entirely by v<sub>pp</sub>; the uncorrelated part δ does not see it.</li>
+            <li><strong>General lesson:</strong> a large part of vₙ is not tied to the eccentricity, and different eccentricity sources have different responses, which matters for interpreting flow at RHIC and the LHC.</li>
+        </ul>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Measure it:</strong> isobar ratios at the LHC, compared with RHIC, would test how the initial condition changes with energy.</li>
+            <li><strong>Better models:</strong> HIJING's initial condition in AMPT has too weak a rapidity dependence. Realistic nuclear parton distributions and gluon saturation are needed.</li>
+            <li><strong>Higher-order correlations:</strong> expected to show stronger energy dependence and better sensitivity.</li>
+            <li><strong>Small systems:</strong> in p/d/³He+Au, flow may be dominated by δ, so v<sub>pp</sub> should better reflect the geometry ordering.</li>
+            <li><strong>Other isobar pairs:</strong> the method is not limited to Ru and Zr.</li>
+        </ul>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> S. Bhatta, C. Zhang, J. Jia, "Energy dependence of heavy-ion initial condition in isobar collisions", Phys. Lett. B 858, 139034 (2024), <a href="https://doi.org/10.1016/j.physletb.2024.139034" target="_blank" rel="noopener">doi:10.1016/j.physletb.2024.139034</a>, <a href="https://arxiv.org/abs/2301.01294" target="_blank" rel="noopener">arXiv:2301.01294</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="preferential-emission-spectators.html">← Previous: Preferential emission and spectator dynamics</a>
+        <a href="higher-order-pt-fluctuations.html">Next: Higher-order transverse-momentum fluctuations →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/isobar-energy-dependence.js"></script>
+</body>
+</html>

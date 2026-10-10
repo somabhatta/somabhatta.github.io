@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Radial Flow Collective? ATLAS v₀(pT) Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of the ATLAS measurement of pT-differential radial flow v0(pT) in Pb+Pb collisions (PRL 136, 032301, 2026, Editors' Suggestion), led by Somadutta Bhatta.">
+    <link rel="canonical" href="https://somabhatta.github.io/research/radial-flow-collectivity.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Is the quark-gluon plasma's radial expansion collective? (ATLAS, PRL 2026)">
+    <meta property="og:description" content="Animated explainer of the first measurement of pT-differential radial flow fluctuations, v0(pT).">
+    <meta property="og:url" content="https://somabhatta.github.io/research/radial-flow-collectivity.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/radial-flow-collectivity/fig_04.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector",
+      "author": [{"@type": "Organization", "name": "ATLAS Collaboration"}],
+      "contributor": {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+      "isPartOf": {"@type": "Periodical", "name": "Physical Review Letters"},
+      "datePublished": "2026",
+      "sameAs": ["https://doi.org/10.1103/ldcn-r2lq", "https://arxiv.org/abs/2503.24125"],
+      "about": ["Radial flow", "Quark-gluon plasma", "Bulk viscosity", "Heavy-ion collisions"],
+      "url": "https://somabhatta.github.io/research/radial-flow-collectivity.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="imaging-nuclear-shapes.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">ATLAS experiment · LHC · Pb+Pb collisions at 5.02 TeV</div>
+    <h1>Is the quark-gluon plasma's radial explosion a collective motion?</h1>
+    <p class="r-paper-ref"><em>Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector</em><br>
+        ATLAS Collaboration, <strong>Phys. Rev. Lett. 136, 032301 (2026)</strong>, Editors' Suggestion</p>
+    <p class="r-role"><strong>My role:</strong> lead analyzer, author of the internal analysis note and of the paper.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://journals.aps.org/prl/abstract/10.1103/ldcn-r2lq" target="_blank" rel="noopener">Read the paper (PRL)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2503.24125" target="_blank" rel="noopener">arXiv:2503.24125</a>
+        <a class="r-btn ghost" href="https://indico.cern.ch/event/1334113/contributions/6394983/attachments/3047380/5385356/v0pt_QM25_Som_ATLAS.pdf" target="_blank" rel="noopener">My Quark Matter 2025 talk</a>
+        <a class="r-btn ghost" href="https://cerncourier.com/a/a-new-probe-of-radial-flow/" target="_blank" rel="noopener">CERN Courier story</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>Lead-lead collisions at the LHC create a tiny droplet of quark-gluon plasma that explodes outward. That this radial explosion is a collective motion of the whole fluid was assumed but never tested. We made the first measurement of its event-by-event fluctuations at each particle momentum, v₀(pT). It passes all three tests of collectivity and is sensitive to the plasma's bulk viscosity.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: one kind of flow had never been tested</h2>
+        <p>Pressure in the plasma droplet leaves two fingerprints on the emitted particles: <strong>anisotropic flow (vₙ)</strong>, set by the droplet's shape, and <strong>radial flow (v₀)</strong>, set by its size.</p>
+        <figure class="anim-panel" data-anim="twoflows">
+            <figcaption><strong>What you're seeing:</strong> left, a changing shape makes particles fly out faster along the short axis (anisotropic flow). Right, a changing size makes all particles faster or slower together (radial flow). Only the first had been proven collective.</figcaption>
+        </figure>
+        <div class="r-keypoint"><strong>Open question:</strong> is the radial push shared by the whole fluid? Earlier measurements used one number per event, the average momentum, which cannot tell.</div>
+    </section>
+
+    <!-- 2. MEASURE -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we measure: how the spectrum tilts, momentum by momentum</h2>
+        <p>A stronger radial push flattens an event's momentum spectrum: fewer slow particles, more fast ones. A weaker push steepens it. The spectrum pivots near the average momentum.</p>
+        <figure class="anim-panel" data-anim="spectrum" data-params='{"mode":"shape"}'>
+            <figcaption><strong>What you're seeing:</strong> one event's spectrum (solid) against the average (dashed) as the push swings stronger (red) and weaker (blue). The bottom panel shows the relative change at each momentum. Its pattern is <strong>v₀(pT)</strong>.</figcaption>
+        </figure>
+        <p>We correlate the spectrum in one half of the ATLAS detector with the average momentum [pT] in the other half. Separating the halves suppresses short-range "non-flow" correlations from jets and decays.</p>
+        <figure class="anim-panel" data-anim="subevents" data-params='{"gap":1,"leftLabel":"a: spectrum shape n(pT)","rightLabel":"b: average momentum [pT]","corrLabel":"covariance ⟨δn(pT) δ[pT]⟩"}'>
+            <figcaption><strong>What you're seeing:</strong> the tracker is split into two halves with a gap in pseudorapidity η. Spectrum shape in one half is correlated with [pT] in the other. Gaps from 0 to 3 were tested.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe: three hallmarks of collectivity</h2>
+        <p>Three properties establish that anisotropic flow is collective. We tested all three for radial flow.</p>
+
+        <figure class="paper-fig narrow">
+            <img src="fig/radial-flow-collectivity/fig_01.png" alt="Schematic of how radial flow fluctuations tilt the event spectrum around the mean transverse momentum" loading="lazy" width="1600" height="1007">
+            <figcaption><strong>Fig. 1:</strong> stronger-flow events (blue) are flatter than average (black), weaker ones (red) steeper. The correlation is negative below ⟨[pT]⟩ and positive above.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/ldcn-r2lq" target="_blank" rel="noopener">PRL 136, 032301 (2026)</a>, <a href="https://arxiv.org/abs/2503.24125" target="_blank" rel="noopener">arXiv:2503.24125</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <h3>Hallmark 1 · It factorizes</h3>
+        <p>With three different reference ranges for [pT], the raw correlations differ, but v₀(pT) is the same below about 3 GeV. The two-particle correlation is a product of single-particle responses. v₀(pT) crosses zero near 1 GeV (≈ ⟨[pT]⟩) and satisfies the predicted sum rule within 4%.</p>
+        <figure class="paper-fig">
+            <img src="fig/radial-flow-collectivity/fig_02.png" alt="ATLAS v0 versus centrality and v0(pT) for three reference pT ranges" loading="lazy" width="1600" height="1798">
+            <figcaption><strong>Fig. 2:</strong> the raw covariance (c) depends on the reference range, while v₀(pT) (d) does not below about 3 GeV. HIJING, a model without flow (lines), falls well below the data.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/ldcn-r2lq" target="_blank" rel="noopener">PRL 136, 032301 (2026)</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <h3>Hallmark 2 · It is long-range</h3>
+        <p>Widening the gap between the halves from 0 to 3 barely changes v₀(pT). The effect spans the whole event.</p>
+        <figure class="paper-fig">
+            <img src="fig/radial-flow-collectivity/fig_03.png" alt="v0(pT) for different pseudorapidity gaps in central and peripheral collisions" loading="lazy" width="1600" height="692">
+            <figcaption><strong>Fig. 3:</strong> v₀(pT) for η gaps 0–3 in central (a) and peripheral (b) collisions. The small spread above 3 GeV in peripheral events is consistent with residual jet correlations.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/ldcn-r2lq" target="_blank" rel="noopener">PRL 136, 032301 (2026)</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <h3>Hallmark 3 · Its shape is universal</h3>
+        <figure class="anim-panel" data-anim="scaling" data-params='{"n":6,"labels":["0–5%","10–20%","20–30%","30–40%","40–50%","60–70%"]}'>
+            <figcaption><strong>What you're seeing (schematic):</strong> v₀(pT) is larger in peripheral collisions because their size fluctuates more. Dividing by the integrated v₀ removes this, leaving the fluid's response, the same for all centralities.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/radial-flow-collectivity/fig_04.png" alt="v0(pT) and v0(pT)/v0 for eight centrality ranges showing universal scaling" loading="lazy" width="1600" height="1022">
+            <figcaption><strong>Fig. 4:</strong> v₀(pT) for eight centralities (a) collapses after dividing by v₀ (b) below about 2.5 GeV. The fall above about 4 GeV may reflect the onset of jet quenching.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/ldcn-r2lq" target="_blank" rel="noopener">PRL 136, 032301 (2026)</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude: radial flow is collective, and it measures bulk viscosity</h2>
+        <p><strong>Radial flow is collective:</strong> it factorizes, is long-range and has a universal shape. ALICE later confirmed the result.</p>
+        <p>v₀(pT) is especially sensitive to <em>bulk viscosity</em>, the plasma's resistance to uniform expansion and one of its least-constrained properties.</p>
+        <figure class="anim-panel" data-anim="viscosity">
+            <figcaption><strong>What you're seeing (cartoon):</strong> with bulk viscosity (right), the droplet resists uniform expansion and pushes outward less hard. v₀(pT) is sensitive to this difference.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/radial-flow-collectivity/fig_05.png" alt="v0(pT)/v0 in central collisions compared with hydrodynamic models with and without bulk viscosity" loading="lazy" width="1600" height="734">
+            <figcaption><strong>Fig. 5:</strong> data (red) vs. hydrodynamics. Ideal and shear-only fluids undershoot above 2 GeV. Adding bulk viscosity (grey) describes the rise much better.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/ldcn-r2lq" target="_blank" rel="noopener">PRL 136, 032301 (2026)</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Small systems:</strong> O+O, Ne+Ne, p+Pb and pp.</li>
+            <li><strong>Longitudinal structure:</strong> radial flow vs. rapidity, v₀(η).</li>
+            <li><strong>Jet quenching:</strong> v₀(pT) at high pT as a probe of energy-loss fluctuations.</li>
+            <li><strong>Rare probes:</strong> identified hadrons, heavy flavour and quarkonia.</li>
+            <li><strong>Bulk viscosity:</strong> tuned model fits including v₀(pT).</li>
+        </ul>
+        <figure class="anim-panel" data-anim="collision" data-params='{"nucleus":"O16","b":1.5,"flowScale":0.3,"note":"next: small systems"}'>
+            <figcaption><strong>What you're seeing:</strong> an oxygen-oxygen collision. Only a few dozen nucleons take part, so the droplet is tiny. v₀(pT) can test whether its radial push is still collective.</figcaption>
+        </figure>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> ATLAS Collaboration, "Evidence for the collective nature of radial flow in Pb+Pb collisions with the ATLAS detector", Phys. Rev. Lett. 136, 032301 (2026), <a href="https://doi.org/10.1103/ldcn-r2lq" target="_blank" rel="noopener">doi:10.1103/ldcn-r2lq</a>, <a href="https://arxiv.org/abs/2503.24125" target="_blank" rel="noopener">arXiv:2503.24125</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="spectators-initial-state.html">← Previous: Using spectators to access initial states</a>
+        <a href="../index.html#research">All research summaries</a>
+        <a href="imaging-nuclear-shapes.html">Next: Imaging the shapes of atomic nuclei →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+</body>
+</html>

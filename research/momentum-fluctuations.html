@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disentangling Momentum Fluctuations: ATLAS Xe+Xe and Pb+Pb Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of the ATLAS measurement separating geometrical and intrinsic sources of event-by-event mean transverse momentum fluctuations in Xe+Xe and Pb+Pb collisions (PRL 133, 252301, 2024), led by Somadutta Bhatta.">
+    <link rel="canonical" href="https://somabhatta.github.io/research/momentum-fluctuations.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Separating two sources of fluctuations in the quark-gluon plasma (ATLAS, PRL 2024)">
+    <meta property="og:description" content="Animated explainer: how ultra-central collisions switch off size fluctuations and reveal the intrinsic ones, linked to the speed of sound of the QGP.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/momentum-fluctuations.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/momentum-fluctuations/fig_03.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions with the ATLAS detector",
+      "author": [{"@type": "Organization", "name": "ATLAS Collaboration"}],
+      "contributor": {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+      "isPartOf": {"@type": "Periodical", "name": "Physical Review Letters"},
+      "datePublished": "2024",
+      "sameAs": ["https://doi.org/10.1103/PhysRevLett.133.252301", "https://arxiv.org/abs/2407.06413"],
+      "about": ["Transverse momentum fluctuations", "Ultra-central collisions", "Initial state", "Speed of sound", "Quark-gluon plasma"],
+      "url": "https://somabhatta.github.io/research/momentum-fluctuations.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="flow-momentum-correlations.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">ATLAS experiment · LHC · Pb+Pb and Xe+Xe collisions</div>
+    <h1>Switching off one source of fluctuations to see the other</h1>
+    <p class="r-paper-ref"><em>Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions with the ATLAS detector</em><br>
+        ATLAS Collaboration, <strong>Phys. Rev. Lett. 133, 252301 (2024)</strong></p>
+    <p class="r-role"><strong>My role:</strong> lead analyzer, author of the internal analysis note and of the paper.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener">Read the paper (PRL)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2407.06413" target="_blank" rel="noopener">arXiv:2407.06413</a>
+        <a class="r-btn ghost" href="https://indico.cern.ch/event/1253590/contributions/5838388/attachments/2871088/5026566/LHCP2024_Som_UCC.pdf" target="_blank" rel="noopener">My LHCP 2024 talk</a>
+        <a class="r-btn ghost" href="https://indico.cern.ch/event/1424442/contributions/6257583/attachments/2994189/5275062/ATHIC25_Som.pdf" target="_blank" rel="noopener">My ATHIC 2025 talk</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>The average particle momentum, [pT], changes from one collision to the next for two reasons: the size of the plasma droplet varies (geometrical), and so does everything else at fixed size (intrinsic). In the most head-on collisions the size stops varying. By measuring how [pT] fluctuations change there, we made the first attempt to separate the two sources.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: two sources, one mixed signal</h2>
+        <p>Each collision makes a tiny droplet of quark-gluon plasma that explodes outward. How hard it pushes sets the average transverse momentum of its particles, [pT]. A smaller droplet is denser and pushes harder, so the droplet's size is one reason [pT] varies between events. Fluctuations in nucleon positions, energy deposition and temperature at fixed size are another.</p>
+        <figure class="anim-panel" data-anim="momentum-fluctuations-sources">
+            <figcaption><strong>What you're seeing:</strong> on the left only the droplet's size changes; when it shrinks, [pT] goes up. On the right the size is fixed but the amount of matter packed in changes, and [pT] follows it. Earlier measurements always saw both effects mixed together.</figcaption>
+        </figure>
+        <div class="r-keypoint"><strong>Why it matters:</strong> the intrinsic part carries information about the plasma itself, such as its speed of sound, but it was buried under the geometrical part.</div>
+    </section>
+
+    <!-- 2. MEASURE -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we measure: the shape of the [pT] distribution</h2>
+        <p>For each event we compute [pT] from all charged particles (0.5–5 GeV). Collecting millions of events gives a distribution of [pT]. We measure its <strong>mean</strong>, its <strong>variance</strong> (width) and its <strong>skewness</strong> (how lopsided it is), as a function of the number of charged particles, N<sub>ch</sub>.</p>
+        <figure class="anim-panel" data-anim="momentum-fluctuations-hist">
+            <figcaption><strong>What you're seeing:</strong> a made-up [pT] distribution filling up one event at a time. The vertical line marks the mean, the arrows the width. The dashed curve is a symmetric bell curve of the same width; positive skewness means a longer tail to high [pT].</figcaption>
+        </figure>
+        <p>If a collision were just many independent sources added together, the variance would fall as 1/N<sub>ch</sub> and the skewness as 1/N<sub>ch</sub><sup>2</sup>. Deviations from this simple scaling are the signal. We compare Pb+Pb (5.02 TeV) with the smaller Xe+Xe system (5.44 TeV).</p>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe: a sharp change in the most central collisions</h2>
+        <p>In the most head-on (ultra-central) collisions, the impact parameter b approaches zero and the overlap reaches its largest possible size. Larger sizes are no longer available, so the geometrical fluctuations are squeezed out.</p>
+        <figure class="anim-panel" data-anim="momentum-fluctuations-ucc">
+            <figcaption><strong>What you're seeing (schematic):</strong> left, the two nuclei for events in one multiplicity class; right, how often each overlap size occurs. As b is forced toward 0, the size distribution piles up against the maximum and then collapses, so the geometrical width shrinks to zero while its lopsidedness first grows and then vanishes.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/momentum-fluctuations/fig_01.png" alt="ATLAS: [pT] versus Nch in Pb+Pb, and the mean, variance k2 and skewness k3 versus Nch for Pb+Pb and Xe+Xe" loading="lazy" width="1600" height="1253">
+            <figcaption><strong>Fig. 1 of the paper.</strong> (a) [pT] versus N<sub>ch</sub> for millions of Pb+Pb events. (b–d) The mean, variance k<sub>2</sub> and skewness k<sub>3</sub>. Right of the dashed lines (top 5% of events), all three break away from their smooth trends: the mean rises, the variance and skewness drop.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener">PRL 133, 252301 (2024)</a>, <a href="https://arxiv.org/abs/2407.06413" target="_blank" rel="noopener">arXiv:2407.06413</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <figure class="paper-fig narrow">
+            <img src="fig/momentum-fluctuations/fig_02.png" alt="ATLAS: Nch k2, Nch squared k3 and intensive skewness Gamma versus Nch" loading="lazy" width="1600" height="1812">
+            <figcaption><strong>Fig. 2 of the paper.</strong> Multiplying out the expected scaling makes the deviations stand out. In ultra-central collisions the variance (a) falls sharply, while the skewness (b, c) first jumps up and then drops: the pattern expected when the largest sizes are cut off.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener">PRL 133, 252301 (2024)</a>, <a href="https://arxiv.org/abs/2407.06413" target="_blank" rel="noopener">arXiv:2407.06413</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/momentum-fluctuations/fig_03.png" alt="ATLAS: mean, k2, k3 and Gamma scaled to their 5% centrality values versus Nch/Nch(5%), compared with a model showing the geometrical component" loading="lazy" width="1600" height="1253">
+            <figcaption><strong>Fig. 3 of the paper.</strong> All quantities scaled to their values at the 5% centrality point. The variance (b) drops by about half. A model (green) describes the mean and variance; its geometrical part (dashed) accounts for most of the changes. The data show more skewness than the model, and Xe+Xe shows slightly weaker effects than Pb+Pb.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener">PRL 133, 252301 (2024)</a>, <a href="https://arxiv.org/abs/2407.06413" target="_blank" rel="noopener">arXiv:2407.06413</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude: geometry can be switched off, and the rest measures the plasma</h2>
+        <p>The ultra-central features match what is expected when the overlap size reaches its maximum and the geometrical fluctuations are suppressed. This gives a new way to separate geometrical from intrinsic fluctuations.</p>
+        <p>With the size fixed, events with more particles have a denser, hotter plasma, which pushes harder and gives a higher [pT]. The slope of this rise is tied to the plasma's speed of sound.</p>
+        <figure class="anim-panel" data-anim="momentum-fluctuations-entropy">
+            <figcaption><strong>What you're seeing (schematic):</strong> a droplet of fixed size holds more or fewer particles. More particles mean a hotter fluid that pushes harder, so the event moves up along the line on the right. The steepness of that line is proportional to the speed of sound squared, c<sub>s</sub><sup>2</sup>.</figcaption>
+        </figure>
+        <figure class="paper-fig narrow">
+            <img src="fig/momentum-fluctuations/fig_04.png" alt="ATLAS: relative change of mean pT versus relative change of Nch in the 0-1% most central Pb+Pb and Xe+Xe collisions, compared with MUSIC and HIJING" loading="lazy" width="1600" height="1315">
+            <figcaption><strong>Fig. 4 of the paper.</strong> In the 0–1% most central events, [pT] rises linearly with N<sub>ch</sub>, with similar slopes in Pb+Pb and Xe+Xe. HIJING, a model with no fluid, misses the slope badly; the hydrodynamic model MUSIC with c<sub>s</sub><sup>2</sup> ≈ 0.23 at T<sub>eff</sub> ≈ 222 MeV reproduces it in both pT ranges.
+                <span class="fig-source">Figure: ATLAS Collaboration, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener">PRL 133, 252301 (2024)</a>, <a href="https://arxiv.org/abs/2407.06413" target="_blank" rel="noopener">arXiv:2407.06413</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <div class="r-keypoint"><strong>A caveat:</strong> the extracted speed of sound depends on which particles define centrality and [pT]. Since the slope comes from the intrinsic fluctuations, a model should describe the slope and the variance and skewness together.</div>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Smaller systems:</strong> the ultra-central effects are slightly weaker in Xe+Xe than in Pb+Pb; O+O, p+Pb and pp collisions can map how they depend on system size.</li>
+            <li><strong>Speed of sound, done carefully:</strong> study how the fluctuations decorrelate along the beam direction, which may explain why the extracted c<sub>s</sub><sup>2</sup> depends on rapidity selection.</li>
+            <li><strong>Collision energy:</strong> follow the geometrical and intrinsic parts across beam energies, for example at RHIC.</li>
+        </ul>
+        <figure class="anim-panel" data-anim="collision" data-params='{"nucleus":"O16","b":0.5,"flowScale":0.3,"note":"next: smaller nuclei"}'>
+            <figcaption><strong>What you're seeing:</strong> a head-on collision of two oxygen-16 nuclei. Only a few dozen nucleons take part, so the droplet is tiny. How its geometrical and intrinsic fluctuations compare is an open question.</figcaption>
+        </figure>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> ATLAS Collaboration, "Disentangling sources of momentum fluctuations in Xe+Xe and Pb+Pb collisions with the ATLAS detector", Phys. Rev. Lett. 133, 252301 (2024), <a href="https://doi.org/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener">doi:10.1103/PhysRevLett.133.252301</a>, <a href="https://arxiv.org/abs/2407.06413" target="_blank" rel="noopener">arXiv:2407.06413</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="imaging-nuclear-shapes.html">← Previous: Imaging the shapes of atomic nuclei</a>
+        <a href="flow-momentum-correlations.html">Next: Flow–momentum correlations and nuclear deformation →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/momentum-fluctuations.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Spectators to Access Initial States Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of how counting spectator neutrons on top of multiplicity gives better access to the initial state of heavy-ion collisions (Bhatta &amp; Bairathi, Eur. Phys. J. C 82, 855, 2022).">
+    <link rel="canonical" href="https://somabhatta.github.io/research/spectators-initial-state.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Counting the nucleons that miss: a sharper look at how heavy-ion collisions begin (EPJC 2022)">
+    <meta property="og:description" content="Animated explainer of spectator-neutron (L+R) binning and the slope-ratio method Rc.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/spectators-initial-state.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/spectators-initial-state/fig_02.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "An improved method to access initial states in relativistic heavy-ion collisions",
+      "author": [
+        {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+        {"@type": "Person", "name": "Vipul Bairathi"}
+      ],
+      "isPartOf": {"@type": "Periodical", "name": "European Physical Journal C"},
+      "datePublished": "2022",
+      "sameAs": ["https://doi.org/10.1140/epjc/s10052-022-10824-w", "https://arxiv.org/abs/2208.05157"],
+      "about": ["Spectator neutrons", "Centrality", "Initial state", "Heavy-ion collisions", "Zero-degree calorimeter"],
+      "url": "https://somabhatta.github.io/research/spectators-initial-state.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="radial-flow-collectivity.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">Phenomenology · AMPT model · Au+Au collisions at 200 GeV (RHIC)</div>
+    <h1>Counting the nucleons that miss: a sharper look at how a collision begins</h1>
+    <p class="r-paper-ref"><em>An improved method to access initial states in relativistic heavy-ion collisions</em><br>
+        S. Bhatta and V. Bairathi, <strong>Eur. Phys. J. C 82, 855 (2022)</strong></p>
+    <p class="r-role"><strong>My role:</strong> first author; phenomenology study with AMPT model simulations.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" rel="noopener">Read the paper (EPJC)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2208.05157" target="_blank" rel="noopener">arXiv:2208.05157</a>
+        <a class="r-btn ghost" href="https://www.worldscientific.com/doi/abs/10.1142/S021830132450015X" target="_blank" rel="noopener">Follow-up: IJMPE 33, 2450015 (2024)</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>Heavy-ion collisions are usually grouped by how many particles they produce. Each group still mixes many different starting configurations. We showed, in model simulations, that also counting the <em>spectator</em> neutrons (nucleons that miss the collision) separates events with the same number of participants but different density, and introduced a simple slope ratio, R<sub>c</sub>, to quantify what this extra information adds.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: centrality classes hide the initial state</h2>
+        <p>Experiments sort collisions into <strong>centrality</strong> classes using the number of charged particles produced (multiplicity, N<sub>ch</sub>). Every result is then an average over a class. But one class contains many different initial states: different numbers of participating nucleons, overlap areas and shapes. These differences matter, because uncertainty in the initial state limits how well we can extract properties of the quark-gluon plasma.</p>
+        <figure class="anim-panel" data-anim="spectators-initial-state-centrality">
+            <figcaption><strong>What you're seeing (schematic):</strong> events are sorted by multiplicity, and six simulated Au+Au events from the same class are shown (orange: participants, grey: spectators). Their overlap regions clearly differ, yet standard binning reduces them to one average.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 2. METHOD -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we compute: sort by spectators as well</h2>
+        <p>Nucleons that do not collide, the <strong>spectators</strong>, fly on along the beam. The neutrons among them can be counted by zero-degree calorimeters (ZDCs) placed far forward on both sides. We call their total n<sub>spec</sub>, from the left (L) and right (R) sides.</p>
+        <figure class="anim-panel" data-anim="sideview" data-params='{"nucleus":"Au197","sigma":4.2}'>
+            <figcaption><strong>What you're seeing:</strong> two gold nuclei pass through each other. Participants form the fireball; spectators continue down the beam pipe, where the ZDCs on both sides count the spectator neutrons. Experiments can only measure the neutrons, so the method uses n<sub>spec</sub>, not all spectators.</figcaption>
+        </figure>
+        <p>In ~2 million simulated Au+Au events (AMPT transport model), n<sub>spec</sub> is only weakly correlated with multiplicity, especially in peripheral collisions. So it carries extra information. We split each 10% centrality class into sub-bins of n<sub>spec</sub> (<strong>L+R binning</strong>) and compare them with the standard class averages.</p>
+        <figure class="anim-panel" data-anim="spectators-initial-state-binning">
+            <figcaption><strong>What you're seeing (toy model):</strong> each dot is one event. Centrality binning slices only along multiplicity. L+R binning cuts one slice again by spectator neutrons, and each sub-bin turns out to hold a different number of participants.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/spectators-initial-state/fig_01.png" alt="Multiplicity distribution with centrality bins, spectator-neutron distribution with L+R bins, Pearson correlations versus centrality, and impact parameter versus Npart" loading="lazy" width="1736" height="1332">
+            <figcaption><strong>Fig. 1 of the paper.</strong> (a) Centrality classes from multiplicity. (b) The spectator-neutron distribution in the 20–30% class, cut into L+R bins. (c) The correlation between n<sub>spec</sub> and multiplicity (blue) weakens from −0.86 to −0.57 towards peripheral events. (d) L+R bins follow the same impact parameter vs. N<sub>part</sub> line as centrality, so they do not bias the selection.
+                <span class="fig-source">Figure: S. Bhatta and V. Bairathi, <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" rel="noopener">Eur. Phys. J. C 82, 855 (2022)</a>, <a href="https://arxiv.org/abs/2208.05157" target="_blank" rel="noopener">arXiv:2208.05157</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe: same participants, different density</h2>
+        <p>At a fixed number of participants (N<sub>part</sub>), L+R bins from a more central class have a <em>smaller</em> overlap area. Those denser events have more nucleon–nucleon collisions per participant and produce more particles. Standard centrality binning alone cannot select such events.</p>
+        <figure class="anim-panel" data-anim="spectators-initial-state-density">
+            <figcaption><strong>What you're seeing (cartoon):</strong> both events have 26 participants. The compact one has more collisions per participant, so it makes more particles, and its rounder shape gives smaller elliptic flow.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/spectators-initial-state/fig_02.png" alt="Overlap area, Ncoll per Npart and dNch/deta versus Npart for centrality averages and L+R bins" loading="lazy" width="1984" height="504">
+            <figcaption><strong>Fig. 2 of the paper.</strong> Red crosses are class averages; coloured symbols are L+R bins. At the same N<sub>part</sub>, the bins span different (a) overlap areas, (b) collisions per participant and (c) particle yields.
+                <span class="fig-source">Figure: S. Bhatta and V. Bairathi, <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" rel="noopener">Eur. Phys. J. C 82, 855 (2022)</a>, <a href="https://arxiv.org/abs/2208.05157" target="_blank" rel="noopener">arXiv:2208.05157</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>For flow, the two harmonics behave differently. Elliptic flow v<sub>2</sub> (and the eccentricity ε<sub>2</sub>) follows the overlap shape, and the L+R bins deviate strongly from the class average. Triangular flow v<sub>3</sub>, which comes mostly from random fluctuations, stays close to it.</p>
+        <figure class="paper-fig">
+            <img src="fig/spectators-initial-state/fig_03.png" alt="Eccentricities and flow coefficients versus dNch/deta for centrality averages and L+R bins" loading="lazy" width="1736" height="1312">
+            <figcaption><strong>Fig. 3 of the paper.</strong> ε<sub>2</sub> and v<sub>2</sub> (top) spread far from the class trend in L+R bins, so events with the same multiplicity but different v<sub>2</sub> can be picked. ε<sub>3</sub> and v<sub>3</sub> (bottom) barely move.
+                <span class="fig-source">Figure: S. Bhatta and V. Bairathi, <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" rel="noopener">Eur. Phys. J. C 82, 855 (2022)</a>, <a href="https://arxiv.org/abs/2208.05157" target="_blank" rel="noopener">arXiv:2208.05157</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <h3>Putting a number on it: R<sub>c</sub></h3>
+        <p>The new step in this paper is to compare two slopes for each class: the slope of the class averages (S<sub>c</sub>) and the slope across the L+R bins inside the class (S<sub>ns</sub>). Their relative difference, R<sub>c</sub>, is zero if an observable is driven only by impact-parameter and nucleon-position fluctuations. A non-zero value measures the extra information the spectators provide.</p>
+        <figure class="anim-panel" data-anim="spectators-initial-state-slopes">
+            <figcaption><strong>What you're seeing (schematic):</strong> for v<sub>2</sub>, the sub-bins inside one class follow a steeper line than the class averages, so R<sub>c</sub> is far from zero. For v<sub>3</sub>, the lines agree and R<sub>c</sub> ≈ 0.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/spectators-initial-state/fig_04.png" alt="Linear fits of dNch/deta versus Npart and the extracted slopes and Rc versus centrality" loading="lazy" width="1736" height="800">
+            <figcaption><strong>Fig. 4 of the paper.</strong> (a) Local linear fits of particle yield vs. N<sub>part</sub>. (b) The L+R slope (stars) falls faster than the centrality slope (red), and R<sub>c</sub> grows from about 0.1 in central to about 0.5 in 50–60% collisions.
+                <span class="fig-source">Figure: S. Bhatta and V. Bairathi, <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" rel="noopener">Eur. Phys. J. C 82, 855 (2022)</a>, <a href="https://arxiv.org/abs/2208.05157" target="_blank" rel="noopener">arXiv:2208.05157</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/spectators-initial-state/fig_05.png" alt="Slopes and Rc versus centrality for impact parameter, overlap area, Ncoll per Npart, v2 and v3" loading="lazy" width="1984" height="1304">
+            <figcaption><strong>Fig. 5 of the paper.</strong> R<sub>c</sub> for (a) impact parameter stays near zero, confirming an unbiased selection. It is large for (b) overlap area, (c) collisions per participant and (d) v<sub>2</sub>, but small for (e) v<sub>3</sub>.
+                <span class="fig-source">Figure: S. Bhatta and V. Bairathi, <a href="https://link.springer.com/article/10.1140/epjc/s10052-022-10824-w" target="_blank" rel="noopener">Eur. Phys. J. C 82, 855 (2022)</a>, <a href="https://arxiv.org/abs/2208.05157" target="_blank" rel="noopener">arXiv:2208.05157</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude</h2>
+        <ul>
+            <li>Spectator neutrons are a useful second event classifier on top of multiplicity, because the two are only weakly correlated.</li>
+            <li>L+R binning selects events with very different initial densities (by about 40%) and collision rates at the same N<sub>part</sub>.</li>
+            <li>R<sub>c</sub> is large for v<sub>2</sub> but small for v<sub>3</sub> (about 10% on average). It can therefore help separate the geometric part of v<sub>2</sub> from the part due to pure fluctuations.</li>
+        </ul>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Real data:</strong> apply the method with ZDC measurements at RHIC and the LHC, for example to control the overlap size in ultra-central collisions.</li>
+            <li><strong>Better ZDCs:</strong> sharper single-neutron resolution would extend the method beyond the 0–60% centrality range used here.</li>
+            <li><strong>Small and deformed nuclei:</strong> these systems have extra sources of fluctuations, where L+R binning could be especially telling.</li>
+        </ul>
+        <figure class="anim-panel" data-anim="collision" data-params='{"nucleus":"U238","b":3,"sigma":4.2,"note":"next: deformed nuclei"}'>
+            <figcaption><strong>What you're seeing:</strong> a collision of two elongated uranium nuclei. How they are oriented changes the overlap shape, and an earlier study showed that spectators can help select such configurations.</figcaption>
+        </figure>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> S. Bhatta and V. Bairathi, "An improved method to access initial states in relativistic heavy-ion collisions", Eur. Phys. J. C 82, 855 (2022), <a href="https://doi.org/10.1140/epjc/s10052-022-10824-w" target="_blank" rel="noopener">doi:10.1140/epjc/s10052-022-10824-w</a>, <a href="https://arxiv.org/abs/2208.05157" target="_blank" rel="noopener">arXiv:2208.05157</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="higher-order-pt-fluctuations.html">← Previous: Higher-order transverse-momentum fluctuations</a>
+        <a href="radial-flow-collectivity.html">Next: Is radial flow collective? →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/spectators-initial-state.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imaging the Shapes of Atomic Nuclei: STAR Nature 2024 Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of the STAR measurement that images the shape of uranium-238 nuclei by smashing them together at RHIC (Nature 635, 67–72, 2024), with Somadutta Bhatta as a primary author.">
+    <link rel="canonical" href="https://somabhatta.github.io/research/imaging-nuclear-shapes.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Imaging the shapes of atomic nuclei by smashing them together (STAR, Nature 2024)">
+    <meta property="og:description" content="Animated explainer of collective-flow-assisted nuclear shape imaging: the deformation and triaxiality of uranium-238 from U+U and Au+Au collisions.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/imaging-nuclear-shapes.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/imaging-nuclear-shapes/fig_01.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Imaging shapes of atomic nuclei in high-energy nuclear collisions",
+      "author": [{"@type": "Organization", "name": "STAR Collaboration"}],
+      "contributor": {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+      "isPartOf": {"@type": "Periodical", "name": "Nature"},
+      "datePublished": "2024",
+      "sameAs": ["https://doi.org/10.1038/s41586-024-08097-2", "https://arxiv.org/abs/2401.06625"],
+      "about": ["Nuclear deformation", "Nuclear structure", "Uranium-238", "Quark-gluon plasma", "Heavy-ion collisions"],
+      "url": "https://somabhatta.github.io/research/imaging-nuclear-shapes.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="momentum-fluctuations.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">STAR experiment · RHIC · U+U and Au+Au collisions at ~200 GeV</div>
+    <h1>Taking a snapshot of a nucleus's shape by smashing it</h1>
+    <p class="r-paper-ref"><em>Imaging shapes of atomic nuclei in high-energy nuclear collisions</em><br>
+        STAR Collaboration, <strong>Nature 635, 67–72 (2024)</strong></p>
+    <p class="r-role"><strong>My role:</strong> one of the primary authors. I ran the Trajectum hydrodynamic simulations used to extract the deformation of uranium, and I was part of the paper-writing team.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" rel="noopener">Read the paper (Nature)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2401.06625" target="_blank" rel="noopener">arXiv:2401.06625</a>
+        <a class="r-btn ghost" href="https://indico.cern.ch/event/1516249/attachments/3029429/5347563/CERN-TH-Som.pdf" target="_blank" rel="noopener">My CERN-TH seminar</a>
+        <a class="r-btn ghost" href="https://sbstatesman.com/130994/news/stony-brook-physicists-unveil-groundbreaking-method-for-nuclear-imaging/" target="_blank" rel="noopener">The Statesman story</a>
+        <a class="r-btn ghost" href="https://www.tandfonline.com/doi/full/10.1080/10619127.2025.2454214" target="_blank" rel="noopener">Nuclear Physics News article</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>Most atomic nuclei are not round. We showed that smashing them together at nearly the speed of light takes an instant snapshot of their shape, which the exploding quark-gluon plasma then imprints on the outgoing particles. Comparing uranium and gold collisions at RHIC, we measured uranium's elongation and its small deviation from a perfect cigar shape, the first such ground-state measurement made without using excited states.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: nuclear shapes are hard to see directly</h2>
+        <p>Nuclei come in different shapes. Uranium-238 is stretched like a cigar; gold-197 is nearly round. The shape is described by two numbers: how deformed the nucleus is (β₂) and how much its three axes differ (γ, the "triaxiality").</p>
+        <figure class="anim-panel" data-anim="imaging-nuclear-shapes-pair">
+            <figcaption><strong>What you're seeing:</strong> simulated uranium-238 and gold-197 nuclei (red protons, blue neutrons) built from the shapes used in the paper. Uranium is strongly elongated; gold is close to spherical.</figcaption>
+        </figure>
+        <p>Low-energy experiments infer shapes indirectly. A deformed nucleus tumbles quantum-mechanically on a timescale of 10³–10⁴ fm/c (1 fm/c = 3 × 10⁻²⁴ s), and slow measurements average over all orientations.</p>
+        <figure class="anim-panel" data-anim="imaging-nuclear-shapes-exposure">
+            <figcaption><strong>What you're seeing (cartoon):</strong> a long exposure blurs a tumbling cigar into a round average, like a photo of a moving runner. A high-energy collision lasts less than 0.1 fm/c, so each event freezes one orientation.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 2. MEASURE -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we measure: how the plasma's flow remembers the collision shape</h2>
+        <p>We focus on head-on collisions. Two uranium nuclei can meet body-to-body or tip-to-tip. The overlap region sets the shape and size of the quark-gluon plasma, and its expansion turns that geometry into the angles and momenta of the particles we detect.</p>
+        <figure class="anim-panel" data-anim="imaging-nuclear-shapes-tiptip">
+            <figcaption><strong>What you're seeing (simulation, deformation exaggerated):</strong> body-body collisions make a large, elongated plasma that flows unevenly (large elliptic flow v₂, smaller mean momentum [pT]). Tip-tip collisions make a compact, round plasma that pushes out harder (small v₂, larger [pT]).</figcaption>
+        </figure>
+        <p>So in uranium collisions, events with large v₂ should have small [pT], and vice versa. We measure three event-by-event quantities: the size of v₂ (⟨v₂²⟩), the spread of [pT] (its variance), and their correlation (⟨v₂² δpT⟩). The first two grow with β₂²; the correlation depends on β₂³ cos 3γ, which makes it sensitive to triaxiality.</p>
+        <figure class="anim-panel" data-anim="ucc" data-params='{"nucleus":"U238","beta2":0.28,"compare":true}'>
+            <figcaption><strong>What you're seeing:</strong> a live Glauber simulation of head-on collisions. Each dot is one event: its eccentricity (a proxy for v₂²) against its compactness (a proxy for [pT]). Deformed uranium (orange) gives a wider, tilted cloud: elongated events are less compact.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe: uranium behaves very differently from gold</h2>
+        <figure class="paper-fig">
+            <img src="fig/imaging-nuclear-shapes/fig_01.png" alt="Diagram comparing low-energy and high-energy methods for determining nuclear shape, with body-body and tip-tip collisions of a prolate nucleus" loading="lazy" width="1600" height="944">
+            <figcaption><strong>The method (Fig. 1 of the paper).</strong> Top: low-energy methods see a superposition of orientations. Bottom: in a collision, body-body and tip-tip configurations produce different plasma shapes, flow and mean momentum.
+                <span class="fig-source">Figure: STAR Collaboration, <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" rel="noopener">Nature 635, 67–72 (2024)</a>, <a href="https://arxiv.org/abs/2401.06625" target="_blank" rel="noopener">arXiv:2401.06625</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>In the most central 0.5% of collisions, uranium shows a clear anticorrelation: events with low [pT] (enriched in body-body collisions) have twice the ⟨v₂²⟩ of gold. In gold the trend goes the other way.</p>
+        <figure class="paper-fig">
+            <img src="fig/imaging-nuclear-shapes/fig_02.png" alt="STAR data: v2 squared versus relative mean transverse momentum, and the correlation coefficient rho2 versus centrality, for U+U and Au+Au" loading="lazy" width="1600" height="747">
+            <figcaption><strong>Fig. 2 of the paper.</strong> (a) ⟨v₂²⟩ falls with [pT] in U+U (red) but rises in Au+Au (blue). (b) The correlation ρ₂ in U+U drops and turns negative near 7% centrality, a direct signature of uranium's elongation.
+                <span class="fig-source">Figure: STAR Collaboration, <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" rel="noopener">Nature 635, 67–72 (2024)</a>, <a href="https://arxiv.org/abs/2401.06625" target="_blank" rel="noopener">arXiv:2401.06625</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>To remove the poorly known properties of the plasma, we divide each U+U observable by the same one in Au+Au. The two nuclei differ in mass by only 20%, so the fluid effects almost cancel and the ratio mainly reflects the shapes.</p>
+        <figure class="anim-panel" data-anim="imaging-nuclear-shapes-ratio">
+            <figcaption><strong>What you're seeing (schematic):</strong> both systems go through nearly the same fluid, so the ratio cancels it. Models then predict how the ratio grows with uranium's β₂, and the crossing with the data gives β₂.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/imaging-nuclear-shapes/fig_03.png" alt="Ratios of three observables between U+U and Au+Au versus centrality, their dependence on beta2 in models, and the resulting constraints on beta2 and gamma of uranium" loading="lazy" width="1600" height="960">
+            <figcaption><strong>Fig. 3 of the paper.</strong> (a–c) U+U/Au+Au ratios versus centrality, compared with IP-Glasma+MUSIC hydrodynamics. (d–f) Central ratios (hatched) against model curves for different β₂ and γ. (g) The combined constraint on uranium's β₂ and γ.
+                <span class="fig-source">Figure: STAR Collaboration, <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" rel="noopener">Nature 635, 67–72 (2024)</a>, <a href="https://arxiv.org/abs/2401.06625" target="_blank" rel="noopener">arXiv:2401.06625</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>As a cross-check with a different hydrodynamic model, we repeated the comparison with Trajectum, whose parameters come from a Bayesian fit to LHC data. It gives β₂ = 0.275 ± 0.017 and γ = 15.5° ± 7.8°.</p>
+        <figure class="paper-fig">
+            <img src="fig/imaging-nuclear-shapes/fig_09.png" alt="Ratios of three observables between U+U and Au+Au compared with IP-Glasma and Trajectum hydrodynamic models" loading="lazy" width="1600" height="664">
+            <figcaption><strong>Methods figure of the paper (model comparison).</strong> Data (black) compared with IP-Glasma+MUSIC (solid) and Trajectum (dashed) for β₂ = 0.28 (red) and 0.25 (blue). The two models agree for the first two ratios.
+                <span class="fig-source">Figure: STAR Collaboration, <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" rel="noopener">Nature 635, 67–72 (2024)</a>, <a href="https://arxiv.org/abs/2401.06625" target="_blank" rel="noopener">arXiv:2401.06625</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude: uranium is a cigar, with a slight twist</h2>
+        <p>Combining both models gives <strong>β₂ = 0.286 ± 0.025</strong> and <strong>γ = 8.7° ± 4.5°</strong> for uranium-238. The deformation agrees with low-energy data (β₂ = 0.287 ± 0.007), and the small γ rules out large triaxiality, consistent with low-energy estimates of 6–8°.</p>
+        <figure class="anim-panel" data-anim="imaging-nuclear-shapes-gamma">
+            <figcaption><strong>What you're seeing:</strong> how γ changes a nucleus from a cigar (0°) through triaxial to a disc (60°). Uranium sits close to the cigar end; the orange band is our result and the blue mark the low-energy estimate.</figcaption>
+        </figure>
+        <div class="r-keypoint"><strong>Why it matters:</strong> this is the first extraction of a nuclear ground-state triaxiality without using transitions to excited states. It establishes high-energy collisions as a new imaging tool that links high- and low-energy nuclear physics.</div>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Isobar pairs:</strong> collide nuclei with the same mass number to measure small shape differences precisely.</li>
+            <li><strong>Neutrinoless double-beta decay:</strong> better shapes of the parent and daughter isobars could reduce uncertainties in the nuclear matrix elements.</li>
+            <li><strong>Odd-mass nuclei and rarer shapes:</strong> the method works equally for odd-mass nuclei, and higher flow harmonics can probe octupole and hexadecapole deformations.</li>
+            <li><strong>Soft nuclei:</strong> multi-particle correlations such as ⟨v₂⁶⟩ can separate a fixed shape from shape fluctuations.</li>
+            <li><strong>Better QGP measurements:</strong> comparing structurally different nuclei isolates the initial conditions, sharpening extractions of the plasma's transport properties.</li>
+        </ul>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> STAR Collaboration, "Imaging shapes of atomic nuclei in high-energy nuclear collisions", Nature 635, 67–72 (2024), <a href="https://doi.org/10.1038/s41586-024-08097-2" target="_blank" rel="noopener">doi:10.1038/s41586-024-08097-2</a>, <a href="https://arxiv.org/abs/2401.06625" target="_blank" rel="noopener">arXiv:2401.06625</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="radial-flow-collectivity.html">← Previous: Is radial flow collective?</a>
+        <a href="momentum-fluctuations.html">Next: Disentangling sources of momentum fluctuations →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/imaging-nuclear-shapes.js"></script>
+</body>
+</html>

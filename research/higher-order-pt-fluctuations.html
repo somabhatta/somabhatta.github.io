@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher-Order Transverse-Momentum Fluctuations Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of a framework to compute the skewness and kurtosis of event-by-event mean transverse-momentum fluctuations, tested with the HIJING model (Bhatta, Zhang, Jia, PRC 105, 024904, 2022).">
+    <link rel="canonical" href="https://somabhatta.github.io/research/higher-order-pt-fluctuations.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Beyond the average: skewness and kurtosis of momentum fluctuations (PRC 2022)">
+    <meta property="og:description" content="Animated explainer of a cumulant and subevent framework for higher-order mean-pT fluctuations in heavy-ion collisions.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/higher-order-pt-fluctuations.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/higher-order-pt-fluctuations/FitCumu.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Higher-order transverse momentum fluctuations in heavy-ion collisions",
+      "author": [
+        {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+        {"@type": "Person", "name": "Chunjian Zhang"},
+        {"@type": "Person", "name": "Jiangyong Jia"}
+      ],
+      "isPartOf": {"@type": "Periodical", "name": "Physical Review C"},
+      "datePublished": "2022",
+      "sameAs": ["https://doi.org/10.1103/PhysRevC.105.024904", "https://arxiv.org/abs/2112.03397"],
+      "about": ["Transverse momentum fluctuations", "Cumulants", "Subevent method", "HIJING", "Heavy-ion collisions"],
+      "url": "https://somabhatta.github.io/research/higher-order-pt-fluctuations.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="spectators-initial-state.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">Phenomenology · HIJING model · pp, p+Pb, Xe+Xe and Pb+Pb at LHC energies</div>
+    <h1>Beyond the average: how to measure the lopsidedness of momentum fluctuations</h1>
+    <p class="r-paper-ref"><em>Higher-order transverse momentum fluctuations in heavy-ion collisions</em><br>
+        S. Bhatta, C. Zhang, J. Jia, <strong>Phys. Rev. C 105, 024904 (2022)</strong></p>
+    <p class="r-role"><strong>My role:</strong> first author of this phenomenology study.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" rel="noopener">Read the paper (PRC)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2112.03397" target="_blank" rel="noopener">arXiv:2112.03397</a>
+        <a class="r-btn ghost" href="https://indico.cern.ch/event/1234313/contributions/5193851/attachments/2571358/4433494/cumulant_presentation.pdf" target="_blank" rel="noopener">Talk on this paper</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>The average momentum of particles changes from one collision to the next. Only the width of that spread had been measured; its lopsidedness (skewness) and tails (kurtosis) had not. We built a method to compute all four, with a version that removes short-range noise, and tested it in a model without collective flow. This gives the baseline for real data.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: only half the shape was known</h2>
+        <p>In each collision we can compute the mean transverse momentum of all particles, [pT]. It is set by the size and energy density of the initial overlap region, so its event-to-event spread carries information about the initial state.</p>
+        <p>A spread is described by its cumulants: mean, variance, skewness and kurtosis. Experiments had measured only the first two. Hydrodynamic calculations predicted a skewness well above the independent-source expectation, and one that is sensitive to nuclear deformation, but neither had been measured, and computing them directly is expensive.</p>
+        <figure class="anim-panel" data-anim="higher-order-pt-fluctuations-moments">
+            <figcaption><strong>What you're seeing (schematic):</strong> the four cumulants, one at a time, against a bell curve (dashed). Mean and width had been measured; lopsidedness and tail weight had not.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 2. METHOD -->
+    <section class="r-section" id="method">
+        <h2><span class="r-num">2</span>What we compute: cumulants from groups of particles</h2>
+        <p>Instead of first computing [pT] per event, we compare each particle's pT with the all-event average and multiply these deviations over every unique pair, triplet or quadruplet in the event. Averaging over events gives the variance (k₂), skewness (k₃) and kurtosis (k₄). We derived compact formulas that make this fast, and checked them against direct loops over particles.</p>
+        <figure class="anim-panel" data-anim="histogram" data-params='{"sampler":"skew","title":"Event-by-event spread"}'>
+            <figcaption><strong>What you're seeing (schematic):</strong> the [pT] values of many events pile up into a distribution. A lopsided one has a nonzero skewness, which is what k₃ captures.</figcaption>
+        </figure>
+        <figure class="anim-panel" data-anim="higher-order-pt-fluctuations-correlator">
+            <figcaption><strong>What you're seeing:</strong> each stick is one particle's pT minus the average. Products over pairs, triplets and quadruplets, averaged over events, give the 2nd-, 3rd- and 4th-order correlators.</figcaption>
+        </figure>
+        <p>Particles from the same jet or resonance decay are correlated only with near neighbours. This "short-range" correlation can mimic a real signal. In the <strong>two-subevent method</strong>, particles are taken from two separated windows, a (−2.5 &lt; η &lt; −0.75) and c (0.75 &lt; η &lt; 2.5), which suppresses it.</p>
+        <figure class="anim-panel" data-anim="higher-order-pt-fluctuations-nonflow">
+            <figcaption><strong>What you're seeing (schematic):</strong> the standard method uses all particles, so close pairs from one bunch (orange) contribute. The two-subevent method correlates particles across the gap, where such bunches rarely reach.</figcaption>
+        </figure>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe in HIJING</h2>
+        <p>HIJING treats a heavy-ion collision as a superposition of independent proton-proton-like sources, with no collective flow. If N independent sources add up, the n-th order cumulant should fall as 1/N<sup>n−1</sup>.</p>
+        <figure class="anim-panel" data-anim="higher-order-pt-fluctuations-sources" data-params='{"left":{"n":3,"perSource":6,"title":"Few sources","sub":"small system"},"right":{"n":30,"perSource":2,"title":"Many sources","sub":"large system"}}'>
+            <figcaption><strong>What you're seeing (schematic):</strong> each source has its own random average momentum (blue low, red high). The event average (orange marker) and past events (purple ticks) scatter much less when many sources are averaged.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/higher-order-pt-fluctuations/FitCumu.png" alt="Mean pT and second, third and fourth order pT cumulants versus Nch in HIJING Pb+Pb and Xe+Xe, with power-law fits" loading="lazy" width="1600" height="1141">
+            <figcaption><strong>Fig. 1 of the paper.</strong> The 2nd-, 3rd- and 4th-order cumulants fall as straight lines on log-log axes versus multiplicity Nch. The fitted powers (about 1.0, 2.1–2.2 and 2.9–3.1) are close to the expected 1, 2 and 3.
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" rel="noopener">PRC 105, 024904 (2022)</a>, <a href="https://arxiv.org/abs/2112.03397" target="_blank" rel="noopener">arXiv:2112.03397</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/higher-order-pt-fluctuations/SEDep.png" alt="Variance, skewness and kurtosis in HIJING Pb+Pb from the standard and two-subevent methods, with their ratios" loading="lazy" width="1600" height="579">
+            <figcaption><strong>Fig. 2 of the paper.</strong> Standard (filled) vs two-subevent (open) results. The variance drops by about a factor of 3, so it is dominated by short-range correlations; skewness and kurtosis change much less.
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" rel="noopener">PRC 105, 024904 (2022)</a>, <a href="https://arxiv.org/abs/2112.03397" target="_blank" rel="noopener">arXiv:2112.03397</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/higher-order-pt-fluctuations/SEDep2_ipt0.png" alt="Variance versus Nch for different rapidity gaps between subevents, and ratio to the standard method" loading="lazy" width="1600" height="729">
+            <figcaption><strong>Fig. 3 of the paper.</strong> The variance for gaps Δη from 0 to 3. Most of the drop comes from splitting into subevents at all; beyond a gap of about 0.5 it stops changing. The remainder likely reflects genuine long-range correlations from strings in HIJING.
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" rel="noopener">PRC 105, 024904 (2022)</a>, <a href="https://arxiv.org/abs/2112.03397" target="_blank" rel="noopener">arXiv:2112.03397</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude</h2>
+        <ul>
+            <li>The framework computes pT fluctuations up to 4th order, with standard and subevent methods.</li>
+            <li>In HIJING, all orders follow the power law expected from independent sources.</li>
+            <li>Subevents strongly suppress the short-range correlations that dominate the variance; skewness and kurtosis are less affected.</li>
+            <li>At the same Nch, the cumulants of p+Pb, Xe+Xe and Pb+Pb follow a common trend, but pp fluctuates more.</li>
+        </ul>
+        <figure class="anim-panel" data-anim="higher-order-pt-fluctuations-sources" data-params='{"left":{"n":2,"perSource":16,"spread":1.4,"title":"pp, high Nch","sub":"few sources, each making many particles"},"right":{"n":16,"perSource":2,"title":"Pb+Pb, same Nch","sub":"many sources, few particles each"},"step1":"Step 1 · Same number of particles, made in two different ways","step2":"Step 2 · pp: a high-Nch event needs each source (e.g. minijets) to produce a lot","step3":"Step 3 · So pp fluctuates more at the same Nch"}'>
+            <figcaption><strong>What you're seeing (schematic):</strong> both events have the same number of particles. In pp they come from very few sources, so fluctuations inside each source (e.g. minijets) dominate and the event average scatters more.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/higher-order-pt-fluctuations/SysDep.png" alt="Mean pT and k2, k3, k4 versus Nch for pp, p+Pb, Xe+Xe and Pb+Pb in HIJING" loading="lazy" width="1600" height="1141">
+            <figcaption><strong>Fig. 4 of the paper.</strong> The mean pT is ordered by system size. For k₂, k₃ and k₄ only pp (open black) stands clearly above the other systems.
+                <span class="fig-source">Figure: S. Bhatta, C. Zhang, J. Jia, <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.024904" target="_blank" rel="noopener">PRC 105, 024904 (2022)</a>, <a href="https://arxiv.org/abs/2112.03397" target="_blank" rel="noopener">arXiv:2112.03397</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <div class="r-keypoint"><strong>Why it matters:</strong> this is a baseline from independent sources and short-range correlations alone, with no final-state effects. Deviations in real data point to collective behaviour; measured variances already scale with a power of about 0.81 instead of 1.</div>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Measure skewness and kurtosis in data</strong> and compare with this baseline. The later ATLAS measurement of momentum fluctuations used these methods (<a href="momentum-fluctuations.html">see that page</a>).</li>
+            <li><strong>Probe nuclear shapes:</strong> skewness is predicted to be sensitive to the deformation of the colliding nuclei.</li>
+        </ul>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> S. Bhatta, C. Zhang, J. Jia, "Higher-order transverse momentum fluctuations in heavy-ion collisions", Phys. Rev. C 105, 024904 (2022), <a href="https://doi.org/10.1103/PhysRevC.105.024904" target="_blank" rel="noopener">doi:10.1103/PhysRevC.105.024904</a>, <a href="https://arxiv.org/abs/2112.03397" target="_blank" rel="noopener">arXiv:2112.03397</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="isobar-energy-dependence.html">← Previous: Energy dependence of the initial condition in isobar collisions</a>
+        <a href="spectators-initial-state.html">Next: Using spectators to access initial states →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/higher-order-pt-fluctuations.js"></script>
+</body>
+</html>
