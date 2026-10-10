@@ -239,32 +239,38 @@
                 xlabel: 'spectator asymmetry (ZDCs)', ylabel: W < 520 ? 'particle asym.' : 'particle asymmetry' });
             ctx.save(); ctx.strokeStyle = C.grid; ctx.beginPath();
             ctx.moveTo(m.X(0), box.y); ctx.lineTo(m.X(0), box.y + box.h); ctx.moveTo(box.x, m.Y(0)); ctx.lineTo(box.x + box.w, m.Y(0)); ctx.stroke(); ctx.restore();
-            let sxy = 0, sxx = 0, syy = 0;
+            let sxy = 0, sxx = 0, syy = 0, sx = 0, sySum = 0;
             const pts = s.ev.map(q => {
                 const xs = -0.8 * q.a + 0.6 * q.n1;                       // spectator asymmetry ~ minus participant asymmetry
                 const ys = sc * q.a + Math.sqrt(1 - sc * sc) * q.n2;      // particle asymmetry at this eta
-                sxy += xs * ys; sxx += xs * xs; syy += ys * ys;
+                sxy += xs * ys; sxx += xs * xs; syy += ys * ys; sx += xs; sySum += ys;
                 return [xs, ys];
             });
-            const rho = -sxy / Math.sqrt(sxx * syy);
+            // Signed, centered Pearson r for the axes actually drawn below.
+            // A paper may choose the opposite asymmetry sign convention.
+            const meanX = sx / pts.length, meanY = sySum / pts.length;
+            sxy -= pts.length * meanX * meanY;
+            sxx -= pts.length * meanX * meanX;
+            syy -= pts.length * meanY * meanY;
+            const rho = sxy / Math.sqrt(Math.max(sxx * syy, 1e-12));
             ctx.save(); ctx.fillStyle = C.navy; ctx.globalAlpha = 0.5;
             pts.forEach(p => { if (Math.abs(p[0]) < 3.2 && Math.abs(p[1]) < 3.2) { ctx.beginPath(); ctx.arc(m.X(p[0]), m.Y(p[1]), W < 520 ? 1.6 : 2.4, 0, 2 * Math.PI); ctx.fill(); } });
             ctx.restore();
             // trend line
-            const slope = sxy / sxx;
-            u.line(ctx, [[m.X(-3), m.Y(-3 * slope)], [m.X(3), m.Y(3 * slope)]], C.orange, 2.4);
+            const slope = sxy / Math.max(sxx, 1e-12), intercept = meanY - slope * meanX;
+            u.line(ctx, [[m.X(-3), m.Y(intercept - 3 * slope)], [m.X(3), m.Y(intercept + 3 * slope)]], C.orange, 2.4);
             u.text(ctx, 'toy events (schematic)', box.x + box.w - 6, box.y + box.h - 6, { size: fs - 2, color: C.muted, align: 'right' });
             // readout
             if (W >= 520) {
                 const rx = box.x + box.w + 30;
-                u.text(ctx, 'correlation', rx, box.y + 30, { size: 13, color: C.muted });
-                u.text(ctx, `ρ = ${rho.toFixed(2)}`, rx, box.y + 62, { size: 26, weight: '700', color: C.orange });
+                u.text(ctx, 'Pearson r (shown axes)', rx, box.y + 30, { size: 13, color: C.muted });
+                u.text(ctx, `r = ${rho.toFixed(2)}`, rx, box.y + 62, { size: 26, weight: '700', color: C.orange });
                 u.text(ctx, 'each dot = one collision', rx, box.y + 96, { size: 12, color: C.muted });
                 u.text(ctx, 'more forward spectators', rx, box.y + 126, { size: 12, color: C.ink });
                 u.text(ctx, '→ fewer forward participants', rx, box.y + 144, { size: 12, color: C.ink });
                 u.text(ctx, '→ fewer particles at +η', rx, box.y + 162, { size: 12, color: C.ink });
             } else {
-                u.text(ctx, `ρ = ${rho.toFixed(2)}`, box.x + 8, box.y + 18, { size: 14, weight: '700', color: C.orange });
+                u.text(ctx, `r = ${rho.toFixed(2)}`, box.x + 8, box.y + 18, { size: 14, weight: '700', color: C.orange });
             }
         }
     });

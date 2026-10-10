@@ -24,9 +24,9 @@
 
     // ---------- colours (match research.css) ----------
     const C = {
-        ink: '#1d2b3a', muted: '#6b7785', grid: '#e3e8ef', bg: '#fbfcfe',
-        blue: '#1f5fbf', navy: '#003366', orange: '#e8710a', red: '#c8372d',
-        gold: '#f2b705', teal: '#138a8a', purple: '#6a4fb3', gray: '#9aa5b1',
+        ink: '#1d2b3a', muted: '#4d6073', grid: '#e3e8ef', bg: '#fbfcfe',
+        blue: '#1f5fbf', navy: '#003366', orange: '#a84d0d', red: '#c8372d',
+        gold: '#8a6500', teal: '#076d78', purple: '#6a4fb3', gray: '#9aa5b1',
         proton: '#d9534f', neutron: '#3f7fd9'
     };
 
@@ -53,7 +53,7 @@
         },
         text(ctx, str, x, y, opt = {}) {
             ctx.save();
-            ctx.font = (opt.weight || '500') + ' ' + (opt.size || 13) + 'px -apple-system, "Segoe UI", Roboto, sans-serif';
+            ctx.font = (opt.weight || '500') + ' ' + (opt.size || 13) + 'px Arial, sans-serif';
             ctx.fillStyle = opt.color || C.ink;
             ctx.textAlign = opt.align || 'left';
             ctx.textBaseline = opt.base || 'alphabetic';
@@ -143,7 +143,7 @@
         },
         pill(ctx, x, y, str, color) {
             ctx.save();
-            ctx.font = '600 12px -apple-system, "Segoe UI", Roboto, sans-serif';
+            ctx.font = '600 12px Arial, sans-serif';
             const w = ctx.measureText(str).width + 16;
             ctx.fillStyle = color; ctx.globalAlpha *= 0.12;
             roundRect(ctx, x, y - 14, w, 20, 10); ctx.fill();
@@ -315,7 +315,8 @@
     const registry = {};
     function register(name, def) { registry[name] = def; }
 
-    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let panelCount = 0;
 
     function Panel(fig) {
         const name = fig.dataset.anim;
@@ -324,151 +325,161 @@
         let params = {};
         try { params = fig.dataset.params ? JSON.parse(fig.dataset.params) : {}; }
         catch (e) { console.warn('anim.js: bad data-params on', name, e); }
-
+        const id = 'animation-' + (++panelCount);
+        const duration = def.duration || 8;
         const aspect = params.aspect || def.aspect || 16 / 9;
+        const cap = fig.querySelector('figcaption');
+        if (cap && !cap.id) cap.id = id + '-caption';
         const stage = document.createElement('div');
         stage.className = 'anim-stage';
+        stage.tabIndex = 0;
+        stage.setAttribute('role', 'region');
+        stage.setAttribute('aria-label', 'Animation viewport. Use the controls below to play or explore.');
         const canvas = document.createElement('canvas');
         canvas.setAttribute('role', 'img');
-        canvas.setAttribute('aria-label', fig.getAttribute('aria-label') || (params.title || name) + ' animation');
+        canvas.setAttribute('aria-label', fig.getAttribute('aria-label') || (params.title || name.replace(/-/g, ' ')) + ' illustration');
+        if (cap) canvas.setAttribute('aria-describedby', cap.id);
+        canvas.textContent = cap ? cap.textContent : 'Scientific illustration; see the accompanying explanation.';
         stage.appendChild(canvas);
-
+        const hint = document.createElement('p');
+        hint.className = 'anim-mobile-hint';
+        hint.textContent = 'Swipe the illustration horizontally to explore both sides.';
         const bar = document.createElement('div');
         bar.className = 'anim-controls';
-        bar.innerHTML =
-            '<button type="button" class="anim-btn anim-play" aria-label="Pause animation">' +
-            '<span class="ico-pause" aria-hidden="true">❚❚</span><span class="ico-play" aria-hidden="true">▶</span>' +
-            '<span class="anim-btn-label">Pause</span></button>' +
-            '<button type="button" class="anim-btn anim-restart" aria-label="Restart animation">↺ <span class="anim-btn-label">Restart</span></button>' +
-            '<div class="anim-progress" aria-hidden="true"><div class="anim-progress-fill"></div></div>' +
-            '<span class="anim-step" aria-live="polite"></span>';
-
-        const cap = fig.querySelector('figcaption');
-        fig.insertBefore(stage, cap || null);
-        fig.insertBefore(bar, cap || null);
-
+        bar.innerHTML = '<button type="button" class="anim-btn anim-play"><span class="anim-btn-label">Play</span></button>' +
+            '<button type="button" class="anim-btn anim-restart" aria-label="Restart animation and reset simulated events">Restart</button>';
+        const steps = document.createElement('div');
+        steps.className = 'anim-chapters';
+        steps.setAttribute('role', 'group');
+        steps.setAttribute('aria-label', 'Jump to an explanation step');
+        const stepEl = document.createElement('p');
+        stepEl.className = 'anim-step';
+        // Automatic event counters must not interrupt screen readers each frame.
+        stepEl.setAttribute('aria-live', 'off');
+        const status = document.createElement('span');
+        status.className = 'sr-only';
+        status.setAttribute('role', 'status');
+        bar.appendChild(steps);
+        [stage, hint, bar, stepEl, status].forEach(el => fig.insertBefore(el, cap || null));
         const playBtn = bar.querySelector('.anim-play');
         const label = playBtn.querySelector('.anim-btn-label');
-        const fill = bar.querySelector('.anim-progress-fill');
-        const stepEl = bar.querySelector('.anim-step');
         const ctx = canvas.getContext('2d');
-        let W = 0, H = 0, state = null, t = 0, last = null, playing = false, visible = false,
-            userPaused = reduceMotion, raf = null, lastStep = '';
-        // Test hook: ?animt=4.5 freezes every panel at that time; &animloops=N
-        // pre-runs N loops (for accumulating plots). Used for screenshots.
+        if (!ctx) { status.textContent = 'Canvas is unavailable. Please read the explanation below.'; bar.hidden = true; return; }
+        let W = 0, H = 0, pixelRatio = 0, state = null, t = 0, last = null;
+        let playing = false, visible = false, userPaused = motionQuery.matches, raf = null, lastStep = '', failed = false;
         const qs = new URLSearchParams(location.search);
         const freezeT = parseFloat(qs.get('animt'));
-        if (!isNaN(freezeT)) { t = freezeT; userPaused = true; }
-
+        if (Number.isFinite(freezeT)) { t = Math.max(0, freezeT); userPaused = true; }
+        const phaseButtons = (def.phases || []).length > 1 ? def.phases.map((ph, index) => {
+            const button = document.createElement('button');
+            button.type = 'button'; button.className = 'anim-phase';
+            button.textContent = 'Step ' + (index + 1);
+            button.addEventListener('click', () => {
+                t = Math.floor(t / duration) * duration + (ph.preview ?? ph.t);
+                userPaused = true; update(); render(); status.textContent = stepEl.textContent;
+            });
+            steps.appendChild(button); return button;
+        }) : [];
+        if (!phaseButtons.length) steps.hidden = true;
         function resize() {
-            const w = stage.clientWidth || 640;
+            // Preserve readable type and side-by-side comparisons on narrow screens.
+            const w = Math.max(640, stage.clientWidth || 640);
             const h = Math.round(w / aspect);
             const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            if (w === W && dpr === pixelRatio && state) return;
+            const changed = w !== W;
+            W = w; H = h; pixelRatio = dpr;
             canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
-            canvas.style.height = h + 'px';
+            canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            const changed = Math.abs(w - W) > 1;
-            W = w; H = h;
             if (!state || changed) state = def.setup ? def.setup(params, W, H, state) : {};
             render();
         }
-
         function render() {
+            const localTime = t % duration;
             ctx.clearRect(0, 0, W, H);
             ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
-            try { def.draw(ctx, t, state, W, H, params); }
-            catch (e) { console.error('anim.js draw error in', name, e); stop(); }
-            const dur = def.duration || 8;
-            fill.style.width = (100 * (t % dur) / dur).toFixed(1) + '%';
-            if (def.phases) {
-                let cur = def.phases[0];
-                for (const ph of def.phases) if ((t % dur) >= ph.t) cur = ph;
-                const txt = typeof cur.label === 'function' ? cur.label(state, params) : cur.label;
-                if (txt !== lastStep) { stepEl.textContent = txt; lastStep = txt; }
+            ctx.save();
+            try { def.draw(ctx, localTime, state, W, H, params); }
+            catch (e) { failed = true; console.error('anim.js draw error in', name, e); stop(); status.textContent = 'This illustration could not be drawn. The explanation remains available below.'; }
+            finally { ctx.restore(); }
+            const phases = def.phases || [];
+            let phaseIndex = 0;
+            phases.forEach((ph, i) => { if (localTime >= ph.t) phaseIndex = i; });
+            const ph = phases[phaseIndex];
+            const txt = ph ? (typeof ph.label === 'function' ? ph.label(state, params) : ph.label) : 'Explore the illustration using the controls above.';
+            if (txt !== lastStep) {
+                stepEl.textContent = txt; lastStep = txt;
             }
+            phaseButtons.forEach((button, i) => {
+                button.setAttribute('aria-pressed', String(i === phaseIndex));
+                const ph = phases[i];
+                button.title = typeof ph.label === 'function' ? ph.label(state, params) : ph.label;
+                button.setAttribute('aria-label', 'Step ' + (i + 1) + ': ' + button.title);
+            });
         }
-
         function frame(ts) {
             if (!playing) return;
             if (last === null) last = ts;
             const dt = Math.min((ts - last) / 1000, 0.1);
             last = ts;
-            const dur = def.duration || 8;
-            const before = Math.floor(t / dur);
+            const before = Math.floor(t / duration);
             t += dt * (params.speed || 1);
-            if (Math.floor(t / dur) !== before && def.onLoop) def.onLoop(state, params, W, H);
+            const after = Math.floor(t / duration);
+            if (def.onLoop) {
+                // Faster playback can cross several short event cycles in one frame.
+                for (let cycle = before; cycle < after; cycle++) def.onLoop(state, params, W, H);
+            }
             render();
-            raf = requestAnimationFrame(frame);
+            if (playing) raf = requestAnimationFrame(frame);
         }
-
         function start() {
-            if (playing) return;
+            if (playing || failed) return;
             playing = true; last = null;
-            raf = requestAnimationFrame(frame);
-            sync();
+            raf = requestAnimationFrame(frame); sync();
         }
         function stop() {
             playing = false;
-            if (raf) cancelAnimationFrame(raf);
-            raf = null;
-            sync();
+            if (raf !== null) cancelAnimationFrame(raf);
+            raf = null; sync();
         }
         function sync() {
             fig.classList.toggle('is-playing', playing);
             label.textContent = playing ? 'Pause' : 'Play';
             playBtn.setAttribute('aria-label', (playing ? 'Pause' : 'Play') + ' animation');
         }
-        function update() { (visible && !userPaused) ? start() : stop(); }
-
-        playBtn.addEventListener('click', () => { userPaused = playing; update(); if (!visible && !userPaused) start(); });
+        function update() { (visible && !userPaused && !document.hidden) ? start() : stop(); }
+        playBtn.addEventListener('click', () => { userPaused = playing; update(); });
         bar.querySelector('.anim-restart').addEventListener('click', () => {
-            t = 0;
+            t = 0; last = null; failed = false;
             state = def.setup ? def.setup(params, W, H, null) : {};
-            render();
-            userPaused = false; start();
+            render(); update(); status.textContent = 'Animation reset to its first frame.';
         });
-        canvas.addEventListener('click', () => playBtn.click());
-
-        // optional interactive sliders declared by the animation
-        if (def.controls) {
-            const box = document.createElement('div');
-            box.className = 'anim-sliders';
-            def.controls.forEach(c => {
-                const id = 'ctl-' + Math.random().toString(36).slice(2);
-                const wrap = document.createElement('label');
-                wrap.className = 'anim-slider';
-                wrap.setAttribute('for', id);
-                const v = params[c.key] !== undefined ? params[c.key] : c.value;
-                params[c.key] = v;
-                wrap.innerHTML = `<span>${c.label}</span><input id="${id}" type="range" min="${c.min}" max="${c.max}" step="${c.step}" value="${v}"><output>${c.fmt ? c.fmt(v) : v}</output>`;
-                const inp = wrap.querySelector('input'), out = wrap.querySelector('output');
-                inp.addEventListener('input', () => {
-                    params[c.key] = parseFloat(inp.value);
-                    out.textContent = c.fmt ? c.fmt(params[c.key]) : inp.value;
-                    if (c.resetup !== false) state = def.setup(params, W, H, state);
-                    render();
-                });
-                box.appendChild(wrap);
-            });
-            fig.insertBefore(box, cap || null);
-        }
-
+        stage.addEventListener('keydown', e => {
+            if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); playBtn.click(); }
+        });
+        // A drag to pan a mobile viewport must not accidentally toggle playback.
+        canvas.addEventListener('click', e => { if (stage.scrollWidth <= stage.clientWidth + 1 && e.detail) playBtn.click(); });
+        // Keep declared defaults without exposing additional controls.
+        (def.controls || []).forEach(c => {
+            if (params[c.key] === undefined) params[c.key] = c.value;
+        });
+        document.addEventListener('visibilitychange', update);
+        motionQuery.addEventListener('change', e => { if (e.matches) { userPaused = true; update(); } });
         if ('IntersectionObserver' in window) {
-            new IntersectionObserver((ents) => {
-                ents.forEach(e => { visible = e.isIntersecting; update(); });
-            }, { threshold: 0.25 }).observe(fig);
+            new IntersectionObserver(entries => {
+                entries.forEach(e => { visible = e.isIntersecting; update(); });
+            }, { threshold: 0.05 }).observe(stage);
         } else { visible = true; }
-
-        if ('ResizeObserver' in window) new ResizeObserver(() => resize()).observe(stage);
+        if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
         else window.addEventListener('resize', resize);
         resize();
-        if (!isNaN(freezeT) && def.onLoop) {
-            const nl = parseInt(qs.get('animloops') || '0', 10);
+        if (Number.isFinite(freezeT) && def.onLoop) {
+            const nl = Math.min(1000, Math.max(0, parseInt(qs.get('animloops') || '0', 10)));
             for (let i = 0; i < nl; i++) def.onLoop(state, params, W, H);
             render();
         }
-        sync();
-        update();
+        sync(); update();
     }
 
     function init() {
@@ -807,15 +818,19 @@
             const m1 = u.axes(ctx, top, [0, 4], [1e-4, 5], { logy: true, ylabel: 'particles (log)', title: 'Spectrum: how many particles at each pT', xticks: false });
             const avg = [], ev = [];
             for (let i = 1; i <= 160; i++) { const pt = 4 * i / 160; avg.push([m1.X(pt), m1.Y(f(pt, T0, 1))]); ev.push([m1.X(pt), m1.Y(f(pt, T, 1 + dM))]); }
+            ctx.save(); ctx.beginPath(); ctx.rect(top.x, top.y, top.w, top.h); ctx.clip();
             u.line(ctx, avg, C.gray, 2, [6, 4]);
             u.line(ctx, ev, osc > 0 ? C.red : C.blue, 2.6);
+            ctx.restore();
             u.text(ctx, '- - average event', top.x + top.w - 8, top.y + 18 + 0, { size: 11, color: C.muted, align: 'right' });
             u.text(ctx, 'this event', top.x + top.w - 8, top.y + 34, { size: 11, color: osc > 0 ? C.red : C.blue, align: 'right', weight: '700' });
 
             const m2 = u.axes(ctx, bot, [0, 4], [-1.2, 1.2], { zero: true, yticks: [-1, 0, 1], xlabel: 'transverse momentum pT (GeV)', ylabel: 'relative change', title: 'Relative change vs. average event  →  v₀(pT)' });
             const rel = [];
-            for (let i = 1; i <= 160; i++) { const pt = 4 * i / 160; rel.push([m2.X(pt), m2.Y(u.clamp(f(pt, T, 1 + dM) / f(pt, T0, 1) - 1, -1.2, 1.2))]); }
+            for (let i = 1; i <= 160; i++) { const pt = 4 * i / 160; rel.push([m2.X(pt), m2.Y(f(pt, T, 1 + dM) / f(pt, T0, 1) - 1)]); }
+            ctx.save(); ctx.beginPath(); ctx.rect(bot.x, bot.y, bot.w, bot.h); ctx.clip();
             u.line(ctx, rel, osc > 0 ? C.red : C.blue, 2.6);
+            ctx.restore();
             if (mode !== 'mult') {
                 const piv = m2.X(2 * T0);
                 ctx.save(); ctx.strokeStyle = C.ink; ctx.setLineDash([2, 3]);
@@ -1068,24 +1083,34 @@
             const shape = (x) => { const lx = Math.log10(x); return (lx - 0.0) * 9 * Math.exp(-Math.pow(Math.max(lx - 0.0, 0) / 0.9, 2) * 0.6) + (x < 1 ? (x - 1) * 3 : 0); };
             const k = u.ease(u.seg(t, 3.5, 5.5));
             const box = { x: 72, y: 16, w: W - 100, h: H - 66 };
-            const yA = [-0.06, 0.3], yB = [-5, 22];
+            const sample = Array.from({length: 81}, (_, j) => shape(0.5 * Math.pow(20, j / 80)));
+            const yB = [Math.min(...sample) * 1.2, Math.max(...sample) * 1.5];
+            const maxAmplitude = Math.max(...amps);
+            const yA = yB.map(v => v * maxAmplitude);
             const lo = u.lerp(yA[0], yB[0], k), hi = u.lerp(yA[1], yB[1], k);
             const m = u.axes(ctx, box, [0.5, 10], [lo, hi], { zero: true, xticks: false, yticks: false,
-                xlabel: p.xlabel || 'transverse momentum pT (GeV, log scale)', ylabel: k < 0.5 ? (p.ylabel1 || 'v₀(pT)') : (p.ylabel2 || 'v₀(pT) / v₀') });
+                xlabel: '', ylabel: k < 0.5 ? (p.ylabel1 || 'v₀(pT)') : (p.ylabel2 || 'v₀(pT) / v₀') });
             const X = (x) => box.x + (Math.log10(x) - Math.log10(0.5)) / (Math.log10(10) - Math.log10(0.5)) * box.w;
             const cols = [C.red, C.orange, C.gold, C.teal, C.blue, C.purple, C.navy, C.gray];
+            ctx.save(); ctx.beginPath(); ctx.rect(box.x, box.y, box.w, box.h); ctx.clip();
             for (let i = 0; i < n; i++) {
                 const pts = [];
                 for (let j = 0; j <= 80; j++) {
                     const x = 0.5 * Math.pow(20, j / 80);
                     const raw = amps[i] * shape(x);
-                    const scaled = shape(x) * 1.9;
+                    const scaled = shape(x); // raw / integrated amplitude
                     pts.push([X(x), m.Y(u.lerp(raw, scaled, k))]);
                 }
                 u.line(ctx, pts, cols[i % cols.length], 2.4);
             }
+            ctx.restore();
+            [0.5, 1, 2, 5, 10].forEach(value => {
+                ctx.fillStyle = C.grid; ctx.fillRect(X(value), box.y + box.h, 1, 4);
+                u.text(ctx, String(value), X(value), box.y + box.h + 14, {size: 10, color: C.muted, align: 'center'});
+            });
+            u.text(ctx, p.xlabel || 'transverse momentum pT (GeV, log scale)', box.x + box.w / 2, box.y + box.h + 31, {size: 12, color: C.muted, align: 'center'});
             if (p.labels) p.labels.forEach((l, i) => u.text(ctx, l, box.x + 10, box.y + 34 + i * 15, { size: 11, weight: '700', color: cols[i % cols.length] }));
-            u.text(ctx, k < 0.5 ? (p.title1 || 'Before dividing') : (p.title2 || 'After dividing by v₀: one shape'), box.x + box.w - 8, box.y + 18, { size: 12, weight: '700', align: 'right' });
+            u.text(ctx, k === 0 ? (p.title1 || 'Before dividing') : k < 1 ? 'Dividing by each curve’s v₀…' : (p.title2 || 'After dividing by v₀: one shape'), box.x + box.w - 8, box.y + 18, { size: 12, weight: '700', align: 'right' });
             u.text(ctx, 'schematic', box.x + box.w - 8, box.y + box.h - 8, { size: 10, color: C.muted, align: 'right' });
         }
     });
