@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somadutta Bhatta | Nuclear Physicist, Quark-Gluon Plasma &amp; ALICE at CERN</title>
-    <meta name="description" content="Somadutta Bhatta is a postdoctoral physicist at Utrecht University and Nikhef (ALICE, CERN) studying the quark-gluon plasma, radial flow and the shapes of atomic nuclei. Publications in Nature and PRL.">
+    <title>Somadutta Bhatta | Postdoctoral Researcher in High-Energy Nuclear Physics (ALICE, CERN)</title>
+    <meta name="description" content="Somadutta Bhatta is a postdoctoral researcher in high-energy nuclear physics at Utrecht University and Nikhef (ALICE, CERN) studying the quark-gluon plasma, radial flow and the shapes of atomic nuclei. Publications in Nature and PRL.">
     <meta name="author" content="Somadutta Bhatta">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="google-site-verification" content="r4szhweStBfrAHpg18Hk6eJ7X1xuICpzAVr3IchkxYQ" />
@@ -15,14 +15,14 @@
     <!-- Link previews (LinkedIn, X/Twitter, Slack, WhatsApp, Mastodon) -->
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://somabhatta.github.io/">
-    <meta property="og:title" content="Somadutta Bhatta, Nuclear Physicist (Utrecht University, Nikhef, ALICE)">
+    <meta property="og:title" content="Somadutta Bhatta, Postdoctoral Researcher in High-Energy Nuclear Physics (Utrecht University, Nikhef, ALICE)">
     <meta property="og:description" content="Quark-gluon plasma, radial flow and imaging the shapes of atomic nuclei in high-energy collisions. Nature 2024, PRL 2026 Editors' Suggestion.">
     <meta property="og:image" content="https://somabhatta.github.io/passport2.jpg">
-    <meta property="og:image:alt" content="Portrait of physicist Somadutta Bhatta">
+    <meta property="og:image:alt" content="Portrait of Somadutta Bhatta">
     <meta property="profile:first_name" content="Somadutta">
     <meta property="profile:last_name" content="Bhatta">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Somadutta Bhatta, Nuclear Physicist">
+    <meta name="twitter:title" content="Somadutta Bhatta, High-Energy Nuclear Physics">
     <meta name="twitter:description" content="Quark-gluon plasma, radial flow and nuclear shapes at the LHC and RHIC.">
     <meta name="twitter:image" content="https://somabhatta.github.io/passport2.jpg">
 
@@ -377,7 +377,13 @@
 
         .highlight-card strong { display: block; color: var(--primary-color); margin-bottom: 6px; line-height: 1.35; }
         .highlight-card .hl-meta { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.4px; color: #e8710a; margin-bottom: 4px; }
-        .highlight-card .hl-links { display: block; margin-top: 8px; font-size: 0.88rem; }
+        .hl-card { display: flex; flex-direction: column; color: inherit; text-decoration: none !important; transition: box-shadow 0.2s ease, transform 0.2s ease; }
+        .hl-card:hover, .hl-card:focus-visible { box-shadow: 0 8px 20px rgba(0,0,0,0.08); transform: translateY(-2px); outline: none; }
+        .hl-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; border: 1px solid #eef1f5; border-radius: 4px; padding: 6px; margin-bottom: 10px; }
+        .hl-card .hl-text { display: block; color: #444; font-size: 0.92rem; }
+        .hl-card .hl-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto; padding-top: 10px; }
+        .hl-card .hl-foot .citation-badge { margin-left: 0; }
+        .hl-card .hl-more { font-size: 0.85rem; font-weight: 600; color: var(--accent-color); }
 
         .interest-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
         .interest-tags span {
@@ -528,6 +534,43 @@
             color: #777;
         }
 
+        /* --- Compact profile bar (replaces the old sidebar) --- */
+        .profile-bar {
+            max-width: var(--page-max-width);
+            margin: 0 auto 14px auto;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .profile-bar .profile-img {
+            width: 96px; height: 96px;
+            object-fit: cover; object-position: center 1px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            flex: 0 0 auto;
+            margin: 0;
+        }
+        .pb-main { flex: 1 1 320px; min-width: 0; }
+        .pb-name { font-size: 1.6rem; color: var(--primary-color); line-height: 1.2; margin: 0; border: 0; padding: 0; display: block; }
+        .pb-title { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #666; margin: 2px 0 4px 0; }
+        .pb-affil { font-size: 0.9rem; color: #555; }
+        .pb-side { flex: 0 1 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+        .pb-mail { font-size: 0.85rem; word-break: break-word; text-align: right; }
+        .pb-links { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+        @media (max-width: 900px) {
+            .profile-bar { padding: 14px 16px; gap: 14px; }
+            .profile-bar .profile-img { width: 72px; height: 72px; }
+            .pb-side { align-items: flex-start; width: 100%; }
+            .pb-mail { text-align: left; }
+            .pb-links { justify-content: flex-start; }
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .top-nav-grid { overflow-x: auto; padding-bottom: 10px; }
@@ -548,6 +591,24 @@
 
 <!-- Real <a href="#..."> links: crawlers can follow them and every tab has a
      shareable URL (e.g. somabhatta.github.io/#publications). -->
+<header class="profile-bar">
+    <img src="passport2.jpg" alt="Somadutta Bhatta, postdoctoral researcher at Utrecht University and Nikhef" class="profile-img" width="96" height="96" fetchpriority="high">
+    <div class="pb-main">
+        <h1 class="pb-name">Somadutta Bhatta</h1>
+        <div class="pb-title">Postdoctoral Researcher · High-Energy Nuclear Physics</div>
+        <div class="pb-affil">GRASP, <strong>Utrecht University</strong> &amp; <strong>Nikhef</strong> · <strong>ALICE</strong> Collaboration, CERN · Utrecht, Netherlands</div>
+    </div>
+    <div class="pb-side">
+        <div class="pb-mail"><a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a> · <a href="mailto:somadutta.bhatta4@gmail.com">somadutta.bhatta4@gmail.com</a></div>
+        <div class="pb-links">
+            <a href="https://scholar.google.com/citations?hl=en&amp;user=D_0_gNkAAAAJ" target="_blank" rel="noopener me" class="btn-social">Google Scholar</a>
+            <a href="https://inspirehep.net/authors/1884500" target="_blank" rel="noopener me" class="btn-social">INSPIRE-HEP</a>
+            <a href="https://orcid.org/0000-0002-9045-3278" target="_blank" rel="noopener me" class="btn-social">ORCID</a>
+            <a href="https://arxiv.org/search/?query=Somadutta+Bhatta&amp;searchtype=author" target="_blank" rel="noopener" class="btn-social">arXiv</a>
+        </div>
+    </div>
+</header>
+
 <nav class="top-nav-wrapper" aria-label="Sections">
     <ul class="top-nav-grid">
         <li><a class="top-nav-card active-tab" href="#biography" id="top-biography"><span class="nav-title">About Me</span><span class="nav-sub">Research</span></a></li>
@@ -563,72 +624,62 @@
 </nav>
 
 <div class="container">
-    <aside class="sidebar">
-        <img src="passport2.jpg" alt="Somadutta Bhatta, nuclear physicist at Utrecht University and Nikhef" class="profile-img" width="160" height="160" fetchpriority="high">
-        <h1 class="sidebar-name">Somadutta Bhatta</h1>
-        <div class="sidebar-title">Postdoctoral Researcher</div>
-        <div class="sidebar-affil">
-            Institute for Gravitational and Subatomic Physics (GRASP)<br>
-            <strong>Utrecht University and Nikhef</strong>
-            <br><br>
-            Member of the <strong>ALICE</strong> Collaboration at CERN
-        </div>
-        <div class="contact-details">
-            <div class="contact-item">
-                <span class="contact-label">Emails:</span>
-                <a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>
-                <a href="mailto:somadutta.bhatta4@gmail.com">somadutta.bhatta4@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <span class="contact-label">Location:</span>
-                Utrecht, Netherlands
-            </div>
-        </div>
-        <div class="social-links">
-            <div class="contact-label">Profiles &amp; Full List of Papers:</div>
-            <a href="https://scholar.google.com/citations?hl=en&amp;user=D_0_gNkAAAAJ" target="_blank" rel="noopener me" class="btn-social">Google Scholar</a>
-            <a href="https://inspirehep.net/authors/1884500" target="_blank" rel="noopener me" class="btn-social">INSPIRE-HEP</a>
-            <a href="https://orcid.org/0000-0002-9045-3278" target="_blank" rel="noopener me" class="btn-social">ORCID</a>
-            <a href="https://arxiv.org/search/?query=Somadutta+Bhatta&amp;searchtype=author" target="_blank" rel="noopener" class="btn-social">arXiv</a>
-        </div>
-    </aside>
-
     <main class="main-content">
 
         <section id="biography" class="content-section active">
             <header class="section-header"><h2 class="section-title">About Me</h2></header>
             <div class="content-body">
-                <p>I am a nuclear physicist and Postdoctoral Researcher at the Institute for Gravitational and Subatomic Physics (GRASP) at <strong>Utrecht University</strong>, also affiliated with <strong>Nikhef</strong>. I work within the <strong>ALICE Collaboration</strong> at CERN's Large Hadron Collider.</p>
+                <p>I am a Postdoctoral Researcher in high-energy nuclear physics at the Institute for Gravitational and Subatomic Physics (GRASP) at <strong>Utrecht University</strong>, also affiliated with <strong>Nikhef</strong>. I work within the <strong>ALICE Collaboration</strong> at CERN's Large Hadron Collider.</p>
                 <p>My research probes the <strong>quark-gluon plasma (QGP)</strong>, the primordial state of matter that filled the Universe microseconds after the Big Bang. By colliding heavy nuclei at nearly the speed of light, we recreate tiny droplets of this "quark soup" and study its properties, such as its viscosity, its speed of sound and how it flows collectively. The same collisions can also be used to image the shapes of the colliding atomic nuclei.</p>
                 <p>I completed my Ph.D. at <strong>Stony Brook University</strong>, working with data from the ATLAS experiment at CERN and the STAR experiment at Brookhaven National Laboratory.</p>
 
                 <h3>Research Highlights</h3>
+                <p style="font-size:0.95rem;margin-bottom:10px;">Selected papers, newest first. Click a card for an animated explanation.</p>
                 <div class="highlight-grid">
-                    <div class="highlight-card">
-                        <span class="hl-meta">2023 · ATLAS · <em>Phys. Rev. C</em> 107, 054910</span>
-                        <strong>First experimental evidence that heavy-ion measurements are sensitive to nuclear triaxiality</strong>
-                        Correlating elliptic flow with mean momentum in Xe+Xe and Pb+Pb collisions shows that the ¹²⁹Xe nucleus is triaxial.
-                        <span class="hl-links"><a href="research/flow-momentum-correlations.html">Animated explainer</a> · <a href="https://doi.org/10.1103/PhysRevC.107.054910" target="_blank" rel="noopener">Paper</a></span>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="hl-meta">Nov 2024 · STAR · <em>Nature</em> 635, 67–72</span>
-                        <strong>First imaging of the shapes of atomic nuclei in high-energy collisions</strong>
-                        U+U and Au+Au collisions take snapshots of nuclear shapes, measuring uranium's deformation and triaxiality.
-                        <span class="hl-links"><a href="research/imaging-nuclear-shapes.html">Animated explainer</a> · <a href="https://www.nature.com/articles/s41586-024-08097-2" target="_blank" rel="noopener">Paper</a></span>
-                    </div>
-                    <div class="highlight-card">
+                    <a class="highlight-card hl-card" href="research/radial-flow-collectivity.html">
+                        <img src="research/fig/radial-flow-collectivity/fig_04.png" alt="Key figure from the paper" loading="lazy">
+                        <span class="hl-meta">Jan 2026 · ATLAS · <em>Phys. Rev. Lett.</em> 136, 032301 · Editors' Suggestion</span>
+                        <strong>First experimental study showing radial flow is collective</strong>
+                        <span class="hl-text">The momentum dependence of radial-flow fluctuations, v₀(pT), passes all three tests of collectivity and is sensitive to bulk viscosity.</span>
+                        <span class="hl-foot"><span class="citation-badge" data-query="arxiv:2503.24125">Loading...</span><span class="hl-more">Animated explainer →</span></span>
+                    </a>
+                    <a class="highlight-card hl-card" href="research/momentum-fluctuations.html">
+                        <img src="research/fig/momentum-fluctuations/fig_03.png" alt="Key figure from the paper" loading="lazy">
                         <span class="hl-meta">Dec 2024 · ATLAS · <em>Phys. Rev. Lett.</em> 133, 252301</span>
                         <strong>First measurement disentangling geometrical and intrinsic fluctuations in the initial state</strong>
-                        Ultra-central collisions switch off size fluctuations, separating the two sources and constraining the QGP speed of sound.
-                        <span class="hl-links"><a href="research/momentum-fluctuations.html">Animated explainer</a> · <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.252301" target="_blank" rel="noopener">Paper</a></span>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="hl-meta">2026 · ATLAS · <em>Phys. Rev. Lett.</em> 136, 032301 · Editors' Suggestion</span>
-                        <strong>First experimental study showing radial flow is collective</strong>
-                        The momentum dependence of radial-flow fluctuations, v₀(pT), passes all three tests of collectivity and is sensitive to bulk viscosity.
-                        <span class="hl-links"><a href="research/radial-flow-collectivity.html">Animated explainer</a> · <a href="https://journals.aps.org/prl/abstract/10.1103/ldcn-r2lq" target="_blank" rel="noopener">Paper</a></span>
-                    </div>
+                        <span class="hl-text">Ultra-central collisions switch off size fluctuations, separating the two sources and constraining the QGP speed of sound.</span>
+                        <span class="hl-foot"><span class="citation-badge" data-query="doi:10.1103/PhysRevLett.133.252301">Loading...</span><span class="hl-more">Animated explainer →</span></span>
+                    </a>
+                    <a class="highlight-card hl-card" href="research/imaging-nuclear-shapes.html">
+                        <img src="research/fig/imaging-nuclear-shapes/fig_01.png" alt="Key figure from the paper" loading="lazy">
+                        <span class="hl-meta">Nov 2024 · STAR · <em>Nature</em> 635, 67–72</span>
+                        <strong>First imaging of the shapes of atomic nuclei in high-energy collisions</strong>
+                        <span class="hl-text">U+U and Au+Au collisions take snapshots of nuclear shapes, measuring uranium's deformation and triaxiality.</span>
+                        <span class="hl-foot"><span class="citation-badge" data-query="doi:10.1038/s41586-024-08097-2">Loading...</span><span class="hl-more">Animated explainer →</span></span>
+                    </a>
+                    <a class="highlight-card hl-card" href="research/thermalization-femtoscale.html">
+                        <img src="research/fig/thermalization-femtoscale/panel_plot.png" alt="Key figure from the paper" loading="lazy">
+                        <span class="hl-meta">May 2024 · <em>Phys. Rev. C</em> 109, L051902 · co-author</span>
+                        <strong>First direct evidence of thermalization at the femtoscale</strong>
+                        <span class="hl-text">At fixed multiplicity, smaller and denser fireballs give particles more momentum, explaining ATLAS data on [pT] fluctuations.</span>
+                        <span class="hl-foot"><span class="citation-badge" data-query="doi:10.1103/PhysRevC.109.L051902">Loading...</span><span class="hl-more">Animated explainer →</span></span>
+                    </a>
+                    <a class="highlight-card hl-card" href="research/flow-momentum-correlations.html">
+                        <img src="research/fig/flow-momentum-correlations/fig_09.png" alt="Key figure from the paper" loading="lazy">
+                        <span class="hl-meta">May 2023 · ATLAS · <em>Phys. Rev. C</em> 107, 054910</span>
+                        <strong>First experimental evidence that heavy-ion measurements are sensitive to nuclear triaxiality</strong>
+                        <span class="hl-text">Correlating elliptic flow with mean momentum in Xe+Xe and Pb+Pb collisions shows that the ¹²⁹Xe nucleus is triaxial.</span>
+                        <span class="hl-foot"><span class="citation-badge" data-query="doi:10.1103/PhysRevC.107.054910">Loading...</span><span class="hl-more">Animated explainer →</span></span>
+                    </a>
+                    <a class="highlight-card hl-card" href="research/higher-order-pt-fluctuations.html">
+                        <img src="research/fig/higher-order-pt-fluctuations/FitCumu.png" alt="Key figure from the paper" loading="lazy">
+                        <span class="hl-meta">Feb 2022 · <em>Phys. Rev. C</em> 105, 024904</span>
+                        <strong>A method to measure higher-order fluctuations of the mean transverse momentum</strong>
+                        <span class="hl-text">Fast cumulant and subevent methods for the variance, skewness and kurtosis of [pT], with a non-flow baseline from HIJING.</span>
+                        <span class="hl-foot"><span class="citation-badge" data-query="doi:10.1103/PhysRevC.105.024904">Loading...</span><span class="hl-more">Animated explainer →</span></span>
+                    </a>
                 </div>
+
                 <p style="font-size:0.95rem;">Covered by CERN Courier, Phys.org, BNL Newsroom and others (<a href="#news">see coverage</a>) and presented in invited talks including a CERN-TH seminar (<a href="#talks">all talks</a>).</p>
 
                 <h3>Research Interests</h3>
@@ -641,16 +692,12 @@
                     <span>Initial state of heavy-ion collisions</span>
                     <span>Hydrodynamic modelling (Trajectum)</span>
                 </div>
-
-                <div class="cta-box">
-                    <p>I am happy to hear from students looking for thesis projects and from researchers interested in collaborating. Email me at <a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a>.</p>
-                </div>
             </div>
         </section>
 
         <section id="research" class="content-section">
             <header class="section-header"><h2 class="section-title">Research Explained</h2></header>
-            <p class="research-intro">Short, animated explanations of my first-author papers: the gap each one addresses, what we measured, what we found and what comes next. Every plot is taken from the paper itself.</p>
+            <p class="research-intro">Short, animated explanations of papers where I am a primary or leading author: the gap each one addresses, what we measured, what we found and what comes next. Every plot is taken from the paper itself.</p>
             <div class="research-grid">
                 <a class="research-card" href="research/radial-flow-collectivity.html">
                     <img src="research/fig/radial-flow-collectivity/fig_04.png" alt="Key figure from the paper: Is the quark-gluon plasma&#x27;s radial explosion a collective motion?" loading="lazy">
@@ -739,6 +786,19 @@
                         <span class="rc-title">Counting the nucleons that miss: a sharper look at how a collision begins</span>
                         <p class="rc-text">Collisions are usually grouped by how many particles they produce, which mixes very different starting configurations. Model simulations show that also counting spectator neutrons picks out events with the same participants but different density, and a simple slope ratio measures the gain.</p>
                         <span class="rc-ref">Eur. Phys. J. C 82, 855 (2022)</span>
+                        <span class="rc-more">Animated explainer →</span>
+                    </div>
+                </a>
+            </div>
+            <h3>Co-authored paper</h3>
+            <div class="research-grid">
+                <a class="research-card" href="research/thermalization-femtoscale.html">
+                    <img src="research/fig/thermalization-femtoscale/panel_plot.png" alt="Key figure from the paper" loading="lazy">
+                    <div class="rc-body">
+                        <span class="rc-kicker">Phenomenology · PRC 2024 · co-author</span>
+                        <span class="rc-title">Squeeze the same particles into less space, and they come out faster</span>
+                        <p class="rc-text">ATLAS saw momentum fluctuations drop sharply in the most central lead-lead collisions. With the same number of particles, a smaller volume makes a denser, hotter fluid and more momentum per particle, as thermalization predicts.</p>
+                        <span class="rc-ref">Phys. Rev. C 109, L051902 (2024)</span>
                         <span class="rc-more">Animated explainer →</span>
                     </div>
                 </a>
@@ -932,7 +992,7 @@
                 <div class="pub-meta"><strong>ATLAS-CONF-2023-061</strong></div>
                 <div class="pub-links">
                     <a href="https://cds.cern.ch/record/2873507/files/ATLAS-CONF-2023-061.pdf" target="_blank" rel="noopener" class="link-btn">Link</a>
-                    <span class="citation-badge" data-query="recid:2693895">Loading...</span>
+                    <span class="citation-badge" data-query="recid:2707806">Loading...</span>
                 </div>
             </article>
 
@@ -972,7 +1032,7 @@
                 <div class="pub-meta"><strong>ATLAS-CONF-2021-001</strong></div>
                 <div class="pub-links">
                     <a href="https://cds.cern.ch/record/2747068" target="_blank" rel="noopener" class="link-btn">Link</a>
-                    <span class="citation-badge" data-query="recid:1831518">Loading...</span>
+                    <span class="citation-badge" data-query="recid:1839988">Loading...</span>
                 </div>
             </article>
 
