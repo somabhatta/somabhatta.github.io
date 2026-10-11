@@ -144,3 +144,7 @@ figure.anim-panel figcaption { color:#354b61; background:#f5f8fb; }
 .title-link:hover { color:#0056b3; text-decoration-color:currentColor; }
 .r-page h1 .title-link { text-decoration:none; }
 .r-page h1 .title-link:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:.12em; }
+
+/* Compact animation panels: centred, not full page width */
+figure.anim-panel { max-width: 720px; margin-left: auto; margin-right: auto; }
+.anim-chapters, .anim-restart { display: none !important; }

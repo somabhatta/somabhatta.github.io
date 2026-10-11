@@ -10,7 +10,7 @@
 (function () {
     'use strict';
 
-    const UMAMI_WEBSITE_ID = '<script defer src="https://cloud.umami.is/script.js" data-website-id="5de528ef-4713-412b-95d0-c494e72e3a6e"></script>';                  // from cloud.umami.is → Settings → Websites → your site
+    const UMAMI_WEBSITE_ID = '5de528ef-4713-412b-95d0-c494e72e3a6e';                  // from cloud.umami.is → Settings → Websites → your site
     const UMAMI_SCRIPT = 'https://cloud.umami.is/script.js';
 
     if (!UMAMI_WEBSITE_ID) return;

@@ -182,7 +182,7 @@
     // heat colour for temperature-like quantity x in [0,1]
     u.heat = function (x, a = 1) {
         x = u.clamp(x, 0, 1);
-        const r = 255, g = Math.round(u.lerp(60, 235, x)), b = Math.round(u.lerp(20, 140, x * x));
+        const r = Math.round(u.lerp(255, 200, x)), g = Math.round(u.lerp(205, 30, x)), b = Math.round(u.lerp(110, 25, x));   // cool = amber, hot = deep red
         return `rgba(${r},${g},${b},${a})`;
     };
 
@@ -346,8 +346,7 @@
         hint.textContent = 'Swipe the illustration horizontally to explore both sides.';
         const bar = document.createElement('div');
         bar.className = 'anim-controls';
-        bar.innerHTML = '<button type="button" class="anim-btn anim-play"><span class="anim-btn-label">Play</span></button>' +
-            '<button type="button" class="anim-btn anim-restart" aria-label="Restart animation and reset simulated events">Restart</button>';
+        bar.innerHTML = '<button type="button" class="anim-btn anim-play"><span class="anim-btn-label">Play</span></button>';
         const steps = document.createElement('div');
         steps.className = 'anim-chapters';
         steps.setAttribute('role', 'group');
@@ -370,16 +369,7 @@
         const qs = new URLSearchParams(location.search);
         const freezeT = parseFloat(qs.get('animt'));
         if (Number.isFinite(freezeT)) { t = Math.max(0, freezeT); userPaused = true; }
-        const phaseButtons = (def.phases || []).length > 1 ? def.phases.map((ph, index) => {
-            const button = document.createElement('button');
-            button.type = 'button'; button.className = 'anim-phase';
-            button.textContent = 'Step ' + (index + 1);
-            button.addEventListener('click', () => {
-                t = Math.floor(t / duration) * duration + (ph.preview ?? ph.t);
-                userPaused = true; update(); render(); status.textContent = stepEl.textContent;
-            });
-            steps.appendChild(button); return button;
-        }) : [];
+        const phaseButtons = [];   // step buttons removed: each panel has Play/Pause only
         if (!phaseButtons.length) steps.hidden = true;
         function resize() {
             // Preserve readable type and side-by-side comparisons on narrow screens.
@@ -450,7 +440,7 @@
         }
         function update() { (visible && !userPaused && !document.hidden) ? start() : stop(); }
         playBtn.addEventListener('click', () => { userPaused = playing; update(); });
-        bar.querySelector('.anim-restart').addEventListener('click', () => {
+        (bar.querySelector('.anim-restart') || document.createElement('button')).addEventListener('click', () => {
             t = 0; last = null; failed = false;
             state = def.setup ? def.setup(params, W, H, null) : {};
             render(); update(); status.textContent = 'Animation reset to its first frame.';
