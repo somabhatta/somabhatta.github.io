@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-flow in Flow–Momentum Correlations Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of how non-flow from jets and decays affects the correlation between elliptic flow and mean transverse momentum in pp, pPb and peripheral PbPb collisions (Zhang, Behera, Bhatta, Jia, Phys. Lett. B 822, 136702, 2021).">
+    <link rel="canonical" href="https://somabhatta.github.io/research/nonflow-flow-momentum.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Rapidity-separated subevents suppress non-flow in flow–momentum correlations of small systems">
+    <meta property="og:description" content="Animated explainer: jets and decays can fake a v2–[pT] correlation; rapidity-separated subevents remove most of it, but at very low multiplicity the leftover depends on the model.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/nonflow-flow-momentum.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/nonflow-flow-momentum/papercov.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Non-flow effects in correlation between harmonic flow and transverse momentum in nuclear collisions",
+      "author": [
+        {"@type": "Person", "name": "Chunjian Zhang"},
+        {"@type": "Person", "name": "Arabinda Behera"},
+        {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+        {"@type": "Person", "name": "Jiangyong Jia"}
+      ],
+      "isPartOf": {"@type": "Periodical", "name": "Physics Letters B"},
+      "datePublished": "2021",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "sameAs": ["https://doi.org/10.1016/j.physletb.2021.136702", "https://arxiv.org/abs/2102.05200"],
+      "about": ["Non-flow", "Elliptic flow", "Transverse momentum", "Subevent cumulants", "Small collision systems", "Gluon saturation"],
+      "url": "https://somabhatta.github.io/research/nonflow-flow-momentum.html"
+    }
+    </script>
+<link rel="stylesheet" href="assets/experience.css">
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="longitudinal-decorrelations.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">Phenomenology · Pythia and Hijing models of pp, pPb and PbPb</div>
+    <h1><a class="title-link" href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">Rapidity-separated subevents suppress non-flow in flow–momentum correlations of small systems</a></h1>
+    <p class="r-paper-ref"><em><a class="title-link" href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">Non-flow effects in correlation between harmonic flow and transverse momentum in nuclear collisions</a></em><br>
+        C. Zhang, A. Behera, S. Bhatta, J. Jia, <strong>Phys. Lett. B 822, 136702 (2021)</strong></p>
+    <p class="r-role"><strong>My role:</strong> co-author.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">Read the paper (PLB)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2102.05200" target="_blank" rel="noopener">arXiv:2102.05200</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>In small collisions, events with stronger elliptic flow v₂ have lower mean transverse momentum [pT]. Jets and decays, called non-flow, can also correlate these two. Using the Pythia and Hijing models, we show that splitting the detector into rapidity-separated subevents removes most non-flow. What remains is much smaller than the data, except at very low multiplicity, where it depends on the model.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: a proposed test of saturation, with non-flow unchecked</h2>
+        <p>In each collision we can measure two numbers: how elliptic the particle emission is (v₂) and the average momentum per particle [pT]. In hydrodynamics, v₂ follows the shape of the initial collision zone and [pT] follows its size: a more compact zone pushes harder and gives a larger [pT].</p>
+        <figure class="anim-panel" data-anim="nonflow-flow-momentum-hydro">
+            <figcaption><strong>What you're seeing (schematic):</strong> two small collisions with the same number of particles. The elongated one gives more v₂, the compact one more [pT]. Hydrodynamic calculations predict that in small systems this adds up to a negative correlation between v₂² and [pT].</figcaption>
+        </figure>
+        <p>ATLAS measured a large negative correlation in pPb and peripheral PbPb collisions, as hydrodynamics expects. Calculations with gluon saturation predicted that at very small multiplicity the initial momenta of the gluons would turn the correlation positive. Such a sign change was argued to be strong evidence for saturation.</p>
+        <div class="r-keypoint"><strong>Open question:</strong> in these small systems, jets and decays also correlate particles. How much of the signal, and of any sign change, could they produce? This had not been studied. Related: <a href="flow-momentum-correlations.html">the ATLAS flow–momentum correlation measurement</a>.</div>
+    </section>
+
+    <!-- 2. MEASURE -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we compute: non-flow in models with no flow at all</h2>
+        <p>The observable is the covariance cov(v₂², [pT]): built from triplets of particles, two that measure v₂ and one that carries its pT. <strong>Non-flow</strong> means correlations among only a few particles, from jets, dijets and resonance decays, usually in one or two small regions of the detector.</p>
+        <figure class="anim-panel" data-anim="nonflow-flow-momentum-jet">
+            <figcaption><strong>What you're seeing (schematic):</strong> flow is a pattern shared by all particles. A jet sends a few fast particles in one direction, which raises both the event's v₂² and its [pT]. Counted naively, that looks like a positive correlation.</figcaption>
+        </figure>
+        <p>Flow spans a wide range of pseudorapidity η (angle along the beam); non-flow is local. So we take the particles from separate η windows, using the same windows as ATLAS: <strong>standard</strong> (all of |η| &lt; 2.5), <strong>two-subevent</strong> (a and c, with a gap |η| &lt; 0.75) and <strong>three-subevent</strong> (v₂ from a and c, [pT] from a middle window b).</p>
+        <figure class="anim-panel" data-anim="nonflow-flow-momentum-subevents">
+            <figcaption><strong>What you're seeing (schematic):</strong> one event drawn in angle versus η. In the standard method a whole triplet can sit inside one jet. Two subevents block that, but a back-to-back jet pair can still connect a and c. With three subevents, a single jet cannot reach all three windows, while flow, present everywhere, survives.</figcaption>
+        </figure>
+        <p>We generate pp collisions with Pythia8 and Hijing, and pPb and peripheral PbPb collisions with Hijing. These models contain jets and decays but no flow, so anything they give is non-flow. We also work out the formulas that compute all three methods quickly from per-event sums.</p>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe: three subevents work best, but not perfectly</h2>
+        <p>In Pythia pp collisions the standard method gives a large positive covariance for every harmonic, as expected from jets. Two subevents reduce it, and three subevents reduce it the most. This ordering holds for every system and pT range we studied.</p>
+        <figure class="paper-fig">
+            <img src="fig/nonflow-flow-momentum/papervnptmtd_rb3_sys0_pt0_cov.png" alt="Three panels of covariance between vn squared and mean pT versus multiplicity for n equals 2, 3 and 4 in Pythia pp collisions, comparing standard, two-subevent and three-subevent methods" loading="lazy" width="1600" height="378">
+            <figcaption><strong>Fig. 1:</strong> non-flow in Pythia pp collisions for v₂, v₃ and v₄ (left to right), versus multiplicity dN<sub>ch</sub>/dη. Black circles (standard) sit well above zero; red (two-subevent) are smaller; blue (three-subevent) stay closest to zero.
+                <span class="fig-source">Figure from C. Zhang et al., <a href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">Phys. Lett. B 822, 136702 (2021)</a>, <a href="https://arxiv.org/abs/2102.05200" target="_blank" rel="noopener">arXiv:2102.05200</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>Even with three subevents some non-flow remains, and at low multiplicity the models disagree. For pp, Pythia and Hijing agree above dN<sub>ch</sub>/dη ≈ 20. Below that, Pythia turns positive at the lowest multiplicities, while Hijing mostly stays negative.</p>
+        <figure class="paper-fig">
+            <img src="fig/nonflow-flow-momentum/papervnptsys_rb3_sub2_har0_covb.png" alt="Three panels of three-subevent covariance versus multiplicity in pp collisions from Pythia at 13 TeV and Hijing at 13 and 5 TeV, for three pT ranges" loading="lazy" width="1600" height="374">
+            <figcaption><strong>Fig. 3:</strong> leftover non-flow in pp with three subevents, for three pT ranges. Black (Pythia) rises above zero at the far left. Red and blue (Hijing) dip below zero and rise again at the lowest multiplicities, but change sign only in the lowest pT range.
+                <span class="fig-source">Figure from C. Zhang et al., <a href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">Phys. Lett. B 822, 136702 (2021)</a>, <a href="https://arxiv.org/abs/2102.05200" target="_blank" rel="noopener">arXiv:2102.05200</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/nonflow-flow-momentum/papervnptsys_rb3_sub2_har0_cov.png" alt="Three panels of three-subevent covariance versus multiplicity comparing pp Pythia, pPb Hijing and PbPb Hijing, for three pT ranges" loading="lazy" width="1600" height="365">
+            <figcaption><strong>Fig. 4:</strong> the same comparison across systems. pPb (red) and PbPb (blue) leftover non-flow is negative at low multiplicity and grows with pT; pp (black) is positive below dN<sub>ch</sub>/dη ≈ 8.
+                <span class="fig-source">Figure from C. Zhang et al., <a href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">Phys. Lett. B 822, 136702 (2021)</a>, <a href="https://arxiv.org/abs/2102.05200" target="_blank" rel="noopener">arXiv:2102.05200</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>Compared with ATLAS data, leftover non-flow is much smaller in PbPb. In pPb at 0.5–2 GeV it reaches about 30–40% of the measured covariance at dN<sub>ch</sub>/dη ≈ 20. Below dN<sub>ch</sub>/dη ≈ 10, the positive saturation signal in a CGC-hydro calculation seems smaller than the negative Hijing non-flow.</p>
+        <figure class="paper-fig">
+            <img src="fig/nonflow-flow-momentum/papercov.png" alt="Two panels of covariance versus multiplicity for pPb and PbPb, comparing Hijing three-subevent non-flow, ATLAS data and a CGC-hydro calculation, for two pT ranges" loading="lazy" width="1600" height="748">
+            <figcaption><strong>Fig. 6 (top):</strong> filled markers are ATLAS data, open markers are Hijing non-flow (three subevents), the pink band is a CGC-hydro calculation with initial-state momentum correlations. Above dN<sub>ch</sub>/dη ≈ 20 the open markers sit near zero, far from the data.
+                <span class="fig-source">Figure from C. Zhang et al., <a href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">Phys. Lett. B 822, 136702 (2021)</a>, <a href="https://arxiv.org/abs/2102.05200" target="_blank" rel="noopener">arXiv:2102.05200</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/nonflow-flow-momentum/paperrho1.png" alt="Two panels of the normalised correlation coefficient rho versus multiplicity for pPb and PbPb, comparing Hijing non-flow, ATLAS data and a CGC-hydro calculation" loading="lazy" width="1600" height="748">
+            <figcaption><strong>Fig. 6 (bottom):</strong> the same comparison for the normalised coefficient ρ(v₂², [pT]). The picture is similar, but in pPb at 0.5–2 GeV non-flow reaches more than half of the measured value at dN<sub>ch</sub>/dη ≈ 20.
+                <span class="fig-source">Figure from C. Zhang et al., <a href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">Phys. Lett. B 822, 136702 (2021)</a>, <a href="https://arxiv.org/abs/2102.05200" target="_blank" rel="noopener">arXiv:2102.05200</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude: the data at higher multiplicity are genuine; the low end is unclear</h2>
+        <p>Above dN<sub>ch</sub>/dη ≈ 20, leftover non-flow is much smaller than the measured covariance in pPb and PbPb. This supports reading the data as a final-state, hydrodynamic response to the initial geometry.</p>
+        <figure class="anim-panel" data-anim="nonflow-flow-momentum-question">
+            <figcaption><strong>What you're seeing (schematic):</strong> the expected pieces of cov(v₂², [pT]) versus multiplicity. At high multiplicity, leftover non-flow is small next to the hydrodynamic signal. At very low multiplicity, where saturation should turn the sign positive, Pythia and Hijing give non-flow of opposite sign.</figcaption>
+        </figure>
+        <p>At very low multiplicity, the sign and size of the leftover non-flow depend on the model. If it is negative, it can hide the predicted sign change. If it is positive, a measured positive value cannot be credited to saturation alone. So, for now, a sign change by itself is not clear evidence for saturation.</p>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Better models of all sources:</strong> the paper calls for detailed quantitative studies of non-flow, initial-state and final-state effects together at low multiplicity.</li>
+            <li><strong>Use the three-subevent method:</strong> it gave the smallest non-flow for every harmonic, system and pT range studied.</li>
+            <li><strong>Clean normalisation:</strong> when computing ρ, the size of v₂ fluctuations should come from non-flow-free flow measurements; otherwise non-flow biases ρ at low multiplicity.</li>
+        </ul>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> C. Zhang, A. Behera, S. Bhatta, J. Jia, "Non-flow effects in correlation between harmonic flow and transverse momentum in nuclear collisions", Phys. Lett. B 822, 136702 (2021), <a href="https://doi.org/10.1016/j.physletb.2021.136702" target="_blank" rel="noopener">doi:10.1016/j.physletb.2021.136702</a>, <a href="https://arxiv.org/abs/2102.05200" target="_blank" rel="noopener">arXiv:2102.05200</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="nuclear-shape-fluctuations.html">← Previous: Nuclear shape fluctuations in heavy-ion collisions</a>
+        <a href="../index.html#research">All research summaries</a>
+        <a href="longitudinal-decorrelations.html">Next: Sources of longitudinal flow decorrelations →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/nonflow-flow-momentum.js"></script>
+<script src="assets/story-animations.js"></script>
+<script src="assets/experience.js"></script>
+<script src="../analytics.js" defer></script>
+</body>
+</html>

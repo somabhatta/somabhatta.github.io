@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Shape Fluctuations Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of how fluctuations of the nuclear shape change the initial geometry of heavy-ion collisions (Dimri, Bhatta, Jia, Eur. Phys. J. A 59, 45, 2023).">
+    <link rel="canonical" href="https://somabhatta.github.io/research/nuclear-shape-fluctuations.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Nuclear shape fluctuations widen collision-geometry fluctuations and blur prolate–oblate differences">
+    <meta property="og:description" content="Animated explainer: when the shape of a nucleus fluctuates, heavy-ion collisions see a wider spread of initial geometries, and prolate and oblate shapes become hard to tell apart.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/nuclear-shape-fluctuations.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/nuclear-shape-fluctuations/fig_01.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Impact of nuclear shape fluctuations in high-energy heavy ion collisions",
+      "author": [
+        {"@type": "Person", "name": "Aman Dimri"},
+        {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"},
+        {"@type": "Person", "name": "Jiangyong Jia"}
+      ],
+      "isPartOf": {"@type": "Periodical", "name": "The European Physical Journal A"},
+      "datePublished": "2023",
+      "sameAs": ["https://doi.org/10.1140/epja/s10050-023-00965-1", "https://arxiv.org/abs/2301.03556"],
+      "about": ["Nuclear deformation", "Shape fluctuations", "Triaxiality", "Eccentricity", "Heavy-ion collisions"],
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://somabhatta.github.io/research/nuclear-shape-fluctuations.html"
+    }
+    </script>
+<link rel="stylesheet" href="assets/experience.css">
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="nonflow-flow-momentum.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">Phenomenology · Monte Carlo Glauber model of U+U collisions</div>
+    <h1><a class="title-link" href="https://doi.org/10.1140/epja/s10050-023-00965-1" target="_blank" rel="noopener">Nuclear shape fluctuations widen collision-geometry fluctuations and blur prolate–oblate differences</a></h1>
+    <p class="r-paper-ref"><em><a class="title-link" href="https://doi.org/10.1140/epja/s10050-023-00965-1" target="_blank" rel="noopener">Impact of nuclear shape fluctuations in high-energy heavy ion collisions</a></em><br>
+        A. Dimri, S. Bhatta, J. Jia, <strong>Eur. Phys. J. A 59, 45 (2023)</strong></p>
+    <p class="r-role"><strong>My role:</strong> co-author.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://doi.org/10.1140/epja/s10050-023-00965-1" target="_blank" rel="noopener">Read the paper (EPJA)</a>
+        <a class="r-btn ghost" href="https://arxiv.org/abs/2301.03556" target="_blank" rel="noopener">arXiv:2301.03556</a>
+        <a class="r-btn ghost" href="https://indico.cern.ch/event/1043736/contributions/5441993/attachments/2672245/4632630/IS2023_FlashTalk_Somadutta.pdf" target="_blank" rel="noopener">My Initial Stages 2023 talk</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>Many nuclei do not have one fixed shape: their deformation fluctuates around an average. We study how this changes the initial shape and size of the hot region in heavy-ion collisions. Fluctuations in the amount of deformation widen the event-by-event spread in a predictable way. Fluctuations in the type of deformation wash out the difference between prolate and oblate nuclei.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: nuclei with a shape that is not fixed</h2>
+        <p>Heavy-ion collisions are now used to measure nuclear shapes. The shape is described by two numbers: <strong>β</strong>, how strongly the nucleus is deformed, and <strong>γ</strong>, the type of deformation, from cigar-like (prolate, γ = 0°) through triaxial to pancake-like (oblate, γ = 60°).</p>
+        <figure class="anim-panel" data-anim="nuclear-shape-fluctuations-wobble">
+            <figcaption><strong>What you're seeing (schematic):</strong> a rigid nucleus keeps one shape, so it sits at a single point in the (β, γ) map. A soft nucleus changes shape, and its ground state is a spread of shapes around an average.</figcaption>
+        </figure>
+        <p>In nuclear-structure theory, the ground state of many nuclei is a mixture of shapes with different (β, γ). Earlier studies of collision observables treated deformed nuclei as rigid; this paper adds the fluctuations.</p>
+        <div class="r-keypoint"><strong>Open question:</strong> how do fluctuations of β and γ change what heavy-ion collisions measure, and can the average shape be separated from its fluctuations?</div>
+    </section>
+
+    <!-- 2. MEASURE -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we compute: the geometry of each collision</h2>
+        <p>The nuclei are so fast that each collision takes one frozen snapshot of both nuclei: their shapes and orientations. From the nucleons that collide we compute two numbers per event: the <strong>eccentricity ε₂</strong> (how elongated the overlap is, which drives elliptic flow) and the <strong>inverse size d⊥</strong> (how compact it is, which drives radial flow and the mean transverse momentum).</p>
+        <figure class="anim-panel" data-anim="nuclear-shape-fluctuations-snapshot">
+            <figcaption><strong>What you're seeing (schematic toy model):</strong> each collision adds one ε₂ value. Both rows have the same average β, but in the lower row β varies from nucleus to nucleus, so the spread of ε₂ and of the size gets wider.</figcaption>
+        </figure>
+        <p>We study the spread of these numbers over many events: their variances (two-particle), skewness (three-particle) and kurtosis (four-particle). We first derive simple formulas for how they depend on the mean and spread of β and γ. We then test them with a Monte Carlo Glauber model of head-on U+U collisions, where each nucleus gets a random (β, γ) drawn from Gaussian distributions: 170 settings with about 50 million events each.</p>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe</h2>
+        <h3>Fluctuations of γ wash out prolate versus oblate</h3>
+        <p>Three-particle correlations are the main handle on γ: their sign separates prolate from oblate shapes. When γ fluctuates, this signal shrinks roughly as e<sup>−9σγ²/2</sup>. A 20° fluctuation reduces it by nearly 40%.</p>
+        <figure class="anim-panel" data-anim="nuclear-shape-fluctuations-gamma">
+            <figcaption><strong>What you're seeing (schematic):</strong> as the γ fluctuation grows, the prolate and oblate signals both move toward the triaxial value. A triaxial nucleus is unaffected.</figcaption>
+        </figure>
+        <figure class="paper-fig">
+            <img src="fig/nuclear-shape-fluctuations/fig_01.png" alt="Two panels showing three-particle correlators versus the triaxiality fluctuation sigma gamma for several mean gamma values; all curves converge at large sigma gamma" loading="lazy" width="1600" height="628">
+            <figcaption><strong>Fig. 1:</strong> two three-particle correlators versus the γ fluctuation σγ (in radians) for β = 0.28. Each colour is one average γ̄; the curves start far apart and meet at the flat triaxial line (cos 3γ̄ = 0) once σγ is large.
+                <span class="fig-source">Figure from A. Dimri, S. Bhatta, J. Jia, <a href="https://doi.org/10.1140/epja/s10050-023-00965-1" target="_blank" rel="noopener">Eur. Phys. J. A 59, 45 (2023)</a>, <a href="https://arxiv.org/abs/2301.03556" target="_blank" rel="noopener">arXiv:2301.03556</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <h3>Fluctuations of β widen the spread</h3>
+        <p>The variances of ε₂ and d⊥ grow with ⟨β²⟩ = β̄² + σβ²: a spread in β adds to the signal just like a larger average β. The size variance also needs a smaller next-order term.</p>
+        <figure class="paper-fig narrow">
+            <img src="fig/nuclear-shape-fluctuations/fig_03.png" alt="Grid of six panels showing the variance of eccentricity and of inverse size versus mean beta squared, for eleven values of sigma beta squared, with fits" loading="lazy" width="1600" height="1900">
+            <figcaption><strong>Fig. 3:</strong> left, the variance of ε₂; right, that of d⊥, versus β̄². Each colour is one σβ², and larger σβ² shifts the line up. Rows show fits with more terms; the bottom row describes the model well.
+                <span class="fig-source">Figure from A. Dimri, S. Bhatta, J. Jia, <a href="https://doi.org/10.1140/epja/s10050-023-00965-1" target="_blank" rel="noopener">Eur. Phys. J. A 59, 45 (2023)</a>, <a href="https://arxiv.org/abs/2301.03556" target="_blank" rel="noopener">arXiv:2301.03556</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>Higher-order quantities depend on higher powers of β, so the spread σβ matters even more there. The four-particle cumulant c<sub>2,ε</sub>{4} is negative for a rigid deformed nucleus but turns positive even for a small σβ.</p>
+        <figure class="paper-fig">
+            <img src="fig/nuclear-shape-fluctuations/fig_05.png" alt="Two panels showing the four-particle cumulant of eccentricity versus mean beta squared for several sigma beta squared values; only the sigma beta equals zero curve goes negative" loading="lazy" width="1600" height="640">
+            <figcaption><strong>Fig. 5:</strong> the four-particle cumulant versus β̄². Only the red points (no β fluctuation) go clearly negative; with any spread in β the values move up. Left and right show two fit forms.
+                <span class="fig-source">Figure from A. Dimri, S. Bhatta, J. Jia, <a href="https://doi.org/10.1140/epja/s10050-023-00965-1" target="_blank" rel="noopener">Eur. Phys. J. A 59, 45 (2023)</a>, <a href="https://arxiv.org/abs/2301.03556" target="_blank" rel="noopener">arXiv:2301.03556</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude</h2>
+        <ul>
+            <li><strong>β fluctuations</strong> change the variances, skewness and kurtosis of ε₂ and d⊥ in a controllable way, described by moments of β.</li>
+            <li><strong>γ fluctuations</strong> reduce the prolate–oblate difference for every observable. For large fluctuations, the values approach those of rigid triaxial nuclei.</li>
+            <li>A negative c<sub>2,ε</sub>{4} that decreases further in central collisions would clearly indicate a large static deformation.</li>
+        </ul>
+        <p>The mean and spread of β can be separated. The two-particle ⟨ε₂²⟩ only fixes β̄² + σβ². The combination ⟨ε₂⁴⟩ − k⟨ε₂²⟩² with k = 2.541 depends almost only on β̄, with about 7% best precision in this model. With β̄ known, ⟨ε₂²⟩ then gives σβ.</p>
+        <figure class="anim-panel" data-anim="nuclear-shape-fluctuations-separate">
+            <figcaption><strong>What you're seeing (schematic):</strong> a rigid and a soft nucleus with the same ⟨β²⟩ give the same two-particle signal. The four-particle signal differs, and combining the two recovers both the average β and its spread.</figcaption>
+        </figure>
+        <figure class="paper-fig narrow">
+            <img src="fig/nuclear-shape-fluctuations/fig_06.png" alt="The combination of fourth and second moments of eccentricity versus mean beta to the fourth for all sigma beta values, falling nearly on one line; inset shows chi-square minimum at k equals 2.541" loading="lazy" width="1600" height="1253">
+            <figcaption><strong>Fig. 6:</strong> with k = 2.541 (inset: the value that best removes the σβ dependence), the points for all σβ² fall close to one line in β̄⁴. The remaining spread sets the 7% precision on β̄.
+                <span class="fig-source">Figure from A. Dimri, S. Bhatta, J. Jia, <a href="https://doi.org/10.1140/epja/s10050-023-00965-1" target="_blank" rel="noopener">Eur. Phys. J. A 59, 45 (2023)</a>, <a href="https://arxiv.org/abs/2301.03556" target="_blank" rel="noopener">arXiv:2301.03556</a>, CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>This separation works less well when σβ is comparable to or larger than β̄.</p>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Full hydrodynamics:</strong> test how well the separation of β̄ and σβ works on final-state flow observables, not only on the initial geometry.</li>
+            <li><strong>Triaxial nuclei such as ¹²⁹Xe:</strong> flow–momentum correlations support a triaxial shape for ¹²⁹Xe, but only if its γ fluctuations are not large. Shape fluctuations must be kept in mind when shapes are read from collision data.</li>
+        </ul>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> A. Dimri, S. Bhatta, J. Jia, "Impact of nuclear shape fluctuations in high-energy heavy ion collisions", Eur. Phys. J. A 59, 45 (2023), <a href="https://doi.org/10.1140/epja/s10050-023-00965-1" target="_blank" rel="noopener">doi:10.1140/epja/s10050-023-00965-1</a>, <a href="https://arxiv.org/abs/2301.03556" target="_blank" rel="noopener">arXiv:2301.03556</a>.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="thermalization-femtoscale.html">← Previous: Thermalization at the femtoscale</a>
+        <a href="../index.html#research">All research summaries</a>
+        <a href="nonflow-flow-momentum.html">Next: Non-flow in flow–momentum correlations →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/nuclear-shape-fluctuations.js"></script>
+<script src="assets/experience.js"></script>
+<script src="../analytics.js" defer></script>
+</body>
+</html>

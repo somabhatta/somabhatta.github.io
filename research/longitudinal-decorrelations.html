@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sources of Longitudinal Flow Decorrelations Explained | Somadutta Bhatta</title>
+    <meta name="description" content="A plain-language, animated explanation of how longitudinal flow decorrelations split into a global twist, local fluctuations and non-flow, using U+U and Au+Au collisions (Jia, Huang, Zhang, Bhatta, arXiv:2408.15006).">
+    <link rel="canonical" href="https://somabhatta.github.io/research/longitudinal-decorrelations.html">
+    <meta name="author" content="Somadutta Bhatta">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The QGP&#x27;s longitudinal structure has a global twist and local fluctuations, separable from non-flow">
+    <meta property="og:description" content="Animated explainer: flow changes along the beam through a global twist and local fluctuations; colliding nuclei of different shapes separates both from non-flow.">
+    <meta property="og:url" content="https://somabhatta.github.io/research/longitudinal-decorrelations.html">
+    <meta property="og:image" content="https://somabhatta.github.io/research/fig/longitudinal-decorrelations/figp2_2_cen1_ck1_ckR0.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link rel="stylesheet" href="assets/research.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Sources of longitudinal flow decorrelations in high-energy nuclear collisions",
+      "author": [
+        {"@type": "Person", "name": "Jiangyong Jia"},
+        {"@type": "Person", "name": "Shengli Huang"},
+        {"@type": "Person", "name": "Chunjian Zhang"},
+        {"@id": "https://somabhatta.github.io/#person", "@type": "Person", "name": "Somadutta Bhatta"}
+      ],
+      "datePublished": "2024",
+      "sameAs": ["https://arxiv.org/abs/2408.15006", "https://inspirehep.net/literature/2822112"],
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "about": ["Longitudinal flow decorrelation", "Non-flow", "Elliptic flow", "Nuclear deformation", "Quark-gluon plasma", "Heavy-ion collisions"],
+      "url": "https://somabhatta.github.io/research/longitudinal-decorrelations.html"
+    }
+    </script>
+<link rel="stylesheet" href="assets/experience.css">
+</head>
+<body>
+
+<nav class="r-topbar" aria-label="Breadcrumb">
+    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
+    <a href="radial-flow-collectivity.html">Next paper →</a>
+</nav>
+
+<main class="r-page">
+    <div class="r-kicker">Phenomenology · AMPT model study · U+U and Au+Au collisions at RHIC energies</div>
+    <h1><a class="title-link" href="https://arxiv.org/abs/2408.15006" target="_blank" rel="noopener">The QGP's longitudinal structure has a global twist and local fluctuations, separable from non-flow</a></h1>
+    <p class="r-paper-ref"><em><a class="title-link" href="https://arxiv.org/abs/2408.15006" target="_blank" rel="noopener">Sources of longitudinal flow decorrelations in high-energy nuclear collisions</a></em><br>
+        J. Jia, S. Huang, C. Zhang, S. Bhatta, <strong>arXiv:2408.15006 [nucl-th] (2024), preprint</strong></p>
+    <p class="r-role"><strong>My role:</strong> co-author.</p>
+    <div class="r-buttons">
+        <a class="r-btn" href="https://arxiv.org/abs/2408.15006" target="_blank" rel="noopener">Read the paper (arXiv)</a>
+        <a class="r-btn ghost" href="https://inspirehep.net/literature/2822112" target="_blank" rel="noopener">INSPIRE record</a>
+    </div>
+
+    <section class="r-tldr">
+        <h2>In one paragraph</h2>
+        <p>Along the beam, the hot droplet (QGP) changes shape in two ways: a smooth global twist from one end to the other, and local random fluctuations. Local fluctuations are hard to tell apart from non-flow, short-range correlations among a few particles. Using a transport model, we separate all three, and show that comparing deformed and spherical nuclei exposes the local part.</p>
+    </section>
+
+    <!-- 1. GAP -->
+    <section class="r-section" id="gap">
+        <h2><span class="r-num">1</span>The gap: two short-range effects that look alike</h2>
+        <p>Particles flow out of the QGP following its initial elliptic shape (elliptic flow). That shape is not the same everywhere along the beam direction (rapidity η). Nucleons moving forward deposit more energy at forward rapidity, and backward-moving nucleons at backward rapidity. So the shape twists from one end to the other.</p>
+        <figure class="anim-panel" data-anim="longitudinal-decorrelations-twist">
+            <figcaption><strong>What you're seeing (schematic):</strong> cross-sections of the fireball at different rapidities. The two ends take their shape from different groups of nucleons, so the shape turns smoothly in between (global twist). Local random wiggles sit on top.</figcaption>
+        </figure>
+        <figure class="paper-fig narrow">
+            <img src="fig/longitudinal-decorrelations/paper2cartoon.png" alt="Cartoon of the QGP as a tube along rapidity with forward-going and backward-going nucleon tubes; the elliptic orientation twists from the backward to the forward end; a zoom shows short energy-deposition segments within two nearby slices" loading="lazy" width="1600" height="1184">
+            <figcaption><strong>Fig. 1:</strong> top, the elliptic shape interpolates between the backward end and the forward end (long-range). Bottom, each nucleon deposits energy over a segment of about 1–2 units of rapidity (red lines); a few deposit more in one slice than the other (short-range).
+                <span class="fig-source">Figure: J. Jia, S. Huang, C. Zhang, S. Bhatta, <a href="https://arxiv.org/abs/2408.15006" target="_blank" rel="noopener">arXiv:2408.15006</a> (preprint; no journal DOI yet), CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>Both effects make flow at two rapidities less alike as their separation |Δη| grows (flow decorrelation). The local part acts mostly at small to medium |Δη|. Non-flow also sits at small |Δη|: correlations from decays and jets among a few particles close in rapidity.</p>
+        <figure class="anim-panel" data-anim="longitudinal-decorrelations-nonflow">
+            <figcaption><strong>What you're seeing (schematic):</strong> flow makes particles at all rapidities share the same two preferred directions. Non-flow adds small tight groups. Both non-flow and local fluctuations add correlation at small |Δη|, so the usual measurement cannot tell them apart.</figcaption>
+        </figure>
+        <div class="r-keypoint"><strong>Open question:</strong> how much of the short-range correlation is real initial-state structure, and how much is non-flow? An experimental separation was missing.</div>
+    </section>
+
+    <!-- 2. MEASURE -->
+    <section class="r-section" id="measure">
+        <h2><span class="r-num">2</span>What we compute: flow lined up with different initial shapes</h2>
+        <p>We simulate central (0–5%) U+U and Au+Au collisions with the AMPT transport model. We use deformed uranium (β = 0.28), uranium made spherical (β = 0), and gold (β = −0.14). In AMPT, the local fluctuations come from how each nucleon's energy is spread along rapidity.</p>
+        <figure class="anim-panel" data-anim="longitudinal-decorrelations-local">
+            <figcaption><strong>What you're seeing (schematic):</strong> each red segment is energy from one nucleon spread along rapidity. Two nearby slices share almost all segments, so their shapes match. Farther apart, they share fewer, and their shapes drift apart at random.</figcaption>
+        </figure>
+        <p>Besides the standard two-particle correlation, we line up the final flow with two initial shapes. These projections contain no non-flow:</p>
+        <ul>
+            <li><strong>Shape of all participating nucleons:</strong> captures only the long-range, global part.</li>
+            <li><strong>Shape of the early quarks at mid-rapidity</strong> (right after the strings melt, before they interact): also captures the local fluctuations.</li>
+        </ul>
+        <figure class="anim-panel" data-anim="longitudinal-decorrelations-method">
+            <figcaption><strong>What you're seeing (schematic):</strong> the standard measurement (black) mixes everything. The two projections peel off the long-range part (blue) and the short-range part (red). What remains at small |Δη| is non-flow (grey).</figcaption>
+        </figure>
+    </section>
+
+    <!-- 3. OBSERVE -->
+    <section class="r-section" id="observe">
+        <h2><span class="r-num">3</span>What we observe: three components with different ranges</h2>
+        <p>The flow correlation falls with |Δη| in all three systems. The ratio between deformed and spherical uranium rises with |Δη|. For the projection on the nucleon shape, the ratio stays flat; for the projection on the early quark shape, it rises, like the full measurement.</p>
+        <figure class="paper-fig">
+            <img src="fig/longitudinal-decorrelations/figp2b_0_cen1_ck1.png" alt="Six panels from AMPT: two-particle elliptic flow versus pseudorapidity gap, and flow projected on nucleon and quark eccentricities versus pseudorapidity, for deformed U, spherical U and Au, with ratios below" loading="lazy" width="1600" height="906">
+            <figcaption><strong>Fig. 2:</strong> left, the standard two-particle flow; middle, flow lined up with the nucleon shape; right, with the early quark shape. In the ratio rows, look at the blue points: nearly flat in the middle, rising on the left and right.
+                <span class="fig-source">Figure: J. Jia, S. Huang, C. Zhang, S. Bhatta, <a href="https://arxiv.org/abs/2408.15006" target="_blank" rel="noopener">arXiv:2408.15006</a> (preprint; no journal DOI yet), CC BY 4.0.</span></figcaption>
+        </figure>
+        <p>Comparing the three curves splits the standard measurement into parts. The long-range part dominates. The short-range part from local fluctuations comes next and starts to fall only beyond |Δη| ≈ 2. Non-flow is confined to |Δη| &lt; 2. Because the quark shape may miss some local structure, this non-flow estimate is likely an upper limit.</p>
+        <figure class="paper-fig">
+            <img src="fig/longitudinal-decorrelations/figp2_2_cen1_ck1_ckR0.png" alt="Three panels for spherical U, Au and deformed U: two-particle flow decomposed into long-range, short-range and non-flow shaded areas versus pseudorapidity gap, with non-flow estimates below" loading="lazy" width="1600" height="937">
+            <figcaption><strong>Fig. 3:</strong> shaded areas show long-range (blue), short-range (pink) and non-flow (grey) parts in spherical U, Au and deformed U. Bottom: the non-flow from this method (black) compared with a scaled estimate from peripheral events (green).
+                <span class="fig-source">Figure: J. Jia, S. Huang, C. Zhang, S. Bhatta, <a href="https://arxiv.org/abs/2408.15006" target="_blank" rel="noopener">arXiv:2408.15006</a> (preprint; no journal DOI yet), CC BY 4.0.</span></figcaption>
+        </figure>
+    </section>
+
+    <!-- 4. CONCLUDE -->
+    <section class="r-section" id="conclude">
+        <h2><span class="r-num">4</span>What we conclude: nuclear shape exposes the short-range structure</h2>
+        <p>Deformation adds flow only in the long-range part. The short-range parts are the same with or without deformation, so at small |Δη| they dilute its effect on the ratio. As |Δη| grows they fade, and the ratio rises.</p>
+        <figure class="anim-panel" data-anim="longitudinal-decorrelations-ratio">
+            <figcaption><strong>What you're seeing (schematic):</strong> stacked contributions for spherical and deformed uranium at one |Δη|. Only the long-range part grows with deformation, so the ratio is diluted where short-range parts are large and rises as they fade.</figcaption>
+        </figure>
+        <p>Between U+U and Au+Au, about half of the rise comes from non-flow at |Δη| &lt; 2. The rest, over 2 &lt; |Δη| &lt; 4, comes from initial-state short-range correlations. These are not exhausted even at |Δη| = 4.</p>
+        <figure class="paper-fig narrow">
+            <img src="fig/longitudinal-decorrelations/figp2_4c_cen1_ck1.png" alt="Ratio of U+U to Au+Au versus pseudorapidity gap for the two-particle flow, the quark-shape projection and the nucleon-shape projection, with a green box for the STAR subevent method" loading="lazy" width="1600" height="1471">
+            <figcaption><strong>Fig. 4:</strong> U+U / Au+Au ratios. Blue (long-range only) is flat; red (with local fluctuations) and black (full measurement) sit below and rise. The green box marks the range used by the STAR subevent method.
+                <span class="fig-source">Figure: J. Jia, S. Huang, C. Zhang, S. Bhatta, <a href="https://arxiv.org/abs/2408.15006" target="_blank" rel="noopener">arXiv:2408.15006</a> (preprint; no journal DOI yet), CC BY 4.0.</span></figcaption>
+        </figure>
+        <ul>
+            <li>The paper describes this as the first successful attempt to disentangle long- and short-range flow decorrelations from non-flow.</li>
+            <li>For STAR's acceptance, the estimated non-flow is 6.8% in Au+Au and about 4% for the U+U/Au+Au ratio, consistent with the uncertainty quoted by STAR's <a href="imaging-nuclear-shapes.html">uranium-shape measurement</a>.</li>
+            <li>A broad short-range component also lowers the factorization ratio r₂ used to measure decorrelations, so r₂ does not reflect only the twist between −η and η.</li>
+        </ul>
+    </section>
+
+    <!-- 5. FUTURE -->
+    <section class="r-section" id="future">
+        <h2><span class="r-num">5</span>What comes next</h2>
+        <ul>
+            <li><strong>Other observables:</strong> the method can be extended to triangular flow and transverse-momentum fluctuations.</li>
+            <li><strong>Other models:</strong> it can test the longitudinal initial state and the final-state response in transport or hydrodynamic models.</li>
+            <li><strong>Experiment:</strong> collisions of isobars or similar nuclei with different shapes, measured with large-acceptance detectors such as the ALICE upgrade and LHCb's SMOG2 fixed-target programme.</li>
+        </ul>
+    </section>
+
+    <div class="r-cite">
+        <strong>Cite this work:</strong> J. Jia, S. Huang, C. Zhang, S. Bhatta, "Sources of longitudinal flow decorrelations in high-energy nuclear collisions", <a href="https://arxiv.org/abs/2408.15006" target="_blank" rel="noopener">arXiv:2408.15006</a> [nucl-th] (2024), preprint.<br>
+        All plots on this page are reproduced from that paper under CC BY 4.0. Animations are simplified illustrations made for this page, not results of the paper.
+    </div>
+
+    <nav class="r-pager" aria-label="More papers">
+        <a href="nonflow-flow-momentum.html">← Previous: Non-flow in flow–momentum correlations</a>
+        <a href="../index.html#research">All research summaries</a>
+        <a href="radial-flow-collectivity.html">Next: Radial flow is collective →</a>
+    </nav>
+</main>
+
+<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
+<script src="assets/anim.js"></script>
+<script src="assets/longitudinal-decorrelations.js"></script>
+<script src="assets/experience.js"></script>
+<script src="../analytics.js" defer></script>
+</body>
+</html>
