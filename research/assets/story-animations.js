@@ -5,10 +5,10 @@
     const {register, u, C, glauber} = window.Anim;
     const P = {ink:'#17324f',muted:'#536a80',line:'#dce6ee',blue:'#2168b4',teal:'#076d78',orange:'#a94c0e',purple:'#7255a3',red:'#ad2e3a'};
     function text(ctx,s,x,y,size=14,color=P.ink,align='left',weight=500) {
-        ctx.save();ctx.font=`${weight} ${size}px Arial, sans-serif`;ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='alphabetic';ctx.fillText(s,x,y);ctx.restore();
+        ctx.save();ctx.font=`${weight} ${size}px Inter, Arial, sans-serif`;ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='alphabetic';ctx.fillText(s,x,y);ctx.restore();
     }
     function wrapped(ctx,s,x,y,width,size=13,color=P.muted,align='left',lineHeight=19,weight=500) {
-        ctx.save();ctx.font=`${weight} ${size}px Arial, sans-serif`;
+        ctx.save();ctx.font=`${weight} ${size}px Inter, Arial, sans-serif`;
         const lines=[];let line='';
         for(const word of s.split(/\s+/)){const next=line?line+' '+word:word;if(ctx.measureText(next).width>width&&line){lines.push(line);line=word;}else line=next;}
         if(line)lines.push(line);ctx.restore();
@@ -21,7 +21,7 @@
     function dashed(ctx,x1,y1,x2,y2,col=P.muted){ctx.save();ctx.strokeStyle=col;ctx.lineWidth=1.2;ctx.setLineDash([4,5]);ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.restore();}
     function line(ctx,pts,col=P.blue,width=2.5,dash){u.line(ctx,pts,col,width,dash);}
     function clip(ctx,b,fn){ctx.save();ctx.beginPath();ctx.rect(b.x,b.y,b.w,b.h);ctx.clip();fn();ctx.restore();}
-    function pill(ctx,s,x,y,col=P.teal){ctx.save();ctx.font='600 12px Arial, sans-serif';const w=ctx.measureText(s).width+20;round(ctx,x,y,w,25,12,'#fff',col);text(ctx,s,x+10,y+17,12,col,'left',600);ctx.restore();return w;}
+    function pill(ctx,s,x,y,col=P.teal){ctx.save();ctx.font='600 12px Inter, Arial, sans-serif';const w=ctx.measureText(s).width+20;round(ctx,x,y,w,25,12,'#fff',col);text(ctx,s,x+10,y+17,12,col,'left',600);ctx.restore();return w;}
     function header(ctx,W,title,note){text(ctx,title,24,30,18,P.ink,'left',700);if(note)text(ctx,note,24,51,12,P.muted);}
     function footer(ctx,W,H,s){round(ctx,18,H-47,W-36,32,8,'#edf4fa',null);text(ctx,s,W/2,H-26,13,P.ink,'center',600);}
     function envelope(t,a,b){return u.ease(u.seg(t,a,b));}

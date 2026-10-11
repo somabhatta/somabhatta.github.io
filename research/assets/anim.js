@@ -53,7 +53,7 @@
         },
         text(ctx, str, x, y, opt = {}) {
             ctx.save();
-            ctx.font = (opt.weight || '500') + ' ' + (opt.size || 13) + 'px Arial, sans-serif';
+            ctx.font = (opt.weight || '500') + ' ' + (opt.size || 13) + 'px Inter, Arial, sans-serif';
             ctx.fillStyle = opt.color || C.ink;
             ctx.textAlign = opt.align || 'left';
             ctx.textBaseline = opt.base || 'alphabetic';
@@ -143,7 +143,7 @@
         },
         pill(ctx, x, y, str, color) {
             ctx.save();
-            ctx.font = '600 12px Arial, sans-serif';
+            ctx.font = '600 12px Inter, Arial, sans-serif';
             const w = ctx.measureText(str).width + 16;
             ctx.fillStyle = color; ctx.globalAlpha *= 0.12;
             roundRect(ctx, x, y - 14, w, 20, 10); ctx.fill();

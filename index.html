@@ -10,6 +10,9 @@
     <meta name="google-site-verification" content="r4szhweStBfrAHpg18Hk6eJ7X1xuICpzAVr3IchkxYQ" />
     <link rel="canonical" href="https://somabhatta.github.io/">
     <meta name="theme-color" content="#003366">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
 
     <!-- Link previews (LinkedIn, X/Twitter, Slack, WhatsApp, Mastodon) -->
@@ -81,7 +84,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: #eef2f5;
@@ -533,6 +536,11 @@
             font-size: 0.8rem;
             color: #777;
         }
+
+        /* --- Inter type tuning --- */
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, .pb-name, .section-title, .rc-title, .highlight-card strong, .nav-title { letter-spacing: -0.015em; }
+        .pb-name, .section-title { font-weight: 800; letter-spacing: -0.025em; }
 
         /* --- Compact profile bar (replaces the old sidebar) --- */
         .profile-bar {
@@ -1473,5 +1481,6 @@
 </script>
 
 <script src="research/assets/experience.js"></script>
+<script src="analytics.js" defer></script>
 </body>
 </html>

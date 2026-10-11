@@ -13,7 +13,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.65;
     color: var(--text-color);
     background: #eef2f5;
@@ -233,3 +233,8 @@ figure.paper-fig figcaption {
 @media (prefers-reduced-motion: reduce) {
     * { scroll-behavior: auto !important; }
 }
+
+/* Inter type tuning */
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+h1, h2, h3 { letter-spacing: -0.015em; }
+.r-page h1 { font-weight: 800; letter-spacing: -0.025em; }
