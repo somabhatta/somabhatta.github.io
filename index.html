@@ -592,6 +592,23 @@
             .main-content { padding: 20px 16px; }
             .section-title { font-size: 1.7rem; }
         }
+        /* --- Simpler first impression --- */
+        .pb-statement { font-size: 1.02rem; color: #2c3e50; margin: 6px 0 6px 0; max-width: 46em; line-height: 1.5; }
+        .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .top-nav-wrapper { margin-bottom: 14px; border-bottom: 1px solid #d9e1ea; }
+        .top-nav-grid { gap: 2px; justify-content: flex-start; flex-wrap: wrap; }
+        .top-nav-grid li { flex: 0 0 auto; }
+        .top-nav-wrapper .top-nav-card, .top-nav-wrapper .top-nav-card:hover, .top-nav-wrapper .top-nav-card:focus-visible, .top-nav-wrapper .top-nav-card.active-tab {
+            background: transparent; border: 0; border-bottom: 3px solid transparent; border-radius: 0; box-shadow: none;
+            min-height: 0; padding: 10px 14px 9px; transform: none; }
+        .top-nav-card:hover, .top-nav-card:focus-visible { border-bottom-color: #9fb6cf; }
+        .top-nav-wrapper .top-nav-card.active-tab { border-bottom-color: var(--primary-color); }
+        .top-nav-card .nav-title { font-size: 0.95rem; font-weight: 600; color: #3b4f63; }
+        .top-nav-wrapper .top-nav-card.active-tab .nav-title { color: var(--primary-color); font-weight: 700; }
+        .nav-sub { display: none; }
+        h3 { background: none; border-left: 0; padding: 0 0 6px 0; border-bottom: 1px solid #e3e8ef; border-radius: 0; color: var(--primary-color); font-size: 1.15rem; }
+        @media (max-width: 760px) { .top-nav-wrapper .top-nav-grid { flex-wrap: nowrap; } .top-nav-wrapper .top-nav-card { padding: 10px 12px 9px; border-radius: 0; } }
+        .btn-cv { border-color: var(--primary-color); color: var(--primary-color); font-weight: 600; }
     </style>
     <script>document.documentElement.classList.replace('no-js', 'js');</script>
 <link rel="stylesheet" href="research/assets/experience.css">
@@ -605,11 +622,13 @@
     <div class="pb-main">
         <h1 class="pb-name">Somadutta Bhatta</h1>
         <div class="pb-title">Postdoctoral Researcher · High-Energy Nuclear Physics</div>
-        <div class="pb-affil">GRASP, <strong>Utrecht University</strong> &amp; <strong>Nikhef</strong> · <strong>ALICE Experiment at the LHC</strong>, CERN · Utrecht, Netherlands</div>
+        <p class="pb-statement">I study fluctuations in heavy-ion collisions, through experimental measurements and phenomenological studies, to understand and constrain the quark-gluon plasma.</p>
+        <div class="pb-affil">GRASP, <strong>Utrecht University</strong> &amp; <strong>Nikhef</strong>, The Netherlands · <strong>ALICE Experiment at the LHC</strong>, CERN</div>
     </div>
     <div class="pb-side">
         <div class="pb-mail"><a href="mailto:s.bhatta@uu.nl">s.bhatta@uu.nl</a> · <a href="mailto:somadutta.bhatta4@gmail.com">somadutta.bhatta4@gmail.com</a></div>
         <div class="pb-links">
+            <a href="cv/Somadutta_Bhatta_CV.pdf" target="_blank" rel="noopener" class="btn-social btn-cv">CV (PDF)</a>
             <a href="https://scholar.google.com/citations?hl=en&amp;user=D_0_gNkAAAAJ" target="_blank" rel="noopener me" class="btn-social">Google Scholar</a>
             <a href="https://inspirehep.net/authors/1884500" target="_blank" rel="noopener me" class="btn-social">INSPIRE-HEP</a>
             <a href="https://orcid.org/0000-0002-9045-3278" target="_blank" rel="noopener me" class="btn-social">ORCID</a>
@@ -636,11 +655,9 @@
     <main class="main-content">
 
         <section id="biography" class="content-section active">
-            <header class="section-header"><h2 class="section-title">About Me</h2></header>
+            <header class="section-header visually-hidden"><h2 class="section-title">About Me</h2></header>
             <div class="content-body">
-                <p>I am a Postdoctoral Researcher in high-energy nuclear physics at the Institute for Gravitational and Subatomic Physics (GRASP) at <strong>Utrecht University</strong>, also affiliated with <strong>Nikhef</strong>. I work with the <strong>ALICE Experiment at the LHC</strong> at CERN.</p>
                 <p>My research probes the <strong>quark-gluon plasma (QGP)</strong>, the primordial state of matter that filled the Universe microseconds after the Big Bang. By colliding heavy nuclei at nearly the speed of light, we recreate tiny droplets of this "quark soup" and study its properties, such as its viscosity, its speed of sound and how it flows collectively. The same collisions can also be used to image the shapes of the colliding atomic nuclei.</p>
-                <p>I completed my Ph.D. at <strong>Stony Brook University</strong>, working with data from the ATLAS experiment at CERN and the STAR experiment at Brookhaven National Laboratory.</p>
 
                 <h3>Research Highlights</h3>
                 <p style="font-size:0.95rem;margin-bottom:10px;">Selected papers, newest first. Click a card for an animated explanation.</p>
@@ -917,7 +934,7 @@
 
             <article class="pub-item">
                 <div class="pub-title"><span class="pub-number">4.</span> <a class="title-link" href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener">Method to constrain preferential emission and spectator dynamics in heavy-ion collisions</a></div>
-                <div class="pub-authors"><strong>S. Bhatta</strong>, V. Bairathi</div>
+                <div class="pub-authors">V. Bairathi, <strong>S. Bhatta</strong> (corresponding author)</div>
                 <div class="pub-meta"><strong>PRC 113, 024917 (2026)</strong></div>
                 <div class="pub-links">
                     <a href="https://journals.aps.org/prc/abstract/10.1103/kzyy-2wtv" target="_blank" rel="noopener" class="link-btn">Journal</a>
@@ -1234,7 +1251,7 @@
                     <strong>Student:</strong> Anne Dijkstra, Utrecht University (Master’s Thesis)<br><br>
 
                     2. <strong>Project Name:</strong> Studying Rapidity-Dependence of Mean Transverse Momentum using Trajectum<br>
-                    <strong>Student:</strong> Wouter Lansdaal, Utrecht University (Bachelor’s Thesis)
+                    <strong>Student:</strong> Wouter Lansdaal, Utrecht University (Bachelor’s Thesis, completed)
                 </li>
 
                 <li>
@@ -1512,10 +1529,15 @@
     }
 
     window.addEventListener('hashchange', () => showSection(location.hash.substring(1)));
+    window.addEventListener('popstate', () => showSection(location.hash.substring(1)));
     document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
             const section = document.getElementById(link.hash.slice(1));
             if (!section || !section.classList.contains('content-section')) return;
+            // Without this, the browser also smooth-scrolls to the section's anchor
+            // after showSection() has scrolled to the top, so the header jumps away and back.
+            e.preventDefault();
+            if (location.hash !== link.hash) history.pushState(null, '', link.hash);
             showSection(section.id);
             const heading = section.querySelector('h2');
             if (heading) { heading.tabIndex = -1; heading.focus({ preventScroll: true }); }
@@ -1526,6 +1548,12 @@
     document.addEventListener("DOMContentLoaded", () => {
         showSection(location.hash.substring(1));
         fetchCitations();
+    });
+    // A shared link such as /#publications makes the browser jump to that anchor after
+    // loading, which hides the header and tab bar; show the page from the top instead.
+    window.addEventListener('load', () => {
+        const target = document.getElementById(location.hash.substring(1));
+        if (target && target.classList.contains('content-section')) window.scrollTo({ top: 0, behavior: 'auto' });
     });
 </script>
 
