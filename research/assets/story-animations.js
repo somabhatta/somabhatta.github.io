@@ -196,7 +196,7 @@
 
     register('flow-momentum-correlations-orient',{
         duration:14,aspect:16/11,
-        phases:[{t:0,label:'Compare two orientations of the same prolate nuclei in a central collision.'},{t:3,preview:5.5,label:'Viewed along the beam: tip–tip is compact and round; body–body is broader and elongated.'},{t:7,preview:9.5,label:'The compact overlap gives a larger momentum scale. The elongated overlap gives more elliptic flow.'},{t:11,label:'This geometric tendency pairs larger v₂ with smaller [pT], contributing a negative correlation.'}],
+        phases:[{t:0,label:'Compare two orientations of the same prolate nuclei in a central collision.'},{t:3,preview:5.5,label:'Viewed along the beam: tip–tip is compact and round; body–body is broader and elongated.'},{t:7,preview:9.5,label:'The compact overlap gives a larger momentum scale. The elongated overlap gives more elliptic flow.'},{t:11,label:'For prolate nuclei this pairs larger $v_2$ with smaller $[p_T]$, contributing a negative correlation.'}],
         setup(){return{};},
         draw(ctx,t,s,W,H){
             header(ctx,W,'Orientation links shape and compactness','Matched prolate nuclei · central-collision geometry, shown schematically');

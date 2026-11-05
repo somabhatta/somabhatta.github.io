@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" font-family="Inter,Helvetica,Arial,sans-serif">
+  <defs>
+    <radialGradient id="qgp" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff3d6"/><stop offset=".55" stop-color="#f39c3c"/><stop offset="1" stop-color="#d9480f" stop-opacity="0"/></radialGradient>
+    <radialGradient id="u" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#e88c80"/><stop offset="1" stop-color="#a8281c"/></radialGradient>
+    <radialGradient id="au" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#8fb4e3"/><stop offset="1" stop-color="#2459a0"/></radialGradient>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#003366"/></marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d9480f"/></marker>
+  </defs>
+  <rect width="320" height="200" fill="#f7f9fc"/>
+<text x="14" y="28" font-size="16" font-weight="800" fill="#003366" text-anchor="start" >Two sources of <tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="normal">[</tspan><tspan font-style="italic">p</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">T</tspan></tspan><tspan font-style="normal">]</tspan></tspan> fluctuations</text>
+<text x="14" y="45" font-size="10.5" font-weight="400" fill="#4a5a70" text-anchor="start" >ATLAS Pb+Pb 5.02 TeV and Xe+Xe 5.44 TeV</text>
+<circle cx="30" cy="88" r="13" fill="url(#qgp)"/><circle cx="66" cy="88" r="22" fill="url(#qgp)"/>
+<text x="48" y="124" font-size="10.5" font-weight="700" fill="#1d4f91" text-anchor="middle" >geometrical</text>
+<text x="48" y="137" font-size="9.5" font-weight="400" fill="#4a5a70" text-anchor="middle" >overlap size varies</text>
+<circle cx="128" cy="88" r="18" fill="url(#qgp)" opacity=".55"/><circle cx="168" cy="88" r="18" fill="url(#qgp)"/>
+<text x="148" y="124" font-size="10.5" font-weight="700" fill="#a86d0c" text-anchor="middle" >intrinsic</text>
+<text x="148" y="137" font-size="9.5" font-weight="400" fill="#4a5a70" text-anchor="middle" >same overlap size</text>
+<line x1="98" y1="62" x2="98" y2="140" stroke="#dbe3ee" stroke-width="1.5"/>
+<rect x="200" y="56" width="110" height="94" rx="6" fill="#fff" stroke="#dbe3ee"/>
+<path d="M212 138 V66 M212 138 H302" stroke="#4a5a70" stroke-width="1.2" fill="none"/>
+<path d="M214 84 C236 86 262 88 278 90 L286 112 L292 128" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M279 80 V138" stroke="#9aa8ba" stroke-dasharray="3 3"/>
+<text x="216" y="74" font-size="9" font-weight="400" fill="#4a5a70" text-anchor="start" >variance of <tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="normal">[</tspan><tspan font-style="italic">p</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">T</tspan></tspan><tspan font-style="normal">]</tspan></tspan></text>
+<text x="257" y="147" font-size="9" font-weight="400" fill="#4a5a70" text-anchor="middle" >multiplicity <tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">N</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">ch</tspan></tspan></tspan> →</text>
+<rect x="14" y="160" width="296" height="30" rx="8" fill="#003366"/>
+<text x="162" y="179" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle" >Ultra-central collisions: geometrical part suppressed</text>
+</svg>

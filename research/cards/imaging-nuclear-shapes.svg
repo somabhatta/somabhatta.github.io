@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" font-family="Inter,Helvetica,Arial,sans-serif">
+  <defs>
+    <radialGradient id="qgp" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff3d6"/><stop offset=".55" stop-color="#f39c3c"/><stop offset="1" stop-color="#d9480f" stop-opacity="0"/></radialGradient>
+    <radialGradient id="u" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#e88c80"/><stop offset="1" stop-color="#a8281c"/></radialGradient>
+    <radialGradient id="au" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#8fb4e3"/><stop offset="1" stop-color="#2459a0"/></radialGradient>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#003366"/></marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d9480f"/></marker>
+  </defs>
+  <rect width="320" height="200" fill="#f7f9fc"/>
+<text x="14" y="28" font-size="16" font-weight="800" fill="#003366" text-anchor="start" >Collisions image the shape of nuclei</text>
+<text x="14" y="45" font-size="10.5" font-weight="400" fill="#4a5a70" text-anchor="start" >STAR: U+U vs Au+Au collisions at RHIC</text>
+<ellipse cx="50" cy="104" rx="34" ry="19" fill="url(#u)"/>
+<text x="50" y="142" font-size="10.5" font-weight="700" fill="#a8281c" text-anchor="middle" ><tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan baseline-shift="super" font-size="70%"><tspan font-style="normal">238</tspan></tspan></tspan>U nucleus</text>
+<text x="50" y="155" font-size="9.5" font-weight="400" fill="#4a5a70" text-anchor="middle" >elongated</text>
+<path d="M88 104 H104" stroke="#003366" stroke-width="2.2" marker-end="url(#ah)"/>
+<ellipse cx="162" cy="104" rx="20" ry="38" fill="url(#qgp)"/>
+<g stroke="#d9480f" stroke-width="2.8" stroke-linecap="round" marker-end="url(#ao)"><path d="M186 104 H212"/><path d="M138 104 H116"/><path d="M162 64 V57"/><path d="M162 144 V151"/></g>
+<text x="162" y="170" font-size="10.5" font-weight="700" fill="#003366" text-anchor="middle" >snapshot → flow</text>
+<text x="162" y="183" font-size="9.5" font-weight="400" fill="#4a5a70" text-anchor="middle" >shape imprinted on particles</text>
+<rect x="222" y="74" width="88" height="62" rx="8" fill="#003366"/>
+<text x="266" y="94" font-size="10" font-weight="400" fill="#cfe0f5" text-anchor="middle" >uranium shape</text>
+<text x="266" y="112" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" ><tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">β</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="normal">2</tspan></tspan><tspan font-style="normal"> = </tspan><tspan font-style="normal">0.286</tspan></tspan></text>
+<text x="266" y="129" font-size="12" font-weight="700" fill="#fff" text-anchor="middle" ><tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">γ</tspan><tspan font-style="normal"> = </tspan><tspan font-style="normal">8.7</tspan><tspan baseline-shift="super" font-size="70%"><tspan font-style="normal">°</tspan></tspan></tspan></text>
+<text x="266" y="152" font-size="9.5" font-weight="400" fill="#4a5a70" text-anchor="middle" >slightly triaxial;</text>
+<text x="266" y="164" font-size="9.5" font-weight="400" fill="#4a5a70" text-anchor="middle" >agrees with low energy</text>
+</svg>

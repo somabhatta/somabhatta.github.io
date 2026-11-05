@@ -343,7 +343,7 @@
         stage.appendChild(canvas);
         const hint = document.createElement('p');
         hint.className = 'anim-mobile-hint';
-        hint.textContent = 'Swipe the illustration horizontally to explore both sides.';
+        hint.textContent = '';
         const bar = document.createElement('div');
         bar.className = 'anim-controls';
         bar.innerHTML = '<button type="button" class="anim-btn anim-play"><span class="anim-btn-label">Play</span></button>';
@@ -380,7 +380,7 @@
             const changed = w !== W;
             W = w; H = h; pixelRatio = dpr;
             canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
-            canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+            canvas.style.width = '100%'; canvas.style.height = 'auto';
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
             if (!state || changed) state = def.setup ? def.setup(params, W, H, state) : {};
             render();
@@ -399,7 +399,10 @@
             const ph = phases[phaseIndex];
             const txt = ph ? (typeof ph.label === 'function' ? ph.label(state, params) : ph.label) : 'Explore the illustration using the controls above.';
             if (txt !== lastStep) {
-                stepEl.textContent = txt; lastStep = txt;
+                // Labels with $...$ math are typeset by main-results.js (Anim.mathHTML).
+                if (txt.indexOf('$') >= 0 && window.Anim.mathHTML) stepEl.innerHTML = window.Anim.mathHTML(txt);
+                else stepEl.textContent = txt;
+                lastStep = txt;
             }
             phaseButtons.forEach((button, i) => {
                 button.setAttribute('aria-pressed', String(i === phaseIndex));
@@ -645,6 +648,8 @@
         phases: [{ t: 0, label: (s) => `Events simulated: ${s.n} · correlation ${s.rhoTxt}` }],
         setup(p) {
             const st = { rand: u.rng(p.seed || 5), pts: { sph: [], def: [] }, n: 0, rhoTxt: '…', cur: null, curType: 'def' };
+            // Optional: simulate events up front so the quoted correlation is not dominated by small-sample noise.
+            for (let i = 0; i < (p.prefill || 0); i++) this.onLoop(st, p);
             return st;
         },
         onLoop(st, p) {

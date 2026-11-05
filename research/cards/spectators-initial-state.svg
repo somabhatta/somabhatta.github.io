@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" font-family="Inter,Helvetica,Arial,sans-serif">
+  <defs>
+    <radialGradient id="qgp" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff3d6"/><stop offset=".55" stop-color="#f39c3c"/><stop offset="1" stop-color="#d9480f" stop-opacity="0"/></radialGradient>
+    <radialGradient id="u" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#e88c80"/><stop offset="1" stop-color="#a8281c"/></radialGradient>
+    <radialGradient id="au" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#8fb4e3"/><stop offset="1" stop-color="#2459a0"/></radialGradient>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#003366"/></marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d9480f"/></marker>
+  </defs>
+  <rect width="320" height="200" fill="#f7f9fc"/>
+<text x="14" y="28" font-size="16" font-weight="800" fill="#003366" text-anchor="start" >Spectator neutrons select initial states</text>
+<text x="14" y="45" font-size="10.5" font-weight="400" fill="#4a5a70" text-anchor="start" >AMPT Au+Au 200 GeV</text>
+<path d="M36 150 V56 M36 150 H214" stroke="#4a5a70" stroke-width="1.3" fill="none"/>
+<path d="M66.0 80.0 L112.0 100.0 L158.0 120.0 L204.0 140.0" fill="none" stroke="#c0392b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="1" stroke-dasharray="5 4"/>
+<path d="M62 76 l8 8 M70 76 l-8 8" stroke="#c0392b" stroke-width="2"/>
+<circle cx="52.0" cy="66.7" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="59.0" cy="73.3" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="66.0" cy="80.0" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="73.0" cy="86.7" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="80.0" cy="93.3" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<path d="M108 96 l8 8 M116 96 l-8 8" stroke="#c0392b" stroke-width="2"/>
+<circle cx="98.0" cy="86.7" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="105.0" cy="93.3" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="112.0" cy="100.0" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="119.0" cy="106.7" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="126.0" cy="113.3" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<path d="M154 116 l8 8 M162 116 l-8 8" stroke="#c0392b" stroke-width="2"/>
+<circle cx="144.0" cy="106.7" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="151.0" cy="113.3" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="158.0" cy="120.0" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="165.0" cy="126.7" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<circle cx="172.0" cy="133.3" r="3.2" fill="#2f6fb3" opacity=".8"/>
+<text x="26" y="103" font-size="10" font-weight="400" fill="#4a5a70" text-anchor="middle" ><tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">v</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="normal">2</tspan></tspan></tspan></text>
+<text x="125" y="161" font-size="9.5" font-weight="400" fill="#4a5a70" text-anchor="middle" ><tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">dN</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">ch</tspan></tspan><tspan font-style="normal">/</tspan><tspan font-style="italic">d</tspan><tspan font-style="italic">η</tspan></tspan></text>
+<rect x="222" y="66" width="10" height="3" fill="#c0392b"/><text x="236" y="70" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="start" >centrality</text>
+<text x="236" y="82" font-size="9.5" font-weight="700" fill="#c0392b" text-anchor="start" >average</text>
+<circle cx="227" cy="102" r="3.4" fill="#2f6fb3"/><text x="236" y="106" font-size="9.5" font-weight="700" fill="#2f6fb3" text-anchor="start" >spectator-</text>
+<text x="236" y="118" font-size="9.5" font-weight="700" fill="#2f6fb3" text-anchor="start" >neutron bins</text>
+<rect x="14" y="168" width="292" height="26" rx="8" fill="#003366"/>
+<text x="160" y="185.0" font-size="10" font-weight="700" fill="#fff" text-anchor="middle" >fixed <tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">N</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">part</tspan></tspan></tspan>, denser: more particles, smaller <tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">v</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="normal">2</tspan></tspan></tspan></text>
+</svg>

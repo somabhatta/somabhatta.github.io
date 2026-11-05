@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" font-family="Inter,Helvetica,Arial,sans-serif">
+  <defs>
+    <radialGradient id="qgp" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff3d6"/><stop offset=".55" stop-color="#f39c3c"/><stop offset="1" stop-color="#d9480f" stop-opacity="0"/></radialGradient>
+    <radialGradient id="u" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#e88c80"/><stop offset="1" stop-color="#a8281c"/></radialGradient>
+    <radialGradient id="au" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#8fb4e3"/><stop offset="1" stop-color="#2459a0"/></radialGradient>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#003366"/></marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d9480f"/></marker>
+  </defs>
+  <rect width="320" height="200" fill="#f7f9fc"/>
+<text x="14" y="28" font-size="16" font-weight="800" fill="#003366" text-anchor="start" >Higher-order <tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="normal">[</tspan><tspan font-style="italic">p</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">T</tspan></tspan><tspan font-style="normal">]</tspan></tspan> fluctuations</text>
+<text x="14" y="45" font-size="10.5" font-weight="400" fill="#4a5a70" text-anchor="start" >Cumulant framework, validated with HIJING</text>
+<path d="M36 158 V54 M36 158 H230" stroke="#4a5a70" stroke-width="1.3" fill="none"/>
+<path d="M42.0 60.0 L222.0 86.0" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<rect x="242" y="65" width="10" height="3" fill="#c0392b"/>
+<text x="256" y="70" font-size="10" font-weight="700" fill="#c0392b" text-anchor="start" ><tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">k</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="normal">2</tspan></tspan><tspan font-style="normal"> ∝ </tspan><tspan font-style="normal">1/</tspan><tspan font-style="italic">N</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">ch</tspan></tspan></tspan></text>
+<path d="M42.0 70.0 L222.0 122.0" fill="none" stroke="#2f6fb3" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<rect x="242" y="91" width="10" height="3" fill="#2f6fb3"/>
+<text x="256" y="96" font-size="10" font-weight="700" fill="#2f6fb3" text-anchor="start" ><tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">k</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="normal">3</tspan></tspan><tspan font-style="normal"> ∝ </tspan><tspan font-style="normal">1/</tspan><tspan font-style="italic">N</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">ch</tspan></tspan><tspan baseline-shift="super" font-size="70%"><tspan font-style="normal">2</tspan></tspan></tspan></text>
+<path d="M42.0 80.0 L222.0 158.0" fill="none" stroke="#2e8b3a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<rect x="242" y="117" width="10" height="3" fill="#2e8b3a"/>
+<text x="256" y="122" font-size="10" font-weight="700" fill="#2e8b3a" text-anchor="start" ><tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">k</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="normal">4</tspan></tspan><tspan font-style="normal"> ∝ </tspan><tspan font-style="normal">1/</tspan><tspan font-style="italic">N</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">ch</tspan></tspan><tspan baseline-shift="super" font-size="70%"><tspan font-style="normal">3</tspan></tspan></tspan></text>
+<text x="26" y="106" font-size="9" font-weight="400" fill="#4a5a70" text-anchor="middle" transform="rotate(-90 26 106)">cumulants of <tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="normal">[</tspan><tspan font-style="italic">p</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">T</tspan></tspan><tspan font-style="normal">]</tspan></tspan> (log)</text>
+<text x="133" y="168" font-size="9" font-weight="400" fill="#4a5a70" text-anchor="middle" >multiplicity <tspan font-family="'STIX Two Text','Times New Roman',Times,serif" font-size="112%"><tspan font-style="italic">N</tspan><tspan baseline-shift="sub" font-size="70%"><tspan font-style="italic">ch</tspan></tspan></tspan> (log)</text>
+<text x="244" y="146" font-size="9" font-weight="400" fill="#4a5a70" text-anchor="start" >independent</text>
+<text x="244" y="157" font-size="9" font-weight="400" fill="#4a5a70" text-anchor="start" >sources</text>
+<rect x="14" y="172" width="292" height="22" rx="8" fill="#003366"/>
+<text x="160" y="187.0" font-size="10" font-weight="700" fill="#fff" text-anchor="middle" >baseline for fluctuations without final-state effects</text>
+</svg>
