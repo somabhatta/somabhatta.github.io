@@ -53,7 +53,7 @@
 
         if (a.pathname && a.pathname.endsWith('/cv/Somadutta_Bhatta_CV.pdf')) {
             track('cv_click', { page });
-        } else if (a.matches('.story, .hero .cta')) {
+        } else if (a.matches('.highlight')) {
             track('highlight_card_click', { page, target: href });
         } else if (a.matches('.entry')) {
             track('research_card_click', { page, target: href });
