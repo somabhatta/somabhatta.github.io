@@ -30,13 +30,13 @@
             }
             input.addEventListener('input', filter); filter();
         }
-        if (!document.querySelector('.r-page')) return;
+        if (!document.querySelector('main.article')) return;
         const sections = Array.from(document.querySelectorAll('.r-section'));
         const panelCount = document.querySelectorAll('.anim-panel').length;
         const wordCount = main.textContent.trim().split(/\s+/).length;
         const meta = document.createElement('p'); meta.className = 'r-reading-meta';
         meta.textContent = Math.max(1, Math.ceil(wordCount / 220)) + ' min read · ' + panelCount + ' interactive illustrations';
-        document.querySelector('.r-paper-ref').before(meta);
+        (document.querySelector('.r-paper-ref') || document.querySelector('.byline')).before(meta);
         const outline = document.createElement('nav'); outline.className = 'r-outline'; outline.setAttribute('aria-label', 'On this page');
         const list = document.createElement('ol');
         const shortNames = {gap:'The question',measure:'The method',observe:'The evidence',conclude:'The insight',future:'What’s next'};
@@ -50,7 +50,7 @@
         });
         outline.appendChild(list);
         const track = document.createElement('div'); track.className = 'r-reading-track'; track.setAttribute('aria-hidden','true'); track.innerHTML = '<span></span>'; outline.appendChild(track);
-        (document.querySelector('.r-tldr') || document.querySelector('.r-buttons')).after(outline);
+        (document.querySelector('.r-tldr') || document.querySelector('.articlegrid') || document.querySelector('.r-buttons')).after(outline);
         const links = Array.from(list.querySelectorAll('a')); let scheduled = false;
         function updateProgress() {
             scheduled = false;

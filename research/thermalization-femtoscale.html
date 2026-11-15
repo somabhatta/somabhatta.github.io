@@ -8,15 +8,15 @@
     <link rel="canonical" href="https://somabhatta.github.io/research/thermalization-femtoscale.html">
     <meta name="author" content="Somadutta Bhatta">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="ATLAS momentum fluctuations reveal thermalization at the femtoscale">
-    <meta property="og:description" content="Animated explainer: at fixed particle number, a smaller collision volume means a denser, hotter fluid and more momentum per particle.">
+    <meta property="og:title" content="Thermalization at the Femtoscale Explained | Somadutta Bhatta">
+    <meta property="og:description" content="A plain-language, animated explanation of how the impact parameter and thermalization explain the steep drop of [pT] fluctuations in central Pb+Pb collisions (Samanta, Bhatta, Jia, Luzum, Ollitrault, PRC 109, L051902, 2024).">
     <meta property="og:url" content="https://somabhatta.github.io/research/thermalization-femtoscale.html">
     <meta property="og:image" content="https://somabhatta.github.io/research/fig/thermalization-femtoscale/panel_plot.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23003366'/><text x='50' y='66' font-size='46' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SB</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'&gt;&lt;circle%20cx='50'%20cy='50'%20r='48'%20fill='%23003366'/&gt;&lt;text%20x='50'%20y='66'%20font-size='46'%20text-anchor='middle'%20fill='white'%20font-family='Arial'%20font-weight='bold'&gt;SB&lt;/text&gt;&lt;/svg&gt;">
     <link rel="stylesheet" href="assets/research.css">
     <script type="application/ld+json">
     {
@@ -38,16 +38,19 @@
     }
     </script>
 <link rel="stylesheet" href="assets/experience.css">
+<link rel="stylesheet" href="../portfolio.css">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="twitter:image" content="https://somabhatta.github.io/research/fig/thermalization-femtoscale/panel_plot.png">
+<meta name="twitter:title" content="Thermalization at the Femtoscale Explained | Somadutta Bhatta">
+<meta name="twitter:description" content="A plain-language, animated explanation of how the impact parameter and thermalization explain the steep drop of [pT] fluctuations in central Pb+Pb collisions (Samanta, Bhatta, Jia, Luzum, Ollitrault, PRC 109, L051902, 2024).">
+<html><head><script defer src="../analytics.js"></script></head></html>
 </head>
-<body>
+<body class="portfolio">
 
-<nav class="r-topbar" aria-label="Breadcrumb">
-    <a class="home" href="../index.html#research">← Somadutta Bhatta · Research explained</a>
-    <a href="nuclear-shape-fluctuations.html">Next paper →</a>
-</nav>
-
-<main class="r-page">
-    <div class="r-kicker">Phenomenology · ATLAS Pb+Pb data at 5.02 TeV</div>
+<header class="mast"><div class="wrap top">
+<a class="wordmark" href="../index.html">Somadutta Bhatta</a><nav aria-label="Main navigation"><a href="../research.html" aria-current="page">Research</a><a href="../publications.html">Publications</a><a href="../talks.html">Talks</a><a href="../about.html">About</a></nav><a class="cv" href="../cv/Somadutta_Bhatta_CV.pdf">CV <span>→</span></a>
+</div></header><main class="wrap article study" id="main">
+    <a class="back" href="../research.html">← Research explained</a><div class="r-kicker">Phenomenology · ATLAS Pb+Pb data at 5.02 TeV</div>
     <h1><a class="title-link" href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.109.L051902" target="_blank" rel="noopener">ATLAS momentum fluctuations reveal thermalization at the femtoscale</a></h1>
     <p class="r-paper-ref"><em><a class="title-link" href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.109.L051902" target="_blank" rel="noopener">Thermalization at the femtoscale seen in high-energy Pb+Pb collisions</a></em><br>
         R. Samanta, S. Bhatta, J. Jia, M. Luzum, J.-Y. Ollitrault, <strong>Phys. Rev. C 109, L051902 (2024)</strong></p>
@@ -68,7 +71,8 @@
 
     <!-- 1. GAP -->
     <section class="r-section" id="gap">
-        <h2><span class="r-num">1</span>The gap: a sharp drop with no explanation</h2>
+        <h2>
+<span class="r-num">1</span>The gap: a sharp drop with no explanation</h2>
         <p>Each collision has an <strong>impact parameter b</strong>: the distance between the centres of the two nuclei. A smaller b means a larger overlap region, where the hot matter forms.</p>
         <figure class="anim-panel" data-anim="thermalization-femtoscale-overlap">
             <figcaption><strong>What you're seeing (schematic):</strong> two lead nuclei seen along the beam. As b shrinks, the shaded overlap, the collision volume V, grows.</figcaption>
@@ -79,12 +83,14 @@
                 <span class="fig-source">Figure reproduced from R. Samanta et al., <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.109.L051902" target="_blank" rel="noopener">Phys. Rev. C 109, L051902 (2024)</a>, <a href="https://arxiv.org/abs/2303.15323" target="_blank" rel="noopener">arXiv:2303.15323</a>.</span></figcaption>
         </figure>
         <p>ATLAS measured how much the momentum per particle, [pT], varies between events with the same particle count N. The variance falls by about a factor of 2 over a narrow range of N, near 3700. Models of independent nucleon-nucleon collisions, such as HIJING, do not show this.</p>
-        <div class="r-keypoint"><strong>Open question:</strong> what makes the fluctuations drop so suddenly in central collisions? Related: <a href="momentum-fluctuations.html">the ATLAS [pT] fluctuation measurement</a>.</div>
+        <div class="r-keypoint">
+<strong>Open question:</strong> what makes the fluctuations drop so suddenly in central collisions? Related: <a href="momentum-fluctuations.html">the ATLAS [pT] fluctuation measurement</a>.</div>
     </section>
 
     <!-- 2. MEASURE -->
     <section class="r-section" id="measure">
-        <h2><span class="r-num">2</span>What we compute: how density sets the momentum per particle</h2>
+        <h2>
+<span class="r-num">2</span>What we compute: how density sets the momentum per particle</h2>
         <p>In a thermalized fluid, a higher density means a higher temperature, and so more momentum per particle. In a relativistic fluid, density and temperature go together, because heat can create new particles.</p>
         <figure class="anim-panel" data-anim="thermalization-femtoscale-density" data-params='{"mode":"fixedV"}'>
             <figcaption><strong>What you're seeing (schematic):</strong> two collisions with the same b, so the same volume. The one with more particles is denser and hotter, and its particles fly out faster.</figcaption>
@@ -98,7 +104,8 @@
 
     <!-- 3. OBSERVE -->
     <section class="r-section" id="observe">
-        <h2><span class="r-num">3</span>What we observe: b fluctuations explain the drop</h2>
+        <h2>
+<span class="r-num">3</span>What we observe: b fluctuations explain the drop</h2>
         <p>Hydrodynamic simulations at b = 0 show that events with more particles have higher [pT]. A model without interactions shows a correlation about 10 times weaker.</p>
         <figure class="paper-fig narrow">
             <img src="fig/thermalization-femtoscale/scatter_plot.png" alt="Scatter of momentum per particle versus particle number at b equals zero in hydrodynamics, with a tilted ellipse, compared with a nearly flat ellipse for a non-thermal model" loading="lazy" width="1600" height="1552">
@@ -119,7 +126,8 @@
 
     <!-- 4. CONCLUDE -->
     <section class="r-section" id="conclude">
-        <h2><span class="r-num">4</span>What we conclude: the drop is a sign of thermalization</h2>
+        <h2>
+<span class="r-num">4</span>What we conclude: the drop is a sign of thermalization</h2>
         <p>The variance of [pT] at fixed N has two parts: an intrinsic part, present even at fixed b, and a part from b varying. The second part vanishes in ultra-central collisions, which produces the steep drop.</p>
         <figure class="anim-panel" data-anim="thermalization-femtoscale-variance">
             <figcaption><strong>What you're seeing (schematic):</strong> the intrinsic spread (blue) falls smoothly. The spread from b fluctuations (green) disappears at the knee. Their sum (red) shows the steep drop.</figcaption>
@@ -129,11 +137,15 @@
 
     <!-- 5. FUTURE -->
     <section class="r-section" id="future">
-        <h2><span class="r-num">5</span>What comes next</h2>
+        <h2>
+<span class="r-num">5</span>What comes next</h2>
         <ul>
-            <li><strong>Mean [pT] in ultra-central collisions:</strong> the model predicts a small rise of the average [pT] above the knee. CMS has observed this rise and used it to extract the speed of sound of the plasma.</li>
-            <li><strong>Higher cumulants:</strong> the skewness of [pT] fluctuations helps separate the b-driven and intrinsic parts.</li>
-            <li><strong>Deformed nuclei:</strong> their random orientations add further fluctuations of both N and [pT].</li>
+            <li>
+<strong>Mean [pT] in ultra-central collisions:</strong> the model predicts a small rise of the average [pT] above the knee. CMS has observed this rise and used it to extract the speed of sound of the plasma.</li>
+            <li>
+<strong>Higher cumulants:</strong> the skewness of [pT] fluctuations helps separate the b-driven and intrinsic parts.</li>
+            <li>
+<strong>Deformed nuclei:</strong> their random orientations add further fluctuations of both N and [pT].</li>
         </ul>
     </section>
 
@@ -144,17 +156,17 @@
 
     <nav class="r-pager" aria-label="More papers">
         <a href="spectators-initial-state.html">← Previous: Using spectators to access initial states</a>
-        <a href="../index.html#research">All research summaries</a>
+        <a href="../research.html">All research summaries</a>
         <a href="nuclear-shape-fluctuations.html">Next: Nuclear shape fluctuations in heavy-ion collisions →</a>
     </nav>
 </main>
 
-<footer class="r-footer">© 2026 Somadutta Bhatta · Utrecht University &amp; Nikhef</footer>
 <script src="assets/anim.js"></script>
 <script src="assets/thermalization-femtoscale.js"></script>
 <script src="assets/story-animations.js"></script>
 <script src="assets/main-results.js"></script>
 <script src="assets/experience.js"></script>
-<script src="../analytics.js" defer></script>
+<footer class="wrap foot"><a href="../index.html">Somadutta Bhatta</a><span>Utrecht University · Nikhef</span><a href="mailto:s.bhatta@uu.nl">Contact →</a></footer>
 </body>
 </html>
+
