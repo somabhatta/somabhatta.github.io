@@ -317,6 +317,7 @@ def main() -> int:
         },
         # convenient flat map, like the original script produced
         "counts": {r.ref: r.citations for r in results},
+        "by_query": {r.query: r.citations for r in results},
         # full detail for each paper
         "papers": [asdict(r) for r in results],
     }

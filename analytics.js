@@ -13,7 +13,7 @@
     const UMAMI_WEBSITE_ID = '5de528ef-4713-412b-95d0-c494e72e3a6e';                  // from cloud.umami.is → Settings → Websites → your site
     const UMAMI_SCRIPT = 'https://cloud.umami.is/script.js';
 
-    if (!UMAMI_WEBSITE_ID) return;
+    if (!UMAMI_WEBSITE_ID || location.hostname !== 'somabhatta.github.io') return;
 
     const s = document.createElement('script');
     s.defer = true;
@@ -51,9 +51,11 @@
         const href = a.getAttribute('href') || '';
         const label = (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80);
 
-        if (a.classList.contains('hl-card')) {
+        if (a.pathname && a.pathname.endsWith('/cv/Somadutta_Bhatta_CV.pdf')) {
+            track('cv_click', { page });
+        } else if (a.matches('.story, .hero .cta')) {
             track('highlight_card_click', { page, target: href });
-        } else if (a.classList.contains('research-card')) {
+        } else if (a.matches('.entry')) {
             track('research_card_click', { page, target: href });
         } else if (href.startsWith('mailto:')) {
             track('email_click', { page });
@@ -72,11 +74,5 @@
         }
     }, true);
 
-    // homepage tabs (#publications, #talks, #hobbies, …) count as views of that section
-    function reportSection() {
-        const sec = location.hash.replace('#', '');
-        if (sec) track('section_view', { page, section: sec });
-    }
-    window.addEventListener('hashchange', reportSection);
-    window.addEventListener('load', function () { setTimeout(reportSection, 1500); });
+    // Each primary section now has its own URL and a standard page view.
 })();
