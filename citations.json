@@ -1,35 +1,128 @@
 {
-  "exp_nature_2024": 94,
-  "exp_prl_radial": 15,
-  "exp_prl_fluct": 29,
-  "exp_prc_corr": 75,
-  "pheno_radial_2025": 0,
-  "pheno_emission_2024": 1,
-  "pheno_plb_2024": 5,
-  "pheno_prc_2022": 12,
-  "pheno_epjc_2022": 8,
-  "co_nuclnews_2025": 0,
-  "co_prl_decorr": 2,
-  "co_prc_thermal": 6,
-  "co_epja_shape": 24,
-  "co_prc_isobar": 18,
-  "co_plb_nonflow": 19,
-  "total_citations": 308,
+  "generated_utc": "2026-11-16T18:39:03+00:00",
+  "source": "https://inspirehep.net/api/literature",
   "by_query": {
-    "arxiv:2503.24125": 15,
-    "doi:10.1038/s41586-024-08097-2": 94,
-    "doi:10.1103/PhysRevLett.133.252301": 29,
-    "doi:10.1103/PhysRevC.107.054910": 75,
-    "arxiv:2504.20008": 0,
-    "doi:10.1103/kzyy-2wtv": 1,
-    "doi:10.1016/j.physletb.2024.139034": 5,
-    "doi:10.1103/PhysRevC.105.024904": 12,
-    "doi:10.1140/epjc/s10052-022-10824-w": 8,
+    "arxiv:2503.24125": 44,
+    "doi:10.1038/s41586-024-08097-2": 168,
+    "doi:10.1103/PhysRevLett.133.252301": 47,
+    "doi:10.1103/PhysRevC.107.054910": 101,
+    "arxiv:2504.20008": 9,
+    "doi:10.1103/kzyy-2wtv": 0,
+    "doi:10.1016/j.physletb.2024.139034": 9,
+    "doi:10.1103/PhysRevC.105.024904": 26,
+    "doi:10.1140/epjc/s10052-022-10824-w": 2,
     "doi:10.1080/10619127.2025.2454214": 0,
-    "arxiv:2408.15006": 2,
-    "doi:10.1103/PhysRevC.109.L051902": 6,
-    "doi:10.1140/epja/s10050-023-00965-1": 24,
-    "doi:10.1103/PhysRevC.106.L031901": 18,
-    "doi:10.1016/j.physletb.2021.136702": 19
-  }
+    "arxiv:2408.15006": 13,
+    "doi:10.1103/PhysRevC.109.L051902": 39,
+    "doi:10.1140/epja/s10050-023-00965-1": 32,
+    "doi:10.1103/PhysRevC.106.L031901": 42,
+    "doi:10.1016/j.physletb.2021.136702": 28,
+    "doi:10.22323/1.449.0202": 1,
+    "recid:2707806": 2,
+    "doi:10.5506/APhysPolBSupp.16.1-A90": 0,
+    "doi:10.22323/1.398.0305": 0,
+    "recid:1839988": 2
+  },
+  "papers": [
+    {
+      "query": "arxiv:2503.24125",
+      "recid": 2907010,
+      "citations": 44
+    },
+    {
+      "query": "doi:10.1038/s41586-024-08097-2",
+      "recid": 2746294,
+      "citations": 168
+    },
+    {
+      "query": "doi:10.1103/PhysRevLett.133.252301",
+      "recid": 2806288,
+      "citations": 47
+    },
+    {
+      "query": "doi:10.1103/PhysRevC.107.054910",
+      "recid": 2075412,
+      "citations": 101
+    },
+    {
+      "query": "arxiv:2504.20008",
+      "recid": 2915883,
+      "citations": 9
+    },
+    {
+      "query": "doi:10.1103/kzyy-2wtv",
+      "recid": 2806105,
+      "citations": 0
+    },
+    {
+      "query": "doi:10.1016/j.physletb.2024.139034",
+      "recid": 2620108,
+      "citations": 9
+    },
+    {
+      "query": "doi:10.1103/PhysRevC.105.024904",
+      "recid": 1985620,
+      "citations": 26
+    },
+    {
+      "query": "doi:10.1140/epjc/s10052-022-10824-w",
+      "recid": 2134256,
+      "citations": 2
+    },
+    {
+      "query": "doi:10.1080/10619127.2025.2454214",
+      "recid": 2914492,
+      "citations": 0
+    },
+    {
+      "query": "arxiv:2408.15006",
+      "recid": 2822112,
+      "citations": 13
+    },
+    {
+      "query": "doi:10.1103/PhysRevC.109.L051902",
+      "recid": 2646086,
+      "citations": 39
+    },
+    {
+      "query": "doi:10.1140/epja/s10050-023-00965-1",
+      "recid": 2621462,
+      "citations": 32
+    },
+    {
+      "query": "doi:10.1103/PhysRevC.106.L031901",
+      "recid": 2091534,
+      "citations": 42
+    },
+    {
+      "query": "doi:10.1016/j.physletb.2021.136702",
+      "recid": 1845762,
+      "citations": 28
+    },
+    {
+      "query": "doi:10.22323/1.449.0202",
+      "recid": 2751642,
+      "citations": 1
+    },
+    {
+      "query": "recid:2707806",
+      "recid": 2707806,
+      "citations": 2
+    },
+    {
+      "query": "doi:10.5506/APhysPolBSupp.16.1-A90",
+      "recid": 2159359,
+      "citations": 0
+    },
+    {
+      "query": "doi:10.22323/1.398.0305",
+      "recid": 2013676,
+      "citations": 0
+    },
+    {
+      "query": "recid:1839988",
+      "recid": 1839988,
+      "citations": 2
+    }
+  ]
 }
